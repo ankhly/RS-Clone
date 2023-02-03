@@ -71,4 +71,4 @@ const infoPage = () => `
   </div>
 `;
 
-document.body.insertAdjacentHTML('afterbegin', infoPage());
+// document.body.insertAdjacentHTML('afterbegin', infoPage());

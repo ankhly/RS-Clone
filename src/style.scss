@@ -1,1 +1,23 @@
 @import "./layout-main-info/info.scss";
+@import "./layout-main-info/main.scss";
+
+$maxWidthContainer: 1440;
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.page {
+  flex: 1 1 auto;
+  background: #fafafa;
+  position: relative;
+}
+.container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
