@@ -14,15 +14,15 @@ const mainPage = (block: string) => `
           <div class="main-page__images">
             <div class="img-block">
               <img class="main-page__img" src="../assetsStatic/phone.svg" alt="phone">
-              <p><b>Создайте онлайн, бесплатно</b> и без регистрации</p>
+              <p class="img-block__text1"><b>Создайте онлайн, бесплатно</b> и без регистрации</p>
             </div>
             <div class="img-block">
               <img class="main-page__img" src="../assetsStatic/share.svg" alt="share">
-              <p><b>Делитесь</b> ссылками на ваши графики</p>
+              <p class="img-block__text2"><b>Делитесь</b> ссылками на ваши графики</p>
             </div>
             <div class="img-block">
               <img class="main-page__img" src="../assetsStatic/download.svg" alt="download">
-              <p><b>Скачивайте графики</b>
+              <p class="img-block__text3"><b>Скачивайте графики</b>
                 PNG / JPG / GIF / SVG
               </p>
             </div>
@@ -34,7 +34,7 @@ const mainPage = (block: string) => `
         </section>
         <section class="main-page__example"></section>
         <section class="main-page__text">
-          <p><b>EasyCharts</b> - сайт для построения графиков/диаграмм онлайн. Выберите вид диаграммы 
+          <p class="main-page__text-p"><b>EasyCharts</b> - сайт для построения графиков/диаграмм онлайн. Выберите вид диаграммы 
             (линейная, круговая, столбчатая, полосовая, линии, области), заполните данные таблицы 
             графика, и диаграмма готова! Диаграмму можно скачать в удобном вам формате или получить
             ссылку на страницу вашего графика. Вы можете также использовать онлайн-конструктор графиков 

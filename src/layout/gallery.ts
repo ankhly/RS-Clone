@@ -3,37 +3,37 @@ export const galleryBlock = () => `
     <a class="gallery-block__link" href="#">
       <div class="gallery-block gallery-block-main">
         <img class="gallery-block-img" src="../assetsStatic/bar.png" alt="bar">
-        <p class="gallery-block-name">Колонны</p>
+        <p class="gallery-block-name gallery-block-name1">Колонны</p>
       </div>
     </a>
     <a class="gallery-block__link" href="#">
       <div class="gallery-block">
         <img class="gallery-block-img" src="../assetsStatic/doughnut.png" alt="doughnut">
-        <p class="gallery-block-name">Пончик</p>
+        <p class="gallery-block-name gallery-block-name2">Пончик</p>
       </div>
     </a>
     <a class="gallery-block__link" href="#">
       <div class="gallery-block">
         <img class="gallery-block-img" src="../assetsStatic/horizontalBar.png" alt="horizontalBar">
-        <p class="gallery-block-name">Полосы</p>
+        <p class="gallery-block-name gallery-block-name3">Полосы</p>
       </div>
     </a>
     <a class="gallery-block__link" href="#">
       <div class="gallery-block">
         <img class="gallery-block-img" src="../assetsStatic/line.png" alt="line">
-        <p class="gallery-block-name">Линии</p>
+        <p class="gallery-block-name gallery-block-name4">Линии</p>
       </div>
     </a>
     <a class="gallery-block__link" href="#">
       <div class="gallery-block">
         <img class="gallery-block-img" src="../assetsStatic/pie.png" alt="pie">
-        <p class="gallery-block-name">Пирог</p>
+        <p class="gallery-block-name gallery-block-name5">Пирог</p>
       </div>
     </a>
     <a class="gallery-block__link" href="#">
       <div class="gallery-block">
         <img class="gallery-block-img" src="../assetsStatic/radar.png" alt="radar">
-        <p class="gallery-block-name">Радар</p>
+        <p class="gallery-block-name gallery-block-name6">Радар</p>
       </div>
     </a>
   </div>
