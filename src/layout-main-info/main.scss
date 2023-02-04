@@ -9,11 +9,14 @@ $green: rgb(119, 184, 180);
 
   &__start {
     background: #fafafa;
-    padding: 20px 0;
+    padding: 40px 0;
   }
 
-  // &__animation {
-  // }
+  &__animation {
+    height: 125px;
+    margin-bottom: 40px;
+    position: relative;
+  }
 
   &__h1 {
     margin-bottom: 10px;
@@ -47,7 +50,7 @@ $green: rgb(119, 184, 180);
   }
 
   &__galery-h2 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-weight: normal;
   }
 
@@ -87,3 +90,12 @@ $green: rgb(119, 184, 180);
   font-weight: bold;
 }
 
+.animation__chart-column {
+  position: absolute;
+  bottom: 0;
+  margin-right: 7px;
+  border-radius: 2px;
+  width: 15px;
+  height: 65%;
+  transition: 0.5s;
+}
