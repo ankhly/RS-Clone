@@ -1,4 +1,5 @@
-const mainPage = () => `
+import { galleryBlock } from "./gallery";
+const mainPage = (block: string) => `
   <div class="wrapper">
   <main class="page">
     <div class="page__container container">
@@ -27,34 +28,9 @@ const mainPage = () => `
             </div>
           </div>                       
         </section>
-        <section class="main-page__galery">
-          <h2 class="main-page__galery-h2">Галерея графиков/диаграмм</h2>
-          <div class="main-page__galery-blocks">
-            <div class="galery-block">
-              <img class="galery-block-img" src="../assetsStatic/bar.png" alt="bar">
-              <p class="galery-block-name">Колонны</p>
-            </div>
-            <div class="galery-block">
-              <img class="galery-block-img" src="../assetsStatic/doughnut.png" alt="doughnut">
-              <p class="galery-block-name">Пончик</p>
-            </div>
-            <div class="galery-block">
-              <img class="galery-block-img" src="../assetsStatic/horizontalBar.png" alt="horizontalBar">
-              <p class="galery-block-name">Полосы</p>
-            </div>
-            <div class="galery-block">
-              <img class="galery-block-img" src="../assetsStatic/line.png" alt="line">
-              <p class="galery-block-name">Линии</p>
-            </div>
-            <div class="galery-block">
-              <img class="galery-block-img" src="../assetsStatic/pie.png" alt="pie">
-              <p class="galery-block-name">Пирог</p>
-            </div>
-            <div class="galery-block">
-              <img class="galery-block-img" src="../assetsStatic/radar.png" alt="radar">
-              <p class="galery-block-name">Радар</p>
-            </div>
-          </div>
+        <section class="main-page__gallery">
+          <h2 class="main-page__gallery-h2">Галерея графиков/диаграмм</h2>
+          ${block}
         </section>
         <section class="main-page__example"></section>
         <section class="main-page__text">
@@ -73,5 +49,4 @@ const mainPage = () => `
   </main>
   </div>
 `;
-mainPage();
-document.body.insertAdjacentHTML('afterbegin', mainPage());
+document.body.insertAdjacentHTML('afterbegin', mainPage(galleryBlock()));

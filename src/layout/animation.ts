@@ -8,7 +8,7 @@ const colorChartColumn = [
   'rgb(226, 86, 89)',
   'rgb(242, 143, 39)',
   'rgb(77, 122, 169)',
-  'rgb(119, 184, 180)'
+  'rgb(119, 184, 180)',
 ];
 
 function randomChartColumn(arr: string[]) {
@@ -42,4 +42,4 @@ const timeInterval = setInterval(() => {
     element.style.background = `${randomChartColumn(colorChartColumn)}`;
     element.style.height = `${randomHeight()}%`;
   });
-},2000);
+}, 2000);

@@ -1,6 +1,7 @@
 import './style.scss';
-import './layout-main-info/info';
-import './layout-main-info/main';
-import './layout-main-info/animation';
+import './layout/info';
+import './layout/main';
+import './layout/animation';
+import './layout/gallery';
 
 console.log('Hello world');
