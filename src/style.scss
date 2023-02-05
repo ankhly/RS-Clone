@@ -1,3 +1,4 @@
+
 $fontFamily: "";
 $fontSize: 16;
 
@@ -15,6 +16,9 @@ $green: rgb(119, 184, 180);
 
 @import "./utils/null.scss";
 @import "./page-create/page-create.scss";
+@import "./layout/info.scss";
+@import "./layout/main.scss";
+@import "./layout/gallery.scss";
 
 html {
   background-color: #ffffff;
@@ -46,6 +50,7 @@ html {
     }
   }
 }
+=======
 .wrapper {
   width: 100%;
   min-height: 100%;
@@ -55,9 +60,12 @@ html {
   position: relative;
 }
 
+
+
 .page {
   flex: 1 1 auto;
-  background-color: #fafafa;
+  background: #fafafa;
+  position: relative;
 }
 
 .container {
