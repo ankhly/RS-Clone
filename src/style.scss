@@ -1,9 +1,56 @@
+
+$fontFamily: "";
+$fontSize: 16;
+
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1440;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+$red: rgb(226, 86, 89);
+$yellow: rgb(242, 143, 39);
+$blue: rgb(77, 122, 169);
+$green: rgb(119, 184, 180);
+
+@import "./utils/null.scss";
+@import "./page-create/page-create.scss";
 @import "./layout/info.scss";
 @import "./layout/main.scss";
 @import "./layout/gallery.scss";
 
-$maxWidthContainer: 1440;
-
+html {
+  background-color: #ffffff;
+  color: #9e9898;
+  &.dark {
+    background-color: #000000;
+    color: #ffffff;
+    .page,
+    .data-actions,
+    .settings-actions,
+    .btn-add,
+    .popup__content,
+    a {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    .popup {
+      &::before {
+        background-color: hsla(0, 0%, 0%, 0);
+      }
+    }
+    .popup__close {
+      &::before {
+        background-color: hsla(0, 0%, 100%);
+      }
+      &::after {
+        background-color: hsla(0, 0%, 100%);
+      }
+    }
+  }
+}
+=======
 .wrapper {
   width: 100%;
   min-height: 100%;
@@ -12,11 +59,15 @@ $maxWidthContainer: 1440;
   flex-direction: column;
   position: relative;
 }
+
+
+
 .page {
   flex: 1 1 auto;
   background: #fafafa;
   position: relative;
 }
+
 .container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
