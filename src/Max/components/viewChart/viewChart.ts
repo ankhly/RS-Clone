@@ -1,3 +1,6 @@
+import { getAddress } from '../../services/api';
+import { chartParametersState } from '../../services/store';
+
 export const renderViewChart = (): string => {
   return  `
     <div class="chartResult">
@@ -7,13 +10,13 @@ export const renderViewChart = (): string => {
   `;
 };
 
-export const renderLoader = (): void => {
+const renderLoader = (): void => {
   const imageContainer = document.querySelector('#imageContainer') as HTMLDivElement;
   imageContainer.innerHTML = '<div class="lds-ripple"><div></div><div></div></div>';
 };
 
 
-export const renderChart = (address: string): void => {
+const renderChart = (address: string): void => {
   const imageContainer = document.querySelector('#imageContainer') as HTMLDivElement;
 
   const imgChart = new Image();
@@ -22,4 +25,10 @@ export const renderChart = (address: string): void => {
     imageContainer.innerHTML = '';
     imageContainer.append(imgChart);
   });
+};
+
+export const renderLoaderOrChart = async () => {
+  renderLoader();
+  const address = await getAddress(chartParametersState);
+  renderChart(address);
 };

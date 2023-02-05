@@ -6,7 +6,7 @@ const renderRowsX = (): string => {
     rowsX += `
       <div class="deleteRowContainer">
         <div title="Удалить эту строку" class="closeX remove-row" data-id="${i}"></div>
-        <input class="inputData inputDataLabel" type="text" value="${chartParametersState.data.labels[i]}"/>
+        <input class="inputData inputDataLabel edit-labels-row" type="text" value="${chartParametersState.data.labels[i]}"/>
       </div>
     `;
   }
@@ -18,7 +18,7 @@ const renderRowsY = (index: number): string => {
   for (let i = 0; i < chartParametersState.data.datasets[index].data.length; i++) {
     rowsY += `
       <input
-        class="inputData inputDataNumbers"
+        class="inputData inputDataNumbers edit-data-column-${index}"
         type="text"
         value="${chartParametersState.data.datasets[index].data[i]}"
       />
@@ -34,7 +34,7 @@ const renderColumnsY = (): string => {
       <div class="formContainerInner">
         <p class="axis">Y${i + 1}</p>
         <div title="Удалить этот столбец" class="closeY remove-column" data-id="${i}"></div>
-        <input class="inputData inputDataLabel margin" value="${chartParametersState.data.datasets[i].label}"/>
+        <input class="inputData inputDataLabel margin edit-labels-column" value="${chartParametersState.data.datasets[i].label}"/>
         ${renderRowsY(i)}
       </div>
     `;
@@ -54,7 +54,7 @@ export const renderMainParametersInner = (): void => {
   dataForm.innerHTML = `
   <div class="formContainer">
     <p class="axis">X</p>
-    <input type="text" value="${chartParametersState.options.title.text}" class="inputData inputDataLabel margin"/>
+    <input type="text" value="${chartParametersState.options.title.text}" class="inputData inputDataLabel margin title-chart"/>
     ${renderRowsX()}
     <button class="addButton add-row"> Добавить строку</button>
   </div>

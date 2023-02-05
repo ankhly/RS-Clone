@@ -1,13 +1,46 @@
-import { addColumn, addRow, removeColumn, removeRow, setType } from './setParametersChart';
-import { getAddress } from '../../services/api';
-import { renderChart, renderLoader } from '../viewChart/viewChart';
+import {
+  addColumn,
+  addRow,
+  removeColumn,
+  removeRow,
+  setDataColumn,
+  setLabelsColumn,
+  setLabelsRow, setTitle,
+  setType,
+} from './setParametersChart';
+import { renderLoaderOrChart } from '../viewChart/viewChart';
 import { renderMainParametersInner } from '../selectParametersChart/parametersChart';
-import { chartParametersState } from '../../services/store';
 
-const rerenderNewChartByClick = async () => {
-  renderLoader();
-  const address = await getAddress(chartParametersState);
-  renderChart(address);
+export const listenersInput = () => {
+  const editLabelsRow = document.querySelectorAll('.edit-labels-row') as NodeListOf<HTMLInputElement>;
+  for (let i = 0; i < editLabelsRow.length; i++) {
+    editLabelsRow[i].addEventListener('input', async (event) => {
+      setLabelsRow(i, (event.target as HTMLInputElement).value);
+      await renderLoaderOrChart();
+    });
+  }
+
+  const editLabelsColumn = document.querySelectorAll('.edit-labels-column') as NodeListOf<HTMLInputElement>;
+  for (let i = 0; i < editLabelsColumn.length; i++) {
+    editLabelsColumn[i].addEventListener('input', async (event) => {
+      setLabelsColumn(i, (event.target as HTMLInputElement).value);
+      await renderLoaderOrChart();
+    });
+
+    const editDataColumn = document.querySelectorAll(`.edit-data-column-${i}`) as NodeListOf<HTMLInputElement>;
+    for (let j = 0; j < editDataColumn.length; j++) {
+      editDataColumn[j].addEventListener('input',  async (event) => {
+        setDataColumn(j, (event.target as HTMLInputElement).value, i);
+        await renderLoaderOrChart();
+      });
+    }
+  }
+
+  const titleChart = document.querySelector('.title-chart') as HTMLInputElement;
+  titleChart.addEventListener('input', async (event) => {
+    setTitle((event.target as HTMLInputElement).value);
+    await renderLoaderOrChart();
+  });
 };
 
 export const listeners = (): void => {
@@ -21,25 +54,29 @@ export const listeners = (): void => {
       removeRow(addRemoveButton.dataset.id!);
       // if (chartParametersState.data.labels.length !== 1) {
         renderMainParametersInner();
-        await rerenderNewChartByClick();
+        listenersInput();
+        await renderLoaderOrChart();
       // }
     }
     if (addRemoveButton.classList.contains('remove-column')) {
       removeColumn(addRemoveButton.dataset.id!);
       // if (chartParametersState.data.datasets.length !== 1) {
         renderMainParametersInner();
-        await rerenderNewChartByClick();
+        listenersInput();
+        await renderLoaderOrChart();
       // }
     }
     if (addRemoveButton.classList.contains('add-row')) {
       addRow();
       renderMainParametersInner();
-      await rerenderNewChartByClick();
+      listenersInput();
+      await renderLoaderOrChart();
     }
     if (addRemoveButton.classList.contains('add-column')) {
       addColumn();
       renderMainParametersInner();
-      await rerenderNewChartByClick();
+      listenersInput();
+      await renderLoaderOrChart();
     }
 
     if (!selectTypeButton) {
@@ -47,27 +84,27 @@ export const listeners = (): void => {
     }
     if (selectTypeButton.classList.contains('type-bar')) {
       setType('bar');
-      await rerenderNewChartByClick();
+      await renderLoaderOrChart();
     }
     if (selectTypeButton.classList.contains('type-horizontalBar')) {
       setType('horizontalBar');
-      await rerenderNewChartByClick();
+      await renderLoaderOrChart();
     }
     if (selectTypeButton.classList.contains('type-line')) {
       setType('line');
-      await rerenderNewChartByClick();
+      await renderLoaderOrChart();
     }
     if (selectTypeButton.classList.contains('type-radar')) {
       setType('radar');
-      await rerenderNewChartByClick();
+      await renderLoaderOrChart();
     }
     if (selectTypeButton.classList.contains('type-pie')) {
       setType('pie');
-      await rerenderNewChartByClick();
+      await renderLoaderOrChart();
     }
     if (selectTypeButton.classList.contains('type-doughnut')) {
       setType('doughnut');
-      await rerenderNewChartByClick();
+      await renderLoaderOrChart();
     }
   });
 };
