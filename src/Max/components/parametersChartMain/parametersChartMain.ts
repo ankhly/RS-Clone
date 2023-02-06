@@ -6,7 +6,11 @@ const renderRowsX = (): string => {
     rowsX += `
       <div class="deleteRowContainer">
         <div title="Удалить эту строку" class="closeX remove-row" data-id="${i}"></div>
-        <input class="inputData inputDataLabel edit-labels-row" type="text" value="${chartParametersState.data.labels[i]}"/>
+        <input
+          class="inputData inputDataLabel edit-labels-row"
+          type="text"
+          value="${chartParametersState.data.labels[i]}"
+        />
       </div>
     `;
   }
@@ -34,7 +38,11 @@ const renderColumnsY = (): string => {
       <div class="formContainerInner">
         <p class="axis">Y${i + 1}</p>
         <div title="Удалить этот столбец" class="closeY remove-column" data-id="${i}"></div>
-        <input class="inputData inputDataLabel margin edit-labels-column" value="${chartParametersState.data.datasets[i].label}"/>
+        <input
+          class="inputData inputDataLabel margin edit-labels-column"
+          type="text"
+          value="${chartParametersState.data.datasets[i].label}"
+        />
         ${renderRowsY(i)}
       </div>
     `;
@@ -54,7 +62,11 @@ export const renderMainParametersInner = (): void => {
   dataForm.innerHTML = `
   <div class="formContainer">
     <p class="axis">X</p>
-    <input type="text" value="${chartParametersState.options.title.text}" class="inputData inputDataLabel margin title-chart"/>
+    <input
+      class="inputData inputDataLabel margin title-chart"
+      type="text"
+      value="${chartParametersState.options.title.text}"
+    />
     ${renderRowsX()}
     <button class="addButton add-row"> Добавить строку</button>
   </div>
@@ -66,32 +78,3 @@ export const renderMainParametersInner = (): void => {
   </div>
   `;
 };
-
-const renderAdditionalParameters = (): string => `
-  <div class="chartViewAndSave">
-    <p class="miniTitle">Параметры графика</p>
-    <div class="params">
-      <label class="labelSettingsForm" for="width">Ширина:</label>
-      <input type="text" id="width" value="${chartParametersState.width}"/>
-    </div>
-    <div class="params">
-      <label class=labelSettingsForm for="height">Высота:</label>
-      <input type="text" id="height" value="${chartParametersState.height}"/>
-    </div>
-    <div class="params">
-       <label class=labelSettingsForm for="color">Цвет фона:</label>
-      <input type="color" id="color" value=""/>
-    </div>
-    <a class="link">Скачать график PNG</a>
-    <a class="link">Скачать график JPG</a>
-    <a class="link">Скачать график PDF</a>
-  </div>
-`;
-
-export const renderAllParameters = (): string => `
-  <div class="optionsChartContainer">
-    <h3 class="miniTitle">Настройки графика</h3>
-    ${renderMainParameters()}
-    ${renderAdditionalParameters()}
-  </div>
-`;

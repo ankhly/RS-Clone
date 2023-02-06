@@ -1,5 +1,5 @@
-import { chartParametersState } from '../../services/store';
-import { Datasets } from '../../types';
+import { chartParametersState } from '../services/store';
+import { Datasets } from '../types';
 
 export const setType = (newType: string): void => {
   chartParametersState.type = newType;
@@ -119,9 +119,7 @@ export const setDataColumn = (id: number, value: string, idColumn: number): void
       ? {
         label: item.label,
         data: item.data.map((itemData: number, indexData: number) => {
-          return id === indexData
-            ? Number(value.replace(/[^0-9.-]/g, ''))
-            : itemData;
+          return id === indexData ? +value : itemData;
         }),
       }
       : item;
@@ -136,3 +134,39 @@ export const setTitle = (value: string): void => {
   localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
 };
 
+export const setWidth = (value: string): void => {
+  chartParametersState.width = +value;
+
+  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+};
+
+export const setHeight = (value: string): void => {
+  chartParametersState.height = +value;
+
+  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+};
+
+export const setColor = (value: string): void => {
+  chartParametersState.backgroundColor = `%23${value.slice(1)}`;
+
+  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+};
+
+export const resetChart = (): void => {
+  chartParametersState.type = 'bar';
+  chartParametersState.data = {
+    labels: ['Строка 1', 'Строка 2', 'Строка 3', 'Строка 4', 'Строка 5'],
+    datasets: [
+      {
+        label: 'Заголовок 1',
+        data: [1, 2, 3, 4, 5],
+      },
+    ],
+  };
+  chartParametersState.options.title.text = 'Заголовок графика';
+  chartParametersState.backgroundColor = 'transparent';
+  chartParametersState.width = 800;
+  chartParametersState.height = 400;
+
+  localStorage.removeItem('chartParametersState');
+};

@@ -16,5 +16,7 @@ export const getAddress = async (chartParametersState: ChartParameters): Promise
   const width = `width=${chartParametersState.width}`;
   const height = `height=${chartParametersState.height}`;
 
-  return (await fetch(`${baseURL}?c={${type},${data},${options}}&${background}&${width}&${height}&devicePixelRatio=1`)).url;
+  return (
+    await fetch(`${baseURL}?c={${type},${data},${options}}&${background}&${width}&${height}&devicePixelRatio=1`)
+  ).url;
 };

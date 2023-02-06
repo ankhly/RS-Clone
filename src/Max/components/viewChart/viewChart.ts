@@ -1,4 +1,5 @@
 import { getAddress } from '../../services/api';
+import { loader } from '../loader/loader';
 import { chartParametersState } from '../../services/store';
 
 export const renderViewChart = (): string => {
@@ -12,9 +13,8 @@ export const renderViewChart = (): string => {
 
 const renderLoader = (): void => {
   const imageContainer = document.querySelector('#imageContainer') as HTMLDivElement;
-  imageContainer.innerHTML = '<div class="lds-ripple"><div></div><div></div></div>';
+  imageContainer.innerHTML = `${loader()}`;
 };
-
 
 const renderChart = (address: string): void => {
   const imageContainer = document.querySelector('#imageContainer') as HTMLDivElement;
