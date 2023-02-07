@@ -7,7 +7,6 @@ import { colorMod } from './feature/colorMod';
 import './feature/animation';
 import './layout/info';
 import './layout/main';
-import './layout/animation';
 import './layout/gallery';
 import './aside/examplePage';
 import './aside/aside';
