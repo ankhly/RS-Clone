@@ -1,19 +1,17 @@
 import './style.scss';
+import './layout/mainRender';
 
-import './page-create/page-create';
-import { colorMod, renderPopup, closePopup, chooseLanguage } from './page-create/page-create';
-=======
-import './layout/info';
-import './layout/main';
-import './layout/animation';
-import './layout/gallery';
-
+import { changePage } from './layout/showPages';
+import { renderPopup, closePopup, chooseLanguage } from './feature/changeLanguage';
+import { colorMod } from './feature/colorMod';
+import './feature/animation';
 
 const documentClick = (e:Event)=>{
   colorMod(e);
   renderPopup(e);
   closePopup(e);
   chooseLanguage(e);
+  changePage(e);
 };
 
 document.addEventListener('click', documentClick);
