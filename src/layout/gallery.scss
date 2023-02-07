@@ -1,18 +1,15 @@
 .gallery-page {
   width: 75%;
   margin: 0 auto;
-
-  // &__h1 {
-  // }
+  padding: 40px 0px;
 
   &__text {
-    color: #555;
     position: relative;
     padding-left: 20px;
   }
 
   &__text::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 3px;
@@ -30,7 +27,7 @@
     display: grid;
     grid-template-columns: repeat(3, 200px);
     justify-content: space-evenly;
-    gap: 30px;
+    gap: 50px;
   }
 }
 .gallery-block {
@@ -41,6 +38,9 @@
   border-radius: 10px;
   box-shadow: 0 -1px 2px -1px rgb(0 0 0 / 30%), 0 1px 2px -1px rgb(0 0 0 / 40%);
   border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   &__link {
     text-decoration: none;
@@ -56,5 +56,3 @@
   font-size: 18px;
   font-weight: bold;
 }
-
-
