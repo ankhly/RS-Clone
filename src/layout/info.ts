@@ -1,14 +1,11 @@
-const infoPage = () => `
-  <div class="wrapper">
-  <main class="page">
-    <div class="page__container container">
+export const infoPage = () => `
       <div class="page__body">
         <div class="info-page">
           <div class="info-page__head">
             <div class="info-page__icon"></div>
           </div>
           <div class="info-page__titles">
-            <h1 class="info-page__h1 h1">Как создать график/диаграмму онлайн на сайте
+            <h1 class="info-page__h1 main-title">Как создать график/диаграмму онлайн на сайте
               <br><b>EasyCharts</b>
             </h1>
             <p class="info-page__text info-page__text1">
@@ -62,12 +59,8 @@ const infoPage = () => `
               Теперь график можно <b>скачать</b> в удобном вам формате или <b>поделиться ссылкой</b> на вашу диаграмму.
             </p>
           </div>
-          <button class="info-page__button">
-            <a class="info-page__button-link" href="#">создать график</a>
-          </button>
+          <button class="info-page__button">Cоздать график</button>
         </div>
       </div>
-    </div>
-  </main>
-  </div>
 `;
+

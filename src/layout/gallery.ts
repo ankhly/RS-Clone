@@ -39,20 +39,15 @@ export const galleryBlock = () => `
   </div>
 `;
 
-const galleryPage = (block: string) => `
-  <div class="wrapper">
-    <main class="page">
-      <div class="page__container container">
-        <div class="page__gallery gallery-page">
-          <h1 class="gallery-page__h1 h1">Галерея графиков/диаграмм</h1>
-          <p class="gallery-page__text">Выберите необходимый вид графика/диаграммы, далее вы перейдёте в режим 
-            онлайн-конструктора, в котором сможете заполнить данные графика, и затем 
-            скачать или сохранить вашу диаграмму. Какую диаграмму вам необходимо построить? 
-            Линейную, круговую, столбчатую, полосовую, линии, области, …?
-          </p>
-          ${block}  
-        </div>
-      </div>
-    </main>
-  </div>  
+export const galleryPage = () => `
+   <div class="page__gallery gallery-page">
+     <h1 class="gallery-page__h1 main-title">Галерея графиков/диаграмм</h1>
+     <p class="gallery-page__text">Выберите необходимый вид графика/диаграммы, далее вы перейдёте в режим 
+       онлайн-конструктора, в котором сможете заполнить данные графика, и затем 
+       скачать или сохранить вашу диаграмму. Какую диаграмму вам необходимо построить? 
+       Линейную, круговую, столбчатую, полосовую, линии, области, …?
+     </p>
+     ${galleryBlock()}  
+   </div>
 `;
+

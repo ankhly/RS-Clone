@@ -1,8 +1,3 @@
-$red: rgb(226, 86, 89);
-$yellow: rgb(242, 143, 39);
-$blue: rgb(77, 122, 169);
-$green: rgb(119, 184, 180);
-
 .info-page {
   margin: 0 auto;
   text-align: center;
@@ -21,30 +16,28 @@ $green: rgb(119, 184, 180);
   }
 
   &__icon::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 46%;
-    background-image: url('../assets/doughnut.png');
+    background-image: url("../assets/doughnut.png");
     width: 100px;
     height: 100px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-
   }
   &__icon::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 28%;
     left: 48%;
-    background-image: url('../assets/info2.svg');
+    background-image: url("../assets/info2.svg");
     width: 45px;
     height: 45px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    
   }
 
   &__titles {
@@ -61,16 +54,15 @@ $green: rgb(119, 184, 180);
   &__section {
     border-radius: 20px;
     background: #fff;
-    box-shadow: 0 -1px 2px -1px rgb(0 0 0 / 30%), 0 1px 2px -1px rgb(0 0 0 / 40%);
+    box-shadow: 0 1px 1px 2px rgb(242 233 233 / 30%), 0 0px 0px 0px rgb(249 249 249 / 99%);
     padding: 15px;
     margin-bottom: 40px;
   }
 }
 .section {
-
   &__h2 {
     padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
+    //border-bottom: 1px solid #eee;
   }
 
   &__text-link {
@@ -82,7 +74,6 @@ $green: rgb(119, 184, 180);
 // .section-ready {
 // }
 .section-view {
-
   &__images {
     margin-top: 25px;
   }
@@ -105,20 +96,31 @@ $green: rgb(119, 184, 180);
 }
 
 .info-page {
-
   &__button {
-    padding: 15px 60px 11px 30px;
+    padding: 15px 30px 11px 30px;
     font-weight: 600;
+    font-size: 18px;
+    line-height: 16px;
+    text-decoration: none;
     background: $blue;
     border-radius: 25px;
+    color: #fff;
     border: none;
     border-bottom: 4px solid rgb(69 112 158);
     box-shadow: 0 1px 2px -1px rgb(0 0 0 / 20%);
-    background-image: url("../assets/arrow-right.svg");
-    background-repeat: no-repeat;
-    background-position: 180px;
-    background-size: 25px;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+    &::after {
+      content: "";
+      background-image: url("../assets/arrow-right.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &__button:hover {
@@ -126,15 +128,4 @@ $green: rgb(119, 184, 180);
     border-bottom: 4px solid rgb(113 174 170);
     background-size: 28px;
   }
-
-  &__button-link {
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    line-height: 16px;
-  }
 }
-
-
-
-
