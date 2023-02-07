@@ -1,16 +1,14 @@
-import { galleryBlock } from "./gallery";
-const mainPage = (block: string) => `
+import { galleryBlock } from './gallery';
+export const mainPage = () => `
   <div class="wrapper">
   <main class="page">
     <div class="page__container container">
       <div class="page__main main-page">
         <section class="main-page__start">
           <div class="main-page__animation"></div>
-          <h1 class="main-page__h1">EasyCharts</h1>
+          <h1 class="main-page__h1 main-title">EasyCharts</h1>
           <h2 class="main-page__h2">Графики/диаграммы онлайн</h2>              
-          <button class="main-page__button info-page__button">
-            <a class="main-page__button-link info-page__button-link" href="#">создать график</a>
-          </button>
+          <button class="main-page__button info-page__button">Cоздать график</button>
           <div class="main-page__images">
             <div class="img-block">
               <img class="main-page__img" src="../assetsStatic/phone.svg" alt="phone">
@@ -30,11 +28,12 @@ const mainPage = (block: string) => `
         </section>
         <section class="main-page__gallery">
           <h2 class="main-page__gallery-h2">Галерея графиков/диаграмм</h2>
-          ${block}
+          ${galleryBlock()}
         </section>
         <section class="main-page__example"></section>
         <section class="main-page__text">
-          <p class="main-page__text-p"><b>EasyCharts</b> - сайт для построения графиков/диаграмм онлайн. Выберите вид диаграммы 
+          <p class="main-page__text-p"><b>EasyCharts</b> - сайт для построения графиков/диаграмм онлайн. 
+          Выберите вид диаграммы 
             (линейная, круговая, столбчатая, полосовая, линии, области), заполните данные таблицы 
             графика, и диаграмма готова! Диаграмму можно скачать в удобном вам формате или получить
             ссылку на страницу вашего графика. Вы можете также использовать онлайн-конструктор графиков 
@@ -49,4 +48,4 @@ const mainPage = (block: string) => `
   </main>
   </div>
 `;
-document.body.insertAdjacentHTML('afterbegin', mainPage(galleryBlock()));
+
