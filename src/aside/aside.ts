@@ -1,4 +1,4 @@
-export const wether = () => `
+const wether = () => `
   <div class="weather hide-weather">
     <input type="text" class="city" placeholder="[Enter city]" value="Minsk"/>
     <i class="weather-icon owf"></i>
@@ -12,7 +12,7 @@ export const wether = () => `
   </div>
 `;
 
-export const currencyConverter = () => `
+const currencyConverter = () => `
   <div class="currency-converter">
     <h3 class="currency-converter__h3">Конвертер валют</h3>
     <p class="currency-converter__p">По курсу НБ РБ</p>
@@ -57,11 +57,9 @@ export const currencyConverter = () => `
   </div>
 `;
 
-export const aside = (weather: string, converter: string) => `
+export const aside = () => `
   <aside class="aside">
-    ${weather}
-    ${converter}
+    ${wether()}
+    ${currencyConverter()}
   </aside>
 `;
-const main = document.querySelector('.main-page') as HTMLDivElement;
-main.insertAdjacentHTML('beforeend', aside(wether(), currencyConverter()));
