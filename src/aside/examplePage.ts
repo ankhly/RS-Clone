@@ -11,4 +11,3 @@ const examplePage = () => `
   <div class="example-page__examles"></div>    
   </div>
 `;
-document.body.insertAdjacentHTML('afterbegin', examplePage());

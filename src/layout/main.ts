@@ -1,8 +1,6 @@
 import { galleryBlock } from './gallery';
+import { aside } from '../aside/aside';
 export const mainPage = () => `
-  <div class="wrapper">
-  <main class="page">
-    <div class="page__container container">
       <div class="page__main main-page">
         <div class="main-page__sections">
           <section class="main-page__start">
@@ -45,9 +43,7 @@ export const mainPage = () => `
             </p>
           </section>            
         </div>
+        ${aside()}
       </div>
-    </div>
-  </main>
-  </div>
 `;
 

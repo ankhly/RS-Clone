@@ -15,7 +15,7 @@ export const changePage = (e:Event)=>{
       renderHtml(galleryPage());
     }
     if (e.target === menuLink && menuLink.classList.contains('menu3')) {
-      console.log(menuLink);
+      console.log('примеры');
     }
     if (e.target === menuLink && menuLink.classList.contains('menu4')) {
       renderHtml(infoPage());

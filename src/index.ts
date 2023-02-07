@@ -5,14 +5,8 @@ import { changePage } from './layout/showPages';
 import { renderPopup, closePopup, chooseLanguage } from './feature/changeLanguage';
 import { colorMod } from './feature/colorMod';
 import './feature/animation';
-import './layout/info';
-import './layout/main';
-import './layout/gallery';
-import './aside/examplePage';
-import './aside/aside';
-import './aside/converter';
 import './aside/wether';
-
+import './aside/converter';
 
 
 const documentClick = (e:Event)=>{

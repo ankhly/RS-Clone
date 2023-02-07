@@ -38,11 +38,10 @@ function setLocalStorageCity() {
 window.addEventListener('beforeunload', setLocalStorageCity);
 
 function getLocalStorageCity() {
-  const storage = localStorage.getItem("city");
+  const storage = localStorage.getItem('city');
   if (storage !== null) {
     city.value = storage;
-    console.log(storage);
   }
   getWaeter();
 }
-window.addEventListener("load", getLocalStorageCity);
+window.addEventListener('load', getLocalStorageCity);
