@@ -1,6 +1,6 @@
 import { getAddress } from '../services/api';
 import { chartParametersState, globalState }  from '../services/store';
-import { TypeCharts } from '../types';
+import {LocalStorageKeys, TypeCharts} from '../types';
 
 const getBase64FromUrl = async (url: string) => {
   const data = await fetch(url);
@@ -20,7 +20,7 @@ export const saveCharts = async (extension: string): Promise<void> => {
   const addressBase64 = await getBase64FromUrl(address);
   const link = document.createElement('a');
   link.setAttribute('href', `${addressBase64}`);
-  link.setAttribute('download', `image.${extension}`);
+  link.setAttribute('download', `chart.${extension}`);
   link.click();
 };
 
@@ -39,6 +39,9 @@ export const showActiveClassAfterRestart = () => {
   const typeRadar = document.querySelector('.type-radar') as HTMLElement;
   const typePie = document.querySelector('.type-pie') as HTMLElement;
   const typeDoughnut = document.querySelector('.type-doughnut') as HTMLElement;
+
+  globalState.type = localStorage.getItem(LocalStorageKeys.type) || TypeCharts.bar;
+
   switch (globalState.type) {
     case TypeCharts.bar:
       showActiveClass(typeBar);
