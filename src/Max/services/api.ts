@@ -6,8 +6,7 @@ export const getAddress = async (chartParametersState: ChartParameters): Promise
   const labels = JSON.stringify(chartParametersState.data.labels);
   const datasets = JSON.stringify(chartParametersState.data.datasets)
     .replace('"label"', 'label')
-    .replace('"data"', 'data')
-    .replace('"backgroundColor"', 'backgroundColor');
+    .replace('"data"', 'data');
 
   const type = `type:'${chartParametersState.type}'`;
   const data = `data:{labels:${labels}, datasets:${datasets}}`;

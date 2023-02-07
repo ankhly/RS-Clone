@@ -1,6 +1,6 @@
 import { getAddress } from '../../services/api';
-import { loader } from '../loader/loader';
 import { chartParametersState } from '../../services/store';
+import { renderLoader } from '../loader/loader';
 
 export const renderViewChart = (): string => {
   return  `
@@ -9,11 +9,6 @@ export const renderViewChart = (): string => {
       <div class="imageContainer" id="imageContainer"></div>
     </div>
   `;
-};
-
-const renderLoader = (): void => {
-  const imageContainer = document.querySelector('#imageContainer') as HTMLDivElement;
-  imageContainer.innerHTML = `${loader()}`;
 };
 
 const renderChart = (address: string): void => {

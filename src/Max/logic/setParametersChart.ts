@@ -1,10 +1,19 @@
 import { chartParametersState } from '../services/store';
-import { Datasets } from '../types';
+import {Datasets, LocalStorageKeys} from '../types';
+import { exampleValueFirst } from '../services/exampleValueFirst';
+import { exampleValueSecond } from '../services/exampleValueSecond';
+import { exampleValueThird } from '../services/exampleValueThird';
 
 export const setType = (newType: string): void => {
   chartParametersState.type = newType;
+  exampleValueFirst.type = newType;
+  exampleValueSecond.type = newType;
+  exampleValueThird.type = newType;
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.example1, JSON.stringify(exampleValueFirst));
+  localStorage.setItem(LocalStorageKeys.example2, JSON.stringify(exampleValueSecond));
+  localStorage.setItem(LocalStorageKeys.example3, JSON.stringify(exampleValueThird));
 };
 
 export const removeRow = (id: string): void => {
@@ -34,7 +43,7 @@ export const removeRow = (id: string): void => {
     }),
   ];
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const removeColumn = (id: string): void => {
@@ -47,7 +56,7 @@ export const removeColumn = (id: string): void => {
       })
       : chartParametersState.data.datasets;
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const addRow = (): void => {
@@ -71,7 +80,7 @@ export const addRow = (): void => {
     }),
   ];
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const addColumn = (): void => {
@@ -89,7 +98,7 @@ export const addColumn = (): void => {
 
   chartParametersState.data.datasets = [...chartParametersState.data.datasets, object];
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const setLabelsRow = (id: number, value: string): void => {
@@ -97,7 +106,7 @@ export const setLabelsRow = (id: number, value: string): void => {
     return id === index ? value : label;
   });
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const setLabelsColumn = (id: number, value: string): void => {
@@ -110,7 +119,7 @@ export const setLabelsColumn = (id: number, value: string): void => {
     }),
   ];
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const setDataColumn = (id: number, value: string, idColumn: number): void => {
@@ -125,31 +134,31 @@ export const setDataColumn = (id: number, value: string, idColumn: number): void
       : item;
   });
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const setTitle = (value: string): void => {
   chartParametersState.options.title.text = value;
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const setWidth = (value: string): void => {
   chartParametersState.width = +value;
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const setHeight = (value: string): void => {
   chartParametersState.height = +value;
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const setColor = (value: string): void => {
   chartParametersState.backgroundColor = `%23${value.slice(1)}`;
 
-  localStorage.setItem('chartParametersState', JSON.stringify(chartParametersState));
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };
 
 export const resetChart = (): void => {
@@ -168,5 +177,5 @@ export const resetChart = (): void => {
   chartParametersState.width = 800;
   chartParametersState.height = 400;
 
-  localStorage.removeItem('chartParametersState');
+  localStorage.removeItem(LocalStorageKeys.mainState);
 };

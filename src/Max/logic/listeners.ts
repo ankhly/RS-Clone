@@ -17,6 +17,9 @@ import { renderLoaderOrChart } from '../components/viewChart/viewChart';
 import { renderMainParametersInner } from '../components/parametersChartMain/parametersChartMain';
 import { renderAdditionalParametersInner } from '../components/parametersChartAdditional/parametersChartAdditional';
 import { saveCharts } from './helpers';
+import { showPage1, showPage2 } from '../../index';
+import { renderLoaderOrExamples } from '../components/viewChartExamples/viewChartExamples';
+import { LocalStorageKeys, ViewPage } from '../types';
 
 export const listenersMainInput = () => {
   const editLabelsRow = document.querySelectorAll('.edit-labels-row') as NodeListOf<HTMLInputElement>;
@@ -128,33 +131,67 @@ export const listeners = (): void => {
       await renderLoaderOrChart();
     }
 
+    if (downloadButton.classList.contains('page-create')) {
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showPage1();
+    }
+    if (downloadButton.classList.contains('page-examples')) {
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
+      await showPage2();
+    }
+
     const selectTypeButton = (event.target as HTMLElement).closest('.imageContainer');
+    const imageContainer = document.querySelector('#imageContainer') as HTMLDivElement;
     if (!selectTypeButton) {
       return;
     }
     if (selectTypeButton.classList.contains('type-bar')) {
       setType('bar');
-      await renderLoaderOrChart();
+      if (imageContainer) {
+        await renderLoaderOrChart();
+      } else {
+        await renderLoaderOrExamples();
+      }
     }
     if (selectTypeButton.classList.contains('type-horizontalBar')) {
       setType('horizontalBar');
-      await renderLoaderOrChart();
+      if (imageContainer) {
+        await renderLoaderOrChart();
+      } else {
+        await renderLoaderOrExamples();
+      }
     }
     if (selectTypeButton.classList.contains('type-line')) {
       setType('line');
-      await renderLoaderOrChart();
+      if (imageContainer) {
+        await renderLoaderOrChart();
+      } else {
+        await renderLoaderOrExamples();
+      }
     }
     if (selectTypeButton.classList.contains('type-radar')) {
       setType('radar');
-      await renderLoaderOrChart();
+      if (imageContainer) {
+        await renderLoaderOrChart();
+      } else {
+        await renderLoaderOrExamples();
+      }
     }
     if (selectTypeButton.classList.contains('type-pie')) {
       setType('pie');
-      await renderLoaderOrChart();
+      if (imageContainer) {
+        await renderLoaderOrChart();
+      } else {
+        await renderLoaderOrExamples();
+      }
     }
     if (selectTypeButton.classList.contains('type-doughnut')) {
       setType('doughnut');
-      await renderLoaderOrChart();
+      if (imageContainer) {
+        await renderLoaderOrChart();
+      } else {
+        await renderLoaderOrExamples();
+      }
     }
   });
 };

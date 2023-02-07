@@ -1,6 +1,6 @@
-import { ChartParameters } from '../types';
+import { ChartParameters, LocalStorageKeys, ViewPage } from '../types';
 
-export const chartParametersState: ChartParameters = JSON.parse(localStorage.getItem('chartParametersState')!) || {
+export const chartParametersState: ChartParameters = JSON.parse(localStorage.getItem(LocalStorageKeys.mainState)!) || {
   type: 'bar',
   data: {
     labels: ['Строка 1', 'Строка 2', 'Строка 3', 'Строка 4', 'Строка 5'],
@@ -20,4 +20,8 @@ export const chartParametersState: ChartParameters = JSON.parse(localStorage.get
   backgroundColor: 'transparent',
   width: 800,
   height: 400,
+};
+
+export const globalState = {
+  view: localStorage.getItem(LocalStorageKeys.view) || ViewPage.create,
 };
