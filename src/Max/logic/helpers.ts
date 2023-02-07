@@ -1,6 +1,6 @@
 import { getAddress } from '../services/api';
 import { chartParametersState, globalState }  from '../services/store';
-import {LocalStorageKeys, TypeCharts} from '../types';
+import { LocalStorageKeys, TypeCharts } from '../types';
 
 const getBase64FromUrl = async (url: string) => {
   const data = await fetch(url);
