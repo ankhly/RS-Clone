@@ -6,6 +6,11 @@ import './layout/info';
 import './layout/main';
 import './layout/animation';
 import './layout/gallery';
+import './aside/examplePage';
+import './aside/aside';
+import './aside/converter';
+import './aside/wether';
+
 
 
 const documentClick = (e:Event)=>{

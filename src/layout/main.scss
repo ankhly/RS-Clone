@@ -6,6 +6,13 @@ $green: rgb(119, 184, 180);
 .main-page {
   margin: 0 auto;
   text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &__sections {
+    width: 82%;
+  }
 
   &__start {
     background: #fafafa;

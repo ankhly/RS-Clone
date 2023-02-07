@@ -8,7 +8,7 @@ const infoPage = () => `
             <div class="info-page__icon"></div>
           </div>
           <div class="info-page__titles">
-            <h1 class="info-page__h1">Как создать график/диаграмму онлайн на сайте
+            <h1 class="info-page__h1 h1">Как создать график/диаграмму онлайн на сайте
               <br><b>EasyCharts</b>
             </h1>
             <p class="info-page__text info-page__text1">
@@ -21,7 +21,8 @@ const infoPage = () => `
           <div class="info-page__section section-view">
             <h2 class="section__h2 section-view__h2">1. Выберите вид графика</h2>        
             <p class="section__text section-view__text">
-              На странице <a class="section__text-link" href="#">создания</a> или в галерее выберите подходящий вам тип графика.
+              На странице <a class="section__text-link" href="#">создания</a> или в галерее выберите
+              подходящий вам тип графика.
               <br>Как вам необходимо отобразить ваши данные?
               <br>Линии / области / колонны / круговая диаграмма / … ?
             </p>
@@ -70,5 +71,3 @@ const infoPage = () => `
   </main>
   </div>
 `;
-
-document.body.insertAdjacentHTML('afterbegin', infoPage());
