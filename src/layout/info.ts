@@ -18,7 +18,8 @@ export const infoPage = () => `
           <div class="info-page__section section-view">
             <h2 class="section__h2 section-view__h2">1. Выберите вид графика</h2>        
             <p class="section__text section-view__text">
-              На странице <a class="section__text-link" href="#">создания</a> или в галерее выберите подходящий вам тип графика.
+              На странице <a class="section__text-link" href="#">создания</a> или в галерее выберите
+              подходящий вам тип графика.
               <br>Как вам необходимо отобразить ваши данные?
               <br>Линии / области / колонны / круговая диаграмма / … ?
             </p>
