@@ -37,11 +37,12 @@ function setLocalStorageCity() {
 }
 window.addEventListener('beforeunload', setLocalStorageCity);
 
-// function getLocalStorageCity() {
-//   if (localStorage.getItem("city")) {
-//     city.value = localStorage.getItem("city");
-//     console.log(localStorage.getItem("city"));
-//   }
-//   getWaeter();
-// }
-// window.addEventListener("load", getLocalStorageCity);
+function getLocalStorageCity() {
+  const storage = localStorage.getItem("city");
+  if (storage !== null) {
+    city.value = storage;
+    console.log(storage);
+  }
+  getWaeter();
+}
+window.addEventListener("load", getLocalStorageCity);
