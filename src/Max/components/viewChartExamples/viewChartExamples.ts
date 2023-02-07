@@ -9,8 +9,26 @@ export const renderViewExamples = (): string => {
     <div class="chartResult">
       <h3 class="miniTitle">График</h3>
       <div class="imageContainer" id="imageContainer-1"></div>
+      <button class="link edit-example-1">
+        Отредактировать график:
+        <span class="edit-example-1">
+          ${exampleValueFirst.options.title.text.split(',').shift()}
+        </span>
+      </button>
       <div class="imageContainer" id="imageContainer-2"></div>
+      <button class="link edit-example-2">
+        Отредактировать график:
+        <span class="edit-example-2">
+          ${exampleValueSecond.options.title.text.split(',').shift()}
+        </span>
+      </button>
       <div class="imageContainer" id="imageContainer-3"></div>
+      <button class="link edit-example-3">
+        Отредактировать график:
+        <span class="edit-example-3">
+          ${exampleValueThird.options.title.text.split(',').shift()}
+        </span>
+      </button>
     </div>
   `;
 };

@@ -1,5 +1,5 @@
 import { chartParametersState } from '../services/store';
-import {Datasets, LocalStorageKeys} from '../types';
+import { ChartParameters, Datasets, LocalStorageKeys } from '../types';
 import { exampleValueFirst } from '../services/exampleValueFirst';
 import { exampleValueSecond } from '../services/exampleValueSecond';
 import { exampleValueThird } from '../services/exampleValueThird';
@@ -162,7 +162,6 @@ export const setColor = (value: string): void => {
 };
 
 export const resetChart = (): void => {
-  chartParametersState.type = 'bar';
   chartParametersState.data = {
     labels: ['Строка 1', 'Строка 2', 'Строка 3', 'Строка 4', 'Строка 5'],
     datasets: [
@@ -178,4 +177,12 @@ export const resetChart = (): void => {
   chartParametersState.height = 400;
 
   localStorage.removeItem(LocalStorageKeys.mainState);
+};
+
+export const setState = (example: ChartParameters): void => {
+  chartParametersState.type = example.type;
+  chartParametersState.data = example.data;
+  chartParametersState.options.title.text = example.options.title.text;
+
+  localStorage.setItem(LocalStorageKeys.mainState, JSON.stringify(chartParametersState));
 };

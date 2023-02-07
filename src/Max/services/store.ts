@@ -1,4 +1,4 @@
-import { ChartParameters, LocalStorageKeys, ViewPage } from '../types';
+import { ChartParameters, LocalStorageKeys, TypeCharts, ViewPage } from '../types';
 
 export const chartParametersState: ChartParameters = JSON.parse(localStorage.getItem(LocalStorageKeys.mainState)!) || {
   type: 'bar',
@@ -24,4 +24,5 @@ export const chartParametersState: ChartParameters = JSON.parse(localStorage.get
 
 export const globalState = {
   view: localStorage.getItem(LocalStorageKeys.view) || ViewPage.create,
+  type: localStorage.getItem(LocalStorageKeys.type) || TypeCharts.bar,
 };

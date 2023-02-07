@@ -36,5 +36,20 @@
         }
       }
     }
+    .image-container-active {
+      box-shadow: 0 0 10px 0 $green;
+      .typeName {
+        color: $green;
+      }
+      &:hover {
+        cursor: default;
+        box-shadow: 0 0 10px 0 $green;
+        border: none;
+        .typeName {
+          color: $green;
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 }

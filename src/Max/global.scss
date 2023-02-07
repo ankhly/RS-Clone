@@ -23,6 +23,8 @@ $white: white;
   background-color: $green;
   color: $white;
   transition: all .25s linear;
+  cursor: pointer;
+  border: none;
   &:hover {
     background-color: $blue;
   }

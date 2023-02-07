@@ -9,7 +9,7 @@ export const renderTypesChart = (): string => `
   <div class="chartSelectionForm">
     <h3 class="miniTitle">Вид</h3>
     <div class="chartsTypeContainer">
-      <div class="imageContainer type-bar">
+      <div class="imageContainer type-bar image-container-active">
         <img src=${bar} alt="Колонны" />
         <p class="typeName">Колонны</p>
       </div>

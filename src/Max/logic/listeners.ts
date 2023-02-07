@@ -8,7 +8,7 @@ import {
   setDataColumn,
   setHeight,
   setLabelsColumn,
-  setLabelsRow,
+  setLabelsRow, setState,
   setTitle,
   setType,
   setWidth,
@@ -16,10 +16,13 @@ import {
 import { renderLoaderOrChart } from '../components/viewChart/viewChart';
 import { renderMainParametersInner } from '../components/parametersChartMain/parametersChartMain';
 import { renderAdditionalParametersInner } from '../components/parametersChartAdditional/parametersChartAdditional';
-import { saveCharts } from './helpers';
-import { showPage1, showPage2 } from '../../index';
+import { saveCharts, showActiveClass } from './helpers';
 import { renderLoaderOrExamples } from '../components/viewChartExamples/viewChartExamples';
-import { LocalStorageKeys, ViewPage } from '../types';
+import { Extensions, LocalStorageKeys, TypeCharts, ViewPage } from '../types';
+import { exampleValueFirst } from '../services/exampleValueFirst';
+import { exampleValueSecond } from '../services/exampleValueSecond';
+import { exampleValueThird } from '../services/exampleValueThird';
+import { showPage1, showPage2 } from './showPages';
 
 export const listenersMainInput = () => {
   const editLabelsRow = document.querySelectorAll('.edit-labels-row') as NodeListOf<HTMLInputElement>;
@@ -117,10 +120,10 @@ export const listeners = (): void => {
 
     const downloadButton = event.target as HTMLButtonElement;
     if (downloadButton.classList.contains('download-PNG')) {
-      await saveCharts('png');
+      await saveCharts(Extensions.png);
     }
     if (downloadButton.classList.contains('download-JPG')) {
-      await saveCharts('jpg');
+      await saveCharts(Extensions.jpg);
     }
     if (downloadButton.classList.contains('reset')) {
       resetChart();
@@ -140,13 +143,31 @@ export const listeners = (): void => {
       await showPage2();
     }
 
+    if (downloadButton.classList.contains('edit-example-1')) {
+      setState(exampleValueFirst);
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showPage1();
+    }
+    if (downloadButton.classList.contains('edit-example-2')) {
+      setState(exampleValueSecond);
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showPage1();
+    }
+    if (downloadButton.classList.contains('edit-example-3')) {
+      setState(exampleValueThird);
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showPage1();
+    }
+
     const selectTypeButton = (event.target as HTMLElement).closest('.imageContainer');
     const imageContainer = document.querySelector('#imageContainer') as HTMLDivElement;
     if (!selectTypeButton) {
       return;
     }
     if (selectTypeButton.classList.contains('type-bar')) {
-      setType('bar');
+      setType(TypeCharts.bar);
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.bar);
+      showActiveClass(selectTypeButton);
       if (imageContainer) {
         await renderLoaderOrChart();
       } else {
@@ -154,7 +175,9 @@ export const listeners = (): void => {
       }
     }
     if (selectTypeButton.classList.contains('type-horizontalBar')) {
-      setType('horizontalBar');
+      setType(TypeCharts.hBar);
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.hBar);
+      showActiveClass(selectTypeButton);
       if (imageContainer) {
         await renderLoaderOrChart();
       } else {
@@ -162,7 +185,9 @@ export const listeners = (): void => {
       }
     }
     if (selectTypeButton.classList.contains('type-line')) {
-      setType('line');
+      setType(TypeCharts.line);
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.line);
+      showActiveClass(selectTypeButton);
       if (imageContainer) {
         await renderLoaderOrChart();
       } else {
@@ -170,7 +195,9 @@ export const listeners = (): void => {
       }
     }
     if (selectTypeButton.classList.contains('type-radar')) {
-      setType('radar');
+      setType(TypeCharts.radar);
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.radar);
+      showActiveClass(selectTypeButton);
       if (imageContainer) {
         await renderLoaderOrChart();
       } else {
@@ -178,7 +205,9 @@ export const listeners = (): void => {
       }
     }
     if (selectTypeButton.classList.contains('type-pie')) {
-      setType('pie');
+      setType(TypeCharts.pie);
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.pie);
+      showActiveClass(selectTypeButton);
       if (imageContainer) {
         await renderLoaderOrChart();
       } else {
@@ -186,7 +215,9 @@ export const listeners = (): void => {
       }
     }
     if (selectTypeButton.classList.contains('type-doughnut')) {
-      setType('doughnut');
+      setType(TypeCharts.doughnut);
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.doughnut);
+      showActiveClass(selectTypeButton);
       if (imageContainer) {
         await renderLoaderOrChart();
       } else {
