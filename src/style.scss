@@ -26,7 +26,7 @@ html {
   background-color: #ffffff;
   color: #9e9898;
   &.dark {
-    background-color: #000000;
+    background-color: #101010;
     color: #ffffff;
     .page,
     .data-actions,
@@ -39,8 +39,9 @@ html {
     .info-page__section,
     .main-page__start,
     .main-page__gallery,
+    .aside,
     a {
-      background-color: #000000;
+      background-color: #101010;
       color: #ffffff;
     }
     .popup {
@@ -54,6 +55,13 @@ html {
       }
       &::after {
         background-color: hsla(0, 0%, 100%);
+      }
+    }
+    .aside {
+      background-image: url('../assets/gif-unscreen.gif');
+      .city, 
+      .currency-converter__h3 {
+        color: #ffffff;
       }
     }
   }

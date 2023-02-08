@@ -103,15 +103,15 @@ export const lang:LangInt = {
     'uk': 'Share charts links',
   },
   'img-block__text3': {
-    'ru': 'Скачивайте графики',
-    'uk': 'Download charts',
+    'ru': 'Скачивайте графики PNG / JPG',
+    'uk': 'Download charts PNG / JPG',
   },
   'main-page__gallery-h2': {
     'ru': 'Галерея графиков/диаграмм',
     'uk': 'Chart/diagram gallery',
   },
   'main-page__text-p': {
-    'ru': `- сайт для построения графиков/диаграмм онлайн. Выберите вид диаграммы 
+    'ru': `EasyCharts - сайт для построения графиков/диаграмм онлайн. Выберите вид диаграммы 
       (линейная, круговая, столбчатая, полосовая, линии, области), заполните данные таблицы 
       графика, и диаграмма готова! Диаграмму можно скачать в удобном вам формате или получить
       ссылку на страницу вашего графика. Вы можете также использовать онлайн-конструктор графиков 
@@ -119,7 +119,7 @@ export const lang:LangInt = {
       программы на вашем компьютере. Построить диаграмму онлайн очень просто! Читайте подробнее о том, 
       как создать диаграмму онлайн здесь. Также вы можете посмотреть примеры диаграмм, чтобы на их основе 
       создать необходимый вам график.`,
-    'uk': `is a website for building charts/diagrams online. Select the chart type (linear, pie, columnar, bar, 
+    'uk': `EasyCharts is a website for building charts/diagrams online. Select the chart type (linear, pie, columnar, bar, 
       lines, areas), fill in the chart/diagram data table, and the chart is done! You can download the chart in a 
       format that is convenient for you or get a link to the page of your chart/diagram. You can also use the online 
       chart and diagram constructor on our website to download the chart (png / jpeg /, etc.) and paste it into 
@@ -176,4 +176,45 @@ export const lang:LangInt = {
     'ru': 'Теперь график можно скачать в удобном вам формате или поделиться ссылкой на вашу диаграмму.',
     'uk': 'Now you can download the chart/diagram in a convenient format or share a link to your chart.',
   },
+  // 'wind': {
+  //   'ru': 'скорость ветра: ',
+  //   'uk': 'wind speed: ',
+  // },
+  // 'humidity': {
+  //   'ru': 'влажность: ',
+  //   'uk': 'humidity: ',
+  // },
+  'currency-converter__h3': {
+    'ru': 'Конвертер валют',
+    'uk': 'Currency Converter',
+  },
+  'currency-converter__p': {
+    'ru': 'По курсу НБ РБ',
+    'uk': 'At the rate of the NB RB',
+  },
+  'span-byn': {
+    'ru': 'Белорусский рубль',
+    'uk': 'Belarusian ruble',
+  },
+  'span-usd': {
+    'ru': 'доллар США',
+    'uk': 'U.S. dollar',
+  },
+  'span-eur': {
+    'ru': 'Евро',
+    'uk': 'Euro',
+  },
+  'span-rub': {
+    'ru': 'Российский рубль',
+    'uk': 'Russian ruble',
+  },
+  'span-uah': {
+    'ru': 'Украинская гривна',
+    'uk': 'Ukrainian hryvnia',
+  },
+  'span-pln': {
+    'ru': 'Польский злотый',
+    'uk': 'Polish zloty',
+  },
+
 };

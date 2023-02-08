@@ -21,37 +21,37 @@ const currencyConverter = () => `
         <label>BYN
           <input class="converter-input input-byn" type="number">
         </label>
-        <span class="currency-converter__span">белорусский рубль</span>
+        <span class="currency-converter__span span-byn">белорусский рубль</span>
       </div>
       <div class="currency-converter__input">
         <label>USD
           <input class="converter-input input-usd" type="number">
         </label>
-        <span class="currency-converter__span">доллар США</span>
+        <span class="currency-converter__span span-usd">доллар США</span>
       </div>
       <div class="currency-converter__input">
         <label>EUR
           <input class="converter-input input-eur" type="number">
         </label>
-        <span class="currency-converter__span">евро</span>
+        <span class="currency-converter__span span-eur">евро</span>
       </div>
       <div class="currency-converter__input">
         <label>RUB
           <input class="converter-input input-rub" type="number">
         </label>
-        <span class="currency-converter__span">российский рубль</span>
+        <span class="currency-converter__span span-rub">российский рубль</span>
       </div>
       <div class="currency-converter__input">
         <label>UAH
           <input class="converter-input input-uah" type="number">
         </label>
-        <span class="currency-converter__span">украинская гривна</span>
+        <span class="currency-converter__span span-uah">украинская гривна</span>
       </div>
       <div class="currency-converter__input">
         <label>PLN
           <input class="converter-input input-pln" type="number">
         </label>
-        <span class="currency-converter__span">польский злотый</span>
+        <span class="currency-converter__span span-pln">польский злотый</span>
       </div>
     </div>
   </div>
