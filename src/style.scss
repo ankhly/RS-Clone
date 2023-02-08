@@ -1,3 +1,12 @@
+@import "./Max/global";
+@import "Max/components/typesChart/typesChart";
+@import "./Max/components/viewChart/viewChart";
+@import "./Max/components/viewChartExamples/viewChartExamples";
+@import "Max/components/parametersChartMain/parametersChartMain";
+@import "Max/components/parametersChartAdditional/parametersChartAdditional";
+@import "Max/components/parametersChartAll/parametersChartAll";
+@import "Max/components/loader/loader";
+
 $fontFamily: "";
 $fontSize: 16;
 
@@ -78,6 +87,23 @@ html {
   margin: 0 auto;
   padding: 0 15px;
 }
+
+// max
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-logic-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
 
 .main-title {
   font-size: 31px;

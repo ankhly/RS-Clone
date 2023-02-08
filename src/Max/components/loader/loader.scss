@@ -1,0 +1,48 @@
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  left: 25%;
+  width: 800px;
+  height: 400px;
+  padding: 0.6rem;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 20px solid $green;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 200px;
+    left: 200px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 200px;
+    left: 200px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 200px;
+    left: 200px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 380px;
+    height: 380px;
+    opacity: 0;
+  }
+}
