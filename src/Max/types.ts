@@ -41,8 +41,11 @@ export enum TypeCharts {
 }
 
 export enum ViewPage {
-  create = 'create',
-  examples = 'examples',
+  main = 'mainPage',
+  create = 'createPage',
+  examples = 'examplesPage',
+  gallery = 'galleryPage',
+  info = 'infoPage',
 }
 
 export enum Extensions {

@@ -2,23 +2,50 @@ import { renderHtml } from './mainRender';
 import { galleryPage } from './gallery';
 import { infoPage } from './info';
 import { renderCreatePage } from './create';
+import { LocalStorageKeys, ViewPage } from '../Max/types';
+import { showPage1, showPage2 } from '../Max/logic/showPages';
+import { examplesPage } from './examples/examples';
+import { mainPage } from './main';
+import { animationLogic } from '../feature/animation';
+import { converterLogic } from '../aside/converter';
+import { weatherLogic } from '../aside/wether';
 
+export const changePage = async (e: Event) => {
+  const target = e.target as HTMLElement;
+  if (target.classList.contains('menu0')) {
+    renderHtml(mainPage());
+    await showPage2();
+    clearInterval(animationLogic());
+    converterLogic();
+    weatherLogic();
 
-export const changePage = (e:Event)=>{
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.main);
+  }
+
   const menuLinks = document.querySelectorAll('.menu__link') as NodeListOf<Element>;
   for (let i = 0; i < menuLinks.length; i++) {
     const menuLink = menuLinks[i] as HTMLElement;
     if (e.target === menuLink && menuLink.classList.contains('menu1')) {
       renderHtml(renderCreatePage());
+
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showPage1();
     }
     if (e.target === menuLink && menuLink.classList.contains('menu2')) {
       renderHtml(galleryPage());
+
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.gallery);
     }
     if (e.target === menuLink && menuLink.classList.contains('menu3')) {
-      console.log('примеры');
+      renderHtml(examplesPage());
+
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
+      await showPage2();
     }
     if (e.target === menuLink && menuLink.classList.contains('menu4')) {
       renderHtml(infoPage());
+
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
     }
   }
 };

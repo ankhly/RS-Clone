@@ -23,6 +23,9 @@ import { exampleValueFirst } from '../services/exampleValueFirst';
 import { exampleValueSecond } from '../services/exampleValueSecond';
 import { exampleValueThird } from '../services/exampleValueThird';
 import { showPage1, showPage2 } from './showPages';
+import {renderHtml} from "../../layout/mainRender";
+import {mainPage} from "../../layout/main";
+import {renderCreatePage} from "../../layout/create";
 
 export const listenersMainInput = () => {
   const editLabelsRow = document.querySelectorAll('.edit-labels-row') as NodeListOf<HTMLInputElement>;
@@ -134,27 +137,21 @@ export const listeners = (): void => {
       await renderLoaderOrChart();
     }
 
-    if (downloadButton.classList.contains('page-create')) {
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showPage1();
-    }
-    if (downloadButton.classList.contains('page-examples')) {
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
-      await showPage2();
-    }
-
     if (downloadButton.classList.contains('edit-example-1')) {
       setState(exampleValueFirst);
       localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      renderHtml(renderCreatePage());
       await showPage1();
     }
     if (downloadButton.classList.contains('edit-example-2')) {
       setState(exampleValueSecond);
       localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      renderHtml(renderCreatePage());
       await showPage1();
     }
     if (downloadButton.classList.contains('edit-example-3')) {
       setState(exampleValueThird);
+      renderHtml(renderCreatePage());
       localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
       await showPage1();
     }

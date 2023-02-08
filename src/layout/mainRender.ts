@@ -1,7 +1,5 @@
-import { mainPage } from './main';
 import { getLanguage } from '../feature/changeLanguage';
 import { renderHeader } from './header';
-
 
 export const renderHtml = (page:string)=>{
   const body = document.querySelector('body') as HTMLElement;
@@ -25,5 +23,3 @@ export const renderHtml = (page:string)=>{
   container.insertAdjacentHTML('beforeend', page);
   getLanguage();
 };
-
-renderHtml(mainPage());
