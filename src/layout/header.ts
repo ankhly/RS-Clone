@@ -4,11 +4,10 @@ export const renderHeader = ():string=>{
   <header class="header">
   <div class="header__container container">
     <div class="header__body">
-      <a href="" class="header__logo">
-        <img src="./assetsStatic/logo.png" alt="">
-      </a>
+      <div class="header__logo menu0">
+        <img class="menu0" src="./assetsStatic/logo.png" alt="logo">
+      </div>
       <div class="header__content">
-        <a href="" class="header__title">Графики / Диаграммы</a>
         <div class="header__menu menu">
           <nav class="menu__body">
             <ul class="menu__list">

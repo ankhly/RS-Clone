@@ -30,6 +30,7 @@ $green: rgb(119, 184, 180);
 @import "./layout/main.scss";
 @import "./layout/gallery.scss";
 @import "./aside/aside.scss";
+@import "./layout/examples/examples";
 
 html {
   background-color: #ffffff;
@@ -87,23 +88,6 @@ html {
   margin: 0 auto;
   padding: 0 15px;
 }
-
-// max
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.main-logic-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
 
 .main-title {
   font-size: 31px;

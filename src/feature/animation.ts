@@ -1,6 +1,3 @@
-const animationDiv = document.querySelector('.main-page__animation') as HTMLElement;
-const pageContainer = document.querySelector('.page__container') as HTMLElement;
-
 const marginColumn = 7;
 const widthColumn = 15;
 let leftPos = 0;
@@ -17,12 +14,14 @@ function randomChartColumn(arr: string[]) {
   return arr[colorColumn];
 }
 
-
 function randomHeight() {
   return Math.floor(Math.random() * 100);
 }
 
 function creatAnimation(number: number) {
+  const animationDiv = document.querySelector('.main-page__animation') as HTMLElement;
+  const pageContainer = document.querySelector('.page__container') as HTMLElement;
+
   for (let i = 0; i < number - 1; i++) {
     const chartColumn = document.createElement('div');
     chartColumn.classList.add('animation__chart-column');
@@ -34,7 +33,9 @@ function creatAnimation(number: number) {
   }
 }
 
-setInterval(() => {
+const showAnimation = (): void => {
+  const pageContainer = document.querySelector('.page__container') as HTMLElement;
+
   const widthBlock = pageContainer.offsetWidth;
   const numberColumn = Math.floor(widthBlock / (widthColumn + marginColumn));
   creatAnimation(numberColumn);
@@ -43,4 +44,13 @@ setInterval(() => {
     element.style.background = `${randomChartColumn(colorChartColumn)}`;
     element.style.height = `${randomHeight()}%`;
   });
-}, 2000);
+};
+
+export const animationLogic = () => {
+  leftPos = 0;
+  showAnimation();
+
+  return setInterval(() => {
+    showAnimation();
+  }, 1500);
+};

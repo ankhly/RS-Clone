@@ -23,6 +23,6 @@ export const chartParametersState: ChartParameters = JSON.parse(localStorage.get
 };
 
 export const globalState = {
-  view: localStorage.getItem(LocalStorageKeys.view) || ViewPage.create,
+  view: localStorage.getItem(LocalStorageKeys.view) || ViewPage.main,
   type: localStorage.getItem(LocalStorageKeys.type) || TypeCharts.bar,
 };
