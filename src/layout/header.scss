@@ -8,6 +8,7 @@
 
   // .header__logo
   &__logo {
+    cursor: pointer;
     img {
       width: 100px;
       height: 80px;
@@ -17,32 +18,6 @@
   // .header__content
   &__content {
     margin: 0px auto 0px 0px;
-  }
-  // .header__title
-  &__title {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 700;
-    padding: 10px 0px 10px 0px;
-    transition: all 0.3s;
-    position: relative;
-    color: #000000;
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: "";
-      width: 100%;
-      height: 2px;
-    }
-    @media (any-hover: hover) {
-      &:hover {
-        color: $blue;
-        &::before {
-          background-color: $blue;
-        }
-      }
-    }
   }
 }
 

@@ -59,6 +59,11 @@
     font-size: 25px;
   }
 
+  &__example {
+    display: flex;
+    justify-content: center;
+  }
+
   &__text {
     padding: 20px 0;
     text-align: left;

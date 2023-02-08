@@ -1,3 +1,12 @@
+@import "./Max/global";
+@import "Max/components/typesChart/typesChart";
+@import "./Max/components/viewChart/viewChart";
+@import "./Max/components/viewChartExamples/viewChartExamples";
+@import "Max/components/parametersChartMain/parametersChartMain";
+@import "Max/components/parametersChartAdditional/parametersChartAdditional";
+@import "Max/components/parametersChartAll/parametersChartAll";
+@import "Max/components/loader/loader";
+
 $fontFamily: "";
 $fontSize: 16;
 
@@ -21,6 +30,7 @@ $green: rgb(119, 184, 180);
 @import "./layout/main.scss";
 @import "./layout/gallery.scss";
 @import "./aside/aside.scss";
+@import "./layout/examples/examples";
 
 html {
   background-color: #ffffff;

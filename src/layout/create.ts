@@ -4,17 +4,7 @@ export const renderCreatePage = ():string=>{
   <div class="page__create create-page">
   <h1 class="create-page__title main-title">Создать график/диаграмму онлайн</h1>
   <div class="create-page__body">
-    <div class="create-page__content">
-      <div class="create-page__view view-create">
-
-      </div>
-      <div class="create-page__chart chart-create">
-
-      </div>
-      <div class="create-page__actions actions-create">
-       
-      </div>
-    </div>
+    <div id="main-logic-container" class="create-page__content"></div>
     <div class="create-page__how how-create">
       <div class="how-create__body">
         <h2 class="how-create__title">Как создать график/диаграмму онлайн</h2>

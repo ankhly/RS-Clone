@@ -1,0 +1,31 @@
+$red: rgb(226, 86, 89);
+$yellow: rgb(242, 143, 39);
+$blue: rgb(77, 122, 169);
+$green: rgb(119, 184, 180);
+
+$black: black;
+$white: white;
+
+%mini-title {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: .6rem;
+  color: $black;
+}
+
+%button {
+  display: block;
+  width: 187px;
+  padding: 0.5rem;
+  margin: .5rem 0;
+  border-radius: 10px;
+  font-size: .9rem;
+  background-color: $green;
+  color: $white;
+  transition: all .25s linear;
+  cursor: pointer;
+  border: none;
+  &:hover {
+    background-color: $blue;
+  }
+}
