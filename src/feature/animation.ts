@@ -18,15 +18,15 @@ function randomHeight() {
   return Math.floor(Math.random() * 100);
 }
 
+
 function creatAnimation(number: number) {
   const animationDiv = document.querySelector('.main-page__animation') as HTMLElement;
-  const pageContainer = document.querySelector('.page__container') as HTMLElement;
 
   for (let i = 0; i < number - 1; i++) {
     const chartColumn = document.createElement('div');
     chartColumn.classList.add('animation__chart-column');
     chartColumn.style.left = `${leftPos}px`;
-    if (leftPos < Math.floor(pageContainer.offsetWidth)) {
+    if (leftPos < Math.floor(animationDiv.offsetWidth)) {
       leftPos += widthColumn + marginColumn;
       animationDiv.appendChild(chartColumn);
     }
@@ -34,9 +34,9 @@ function creatAnimation(number: number) {
 }
 
 const showAnimation = (): void => {
-  const pageContainer = document.querySelector('.page__container') as HTMLElement;
-
-  const widthBlock = pageContainer.offsetWidth;
+  const animationDiv = document.querySelector('.main-page__animation') as HTMLElement;
+  
+  const widthBlock = animationDiv.offsetWidth;
   const numberColumn = Math.floor(widthBlock / (widthColumn + marginColumn));
   creatAnimation(numberColumn);
   const columns = document.getElementsByClassName('animation__chart-column') as HTMLCollectionOf<HTMLElement>;

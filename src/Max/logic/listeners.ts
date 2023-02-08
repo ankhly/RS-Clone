@@ -23,9 +23,9 @@ import { exampleValueFirst } from '../services/exampleValueFirst';
 import { exampleValueSecond } from '../services/exampleValueSecond';
 import { exampleValueThird } from '../services/exampleValueThird';
 import { showPage1, showPage2 } from './showPages';
-import {renderHtml} from "../../layout/mainRender";
-import {mainPage} from "../../layout/main";
-import {renderCreatePage} from "../../layout/create";
+import { renderHtml } from '../../layout/mainRender';
+import { mainPage } from '../../layout/main';
+import { renderCreatePage } from '../../layout/create';
 
 export const listenersMainInput = () => {
   const editLabelsRow = document.querySelectorAll('.edit-labels-row') as NodeListOf<HTMLInputElement>;
