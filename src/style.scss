@@ -7,6 +7,88 @@
 @import "Max/components/parametersChartAll/parametersChartAll";
 @import "Max/components/loader/loader";
 
+$fontFamily: "";
+$fontSize: 16;
+
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1440;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+$red: rgb(226, 86, 89);
+$yellow: rgb(242, 143, 39);
+$blue: rgb(77, 122, 169);
+$green: rgb(119, 184, 180);
+
+@import "./utils/null.scss";
+@import "./layout/header.scss";
+@import "./layout/popupLanguage.scss";
+@import "./layout/create.scss";
+@import "./layout/info.scss";
+@import "./layout/main.scss";
+@import "./layout/gallery.scss";
+@import "./aside/aside.scss";
+
+html {
+  background-color: #ffffff;
+  color: #9e9898;
+  &.dark {
+    background-color: #000000;
+    color: #ffffff;
+    .page,
+    .data-actions,
+    .settings-actions,
+    .btn-add,
+    .popup__content,
+    .menu__link,
+    .gallery-block,
+    .info-page,
+    .info-page__section,
+    .main-page__start,
+    .main-page__gallery,
+    a {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    .popup {
+      &::before {
+        background-color: hsla(0, 0%, 0%, 0);
+      }
+    }
+    .popup__close {
+      &::before {
+        background-color: hsla(0, 0%, 100%);
+      }
+      &::after {
+        background-color: hsla(0, 0%, 100%);
+      }
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.page {
+  flex: 1 1 auto;
+  background: #fafafa;
+  position: relative;
+}
+
+.container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// max
 * {
   margin: 0;
   padding: 0;
@@ -22,4 +104,8 @@
 .menu {
   display: flex;
   justify-content: center;
+
+.main-title {
+  font-size: 31px;
+  margin: 0px 0px 15px 0px;
 }
