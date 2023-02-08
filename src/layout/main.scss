@@ -2,37 +2,42 @@
   margin: 0 auto;
   text-align: center;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
 
-  &__sections {
-    width: 82%;
-  }
+  // &__sections {
+  // }
 
   &__start {
     background: #fafafa;
-    padding: 40px 0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__start-wrap {
+    width: 82%;
+    padding-top: 50px;
   }
 
   &__animation {
     height: 125px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     position: relative;
   }
 
   &__h1 {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    padding-top: 10px;
   }
 
   &__h2 {
-    margin: 10px 0 30px;
+    margin: 10px 0 40px;
     color: #bbb;
     font-weight: 300;
     font-size: 25px;
   }
 
   &__button {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 
   &__images {

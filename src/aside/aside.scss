@@ -1,12 +1,10 @@
 .aside {
   width: 17%;
   background-color: #fafafa;
-  padding: 20px 5px;
-  margin-top: 170px;
+  padding: 5px;
   background-image: url('../assets/gif.gif');
   background-size: cover;
   border-radius: 5px;
-  margin-bottom: 20px;
 }
 .weather {
   display: flex;
@@ -15,9 +13,9 @@
   align-items: flex-start;
   row-gap: 5px;
   width: 100%;
-  padding: 15px 5px;
+  padding: 5px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .weather-error {
