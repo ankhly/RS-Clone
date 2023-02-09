@@ -1,13 +1,4 @@
-@import "./Max/global";
-@import "Max/components/typesChart/typesChart";
-@import "./Max/components/viewChart/viewChart";
-@import "./Max/components/viewChartExamples/viewChartExamples";
-@import "Max/components/parametersChartMain/parametersChartMain";
-@import "Max/components/parametersChartAdditional/parametersChartAdditional";
-@import "Max/components/parametersChartAll/parametersChartAll";
-@import "Max/components/loader/loader";
-
-$fontFamily: "";
+$fontFamily: 'Inter', sans-serif;
 $fontSize: 16;
 
 $minWidth: 320px;
@@ -21,20 +12,55 @@ $red: rgb(226, 86, 89);
 $yellow: rgb(242, 143, 39);
 $blue: rgb(77, 122, 169);
 $green: rgb(119, 184, 180);
+$black: black;
+$white: white;
 
-@import "./utils/null.scss";
-@import "./layout/header.scss";
-@import "./layout/popupLanguage.scss";
-@import "./layout/create.scss";
-@import "./layout/info.scss";
-@import "./layout/main.scss";
-@import "./layout/gallery.scss";
-@import "./aside/aside.scss";
-@import "./layout/examples/examples";
+%mini-title {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: .6rem;
+  color: $black;
+}
+
+%button {
+  display: block;
+  width: 153px;
+  padding: 0.5rem;
+  margin: .5rem 0;
+  border-radius: 10px;
+  font-size: .9rem;
+  background-color: $green;
+  color: $white;
+  transition: all .25s linear;
+  cursor: pointer;
+  border: none;
+  &:hover {
+    background-color: $blue;
+  }
+}
+
+@import "./utils/null";
+@import "./components/header/header";
+@import "./components/pageMain/main";
+@import "./components/pageCreate/create";
+@import "./components/pageGallery/gallery";
+@import "./components/pageExamples/examples";
+@import "./components/pageInfo/info";
+@import "./components/aside/aside";
+@import "./components/popupLanguage/popupLanguage";
+@import "components/typesChart/typesChart";
+@import "./components/viewChart/viewChart";
+@import "./components/viewChartExamples/viewChartExamples";
+@import "components/parametersChartMain/parametersChartMain";
+@import "components/parametersChartAdditional/parametersChartAdditional";
+@import "components/parametersChartAll/parametersChartAll";
+@import "components/loader/loader";
+@import "components/tables/tables";
 
 html {
   background-color: #ffffff;
   color: #9e9898;
+  font-family: $fontFamily;
   &.dark {
     background-color: #101010;
     color: #ffffff;
@@ -69,7 +95,7 @@ html {
     }
     .aside {
       background-image: url('../assets/gif-unscreen.gif');
-      .city, 
+      .city,
       .currency-converter__h3 {
         color: #ffffff;
       }
@@ -94,10 +120,9 @@ html {
 .container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
-  padding: 0 15px;
 }
 
 .main-title {
   font-size: 31px;
-  margin: 0px 0px 15px 0px;
+  margin: 0 0 15px 0;
 }

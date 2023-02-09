@@ -1,54 +1,40 @@
 import './style.scss';
 
-import { changePage } from './layout/showPages';
-import { renderPopup, closePopup, chooseLanguage } from './feature/changeLanguage';
-import { colorMod, getColorMod } from './feature/colorMod';
-
-import { listeners } from './Max/logic/listeners';
-import { globalState } from './Max/services/store';
-import { ViewPage } from './Max/types';
-import { showPage1, showPage2 } from './Max/logic/showPages';
-import { renderHtml } from './layout/mainRender';
-import { renderCreatePage } from './layout/create';
-import { galleryPage } from './layout/gallery';
-import { examplesPage } from './layout/examples/examples';
-import { infoPage } from './layout/info';
-import { mainPage } from './layout/main';
-import { animationLogic } from './feature/animation';
-import { converterLogic } from './aside/converter';
-import { weatherLogic } from './aside/wether';
+import { listeners } from './logic/listeners';
+import { showCreateBlock, showExamplesBlock, showExamplesBlockInInfo } from './logic/showPages';
+import { renderHtml } from './components/mainRender';
+import { renderCreatePage } from './components/pageCreate/create';
+import { galleryPage } from './components/pageGallery/gallery';
+import { examplesPage } from './components/pageExamples/examples';
+import { infoPage } from './components/pageInfo/info';
+import { mainPage } from './components/pageMain/main';
+import { animationLogic } from './logic/animation';
+import { converterLogic } from './services/API-converter';
+import { weatherLogic } from './services/API-wether';
+import { globalState } from './store/store';
+import { ViewPage } from './utils/types';
 
 if (globalState.view === ViewPage.main) {
   renderHtml(mainPage());
-  await showPage2();
   animationLogic();
   converterLogic();
-  weatherLogic();
+  await weatherLogic();
+  await showExamplesBlock();
 }
 if (globalState.view === ViewPage.create) {
   renderHtml(renderCreatePage());
-  await showPage1();
+  await showCreateBlock();
 }
 if (globalState.view === ViewPage.gallery) {
   renderHtml(galleryPage());
 }
 if (globalState.view === ViewPage.examples) {
   renderHtml(examplesPage());
-  await showPage2();
+  await showExamplesBlock();
 }
 if (globalState.view === ViewPage.info) {
   renderHtml(infoPage());
+  await showExamplesBlockInInfo();
 }
 
-getColorMod();
 listeners();
-
-const documentClick = async (e: Event) => {
-  colorMod(e);
-  renderPopup(e);
-  closePopup(e);
-  chooseLanguage(e);
-  await changePage(e);
-};
-
-document.addEventListener('click', documentClick);
