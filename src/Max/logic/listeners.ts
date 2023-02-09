@@ -22,10 +22,11 @@ import { Extensions, LocalStorageKeys, TypeCharts, ViewPage } from '../types';
 import { exampleValueFirst } from '../services/exampleValueFirst';
 import { exampleValueSecond } from '../services/exampleValueSecond';
 import { exampleValueThird } from '../services/exampleValueThird';
-import { showPage1, showPage2 } from './showPages';
+import {showCreateBlock, showExamplesBlock, showExamplesBlockInInfo} from './showPages';
 import { renderHtml } from '../../layout/mainRender';
-import { mainPage } from '../../layout/main';
 import { renderCreatePage } from '../../layout/create';
+import {examplesPage} from "../../layout/examples/examples";
+import {infoPage} from "../../layout/info";
 
 export const listenersMainInput = () => {
   const editLabelsRow = document.querySelectorAll('.edit-labels-row') as NodeListOf<HTMLInputElement>;
@@ -141,19 +142,100 @@ export const listeners = (): void => {
       setState(exampleValueFirst);
       localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
       renderHtml(renderCreatePage());
-      await showPage1();
+      await showCreateBlock();
     }
     if (downloadButton.classList.contains('edit-example-2')) {
       setState(exampleValueSecond);
       localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
       renderHtml(renderCreatePage());
-      await showPage1();
+      await showCreateBlock();
     }
     if (downloadButton.classList.contains('edit-example-3')) {
       setState(exampleValueThird);
       renderHtml(renderCreatePage());
       localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showPage1();
+      await showCreateBlock();
+    }
+
+    if (downloadButton.classList.contains('create-chart-button')) {
+      renderHtml(renderCreatePage());
+
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showCreateBlock();
+    }
+    if (downloadButton.classList.contains('examples-chart-button')) {
+      renderHtml(examplesPage());
+
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
+      await showExamplesBlock();
+    }
+    if (downloadButton.classList.contains('info-chart-button')) {
+      renderHtml(infoPage());
+      await showExamplesBlockInInfo();
+
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
+    }
+
+
+    if (downloadButton.classList.contains('create-bar')) {
+      setType(TypeCharts.bar);
+      renderHtml(renderCreatePage());
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showCreateBlock();
+
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.bar);
+      const selectTypeButton1 = document.querySelector('.type-bar') as HTMLElement;
+      showActiveClass(selectTypeButton1);
+    }
+    if (downloadButton.classList.contains('create-horizontalBar')) {
+      setType(TypeCharts.hBar);
+      renderHtml(renderCreatePage());
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showCreateBlock();
+
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.hBar);
+      const selectTypeButton1 = document.querySelector('.type-horizontalBar') as HTMLElement;
+      showActiveClass(selectTypeButton1);
+    }
+    if (downloadButton.classList.contains('create-line')) {
+      setType(TypeCharts.line);
+      renderHtml(renderCreatePage());
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showCreateBlock();
+
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.line);
+      const selectTypeButton1 = document.querySelector('.type-line') as HTMLElement;
+      showActiveClass(selectTypeButton1);
+    }
+    if (downloadButton.classList.contains('create-radar')) {
+      setType(TypeCharts.radar);
+      renderHtml(renderCreatePage());
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showCreateBlock();
+
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.radar);
+      const selectTypeButton1 = document.querySelector('.type-radar') as HTMLElement;
+      showActiveClass(selectTypeButton1);
+    }
+    if (downloadButton.classList.contains('create-pie')) {
+      setType(TypeCharts.pie);
+      renderHtml(renderCreatePage());
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showCreateBlock();
+
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.pie);
+      const selectTypeButton1 = document.querySelector('.type-pie') as HTMLElement;
+      showActiveClass(selectTypeButton1);
+    }
+    if (downloadButton.classList.contains('create-doughnut')) {
+      setType(TypeCharts.doughnut);
+      renderHtml(renderCreatePage());
+      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+      await showCreateBlock();
+
+      localStorage.setItem(LocalStorageKeys.type, TypeCharts.doughnut);
+      const selectTypeButton1 = document.querySelector('.type-doughnut') as HTMLElement;
+      showActiveClass(selectTypeButton1);
     }
 
     const selectTypeButton = (event.target as HTMLElement).closest('.imageContainer');

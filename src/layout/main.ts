@@ -8,7 +8,7 @@ export const mainPage = () => `
             <div class="main-page__start-wrap">
               <h1 class="main-page__h1 main-title">EasyCharts</h1>
               <h2 class="main-page__h2">Графики/диаграммы онлайн</h2>
-              <button class="main-page__button info-page__button">Cоздать график</button>
+              <button class="main-page__button info-page__button create-chart-button">Cоздать график</button>
               <div class="main-page__images">
                 <div class="img-block">
                   <img class="main-page__img" src="../assetsStatic/phone.svg" alt="phone">
@@ -24,7 +24,7 @@ export const mainPage = () => `
                     PNG / JPG / GIF / SVG
                   </p>
                 </div>
-              </div>            
+              </div>
             </div>
             ${aside()}
           </section>

@@ -58,6 +58,16 @@
     box-shadow: 0 1px 1px 2px rgb(242 233 233 / 30%), 0 0px 0px 0px rgb(249 249 249 / 99%);
     padding: 15px;
     margin-bottom: 40px;
+    .info-examples {
+      display: flex;
+      justify-content: space-between;
+      .imageContainerBlock {
+        width: 33%;
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 .section {
@@ -66,7 +76,6 @@
     font-size: 27px;
     //border-bottom: 1px solid #eee;
   }
-
   &__text-link {
     color: $green;
   }
@@ -81,6 +90,7 @@
   }
 
   &__link {
+    cursor: pointer;
     display: inline-block;
     vertical-align: top;
     margin: 0 10px 10px 0;
@@ -89,6 +99,11 @@
     box-shadow: 0 -1px 2px -1px rgb(0 0 0 / 30%), 0 1px 2px -1px rgb(0 0 0 / 40%);
     border-radius: 5px;
     border: 1px solid transparent;
+    transition: all .1s linear;
+    &:hover {
+      box-shadow: 0 0 10px 0 $blue;
+      border: 1px solid $blue;
+    }
   }
 
   &__img {

@@ -6,6 +6,7 @@
 @import "Max/components/parametersChartAdditional/parametersChartAdditional";
 @import "Max/components/parametersChartAll/parametersChartAll";
 @import "Max/components/loader/loader";
+@import "Max/components/tables/tables";
 
 $fontFamily: "";
 $fontSize: 16;
@@ -69,7 +70,7 @@ html {
     }
     .aside {
       background-image: url('../assets/gif-unscreen.gif');
-      .city, 
+      .city,
       .currency-converter__h3 {
         color: #ffffff;
       }

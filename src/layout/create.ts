@@ -14,8 +14,8 @@ export const renderCreatePage = ():string=>{
           <div class="how-create__step"><span class="three">3. </span><i class="step3">Готово!</i></div>
         </div>
         <div class="how-create__buttons">
-          <button class="how-create__read button-more btnmore1">Читать подробнее</button>
-          <button class="how-create__look button-more btnmore2">Смотреть примеры</button>
+          <button class="how-create__read button-more btnmore1 info-chart-button">Читать подробнее</button>
+          <button class="how-create__look button-more btnmore2 examples-chart-button">Смотреть примеры</button>
         </div>
       </div>
     </div>

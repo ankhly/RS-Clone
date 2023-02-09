@@ -5,9 +5,13 @@ import { renderMainParametersInner } from '../components/parametersChartMain/par
 import { renderAdditionalParametersInner } from '../components/parametersChartAdditional/parametersChartAdditional';
 import { listenersAdditionalInput, listenersMainInput } from './listeners';
 import { showActiveClassAfterRestart } from './helpers';
-import { renderLoaderOrExamples, renderViewExamples } from '../components/viewChartExamples/viewChartExamples';
+import {
+  renderLoaderOrExamples,
+  renderViewExamples,
+  renderViewExamplesInInfo
+} from '../components/viewChartExamples/viewChartExamples';
 
-export const showPage1 = async () => {
+export const showCreateBlock = async () => {
   const mainLogicContainer = document.querySelector('#main-logic-container') as HTMLDivElement;
 
   mainLogicContainer.innerHTML = `
@@ -25,7 +29,7 @@ export const showPage1 = async () => {
   showActiveClassAfterRestart();
 };
 
-export const showPage2 = async () => {
+export const showExamplesBlock = async () => {
   const mainLogicContainer = document.querySelector('#main-logic-container') as HTMLDivElement;
 
   mainLogicContainer.innerHTML = `
@@ -36,4 +40,14 @@ export const showPage2 = async () => {
   await renderLoaderOrExamples();
 
   showActiveClassAfterRestart();
+};
+
+export const showExamplesBlockInInfo = async () => {
+  const mainLogicContainer = document.querySelector('#main-logic-container') as HTMLDivElement;
+
+  mainLogicContainer.innerHTML = `
+    ${renderViewExamplesInInfo()}
+  `;
+
+  await renderLoaderOrExamples();
 };

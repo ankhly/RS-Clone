@@ -1,3 +1,4 @@
+
 export const infoPage = () => `
       <div class="page__body">
         <div class="info-page">
@@ -16,7 +17,7 @@ export const infoPage = () => `
             </p>
           </div>
           <div class="info-page__section section-view">
-            <h2 class="section__h2 section-view__h2">1. Выберите вид графика</h2>        
+            <h2 class="section__h2 section-view__h2">1. Выберите вид графика</h2>
             <p class="section__text section-view__text">
               На странице <a class="section__text-link" href="#">создания</a> или в галерее выберите
               подходящий вам тип графика.
@@ -24,25 +25,25 @@ export const infoPage = () => `
               <br>Линии / области / колонны / круговая диаграмма / … ?
             </p>
             <div class="section-view__images">
-              <a class="section-view__link" href="#">
-                <img class="section-view__img" src="../assetsStatic/bar.png" alt="bar">
-              </a>
-              <a class="section-view__link" href="#">
-                <img class="section-view__img" src="../assetsStatic/doughnut.png" alt="doughnut">
-              </a>
-              <a class="section-view__link" href="#">
-                <img class="section-view__img" src="../assetsStatic/horizontalBar.png" alt="horizontalBar">
-              </a>
-              <a class="section-view__link" href="#">
-                <img class="section-view__img" src="../assetsStatic/line.png" alt="line">
-              </a>
-              <a class="section-view__link" href="#">
-                <img class="section-view__img" src="../assetsStatic/pie.png" alt="pie">
-              </a>
-              <a class="section-view__link" href="#">
-                <img class="section-view__img" src="../assetsStatic/radar.png" alt="radar">
-              </a>
-            </div>            
+              <div class="section-view__link create-bar">
+                <img class="section-view__img create-bar" src="../assetsStatic/bar.png" alt="bar">
+              </div>
+              <div class="section-view__link create-horizontalBar">
+                <img class="section-view__img create-horizontalBar" src="../assetsStatic/horizontalBar.png" alt="horizontalBar">
+              </div>
+              <div class="section-view__link create-line">
+                <img class="section-view__img create-line" src="../assetsStatic/line.png" alt="line">
+              </div>
+              <div class="section-view__link create-radar">
+                <img class="section-view__img create-radar" src="../assetsStatic/radar.png" alt="radar">
+              </div>
+              <div class="section-view__link create-pie">
+                <img class="section-view__img create-pie" src="../assetsStatic/pie.png" alt="pie">
+              </div>
+              <div class="section-view__link create-doughnut">
+                <img class="section-view__img create-doughnut" src="../assetsStatic/doughnut.png" alt="doughnut">
+              </div>
+            </div>
           </div>
           <div class="info-page__section section-tables">
             <h2 class="section__h2 section-tables__h2">2. Заполните таблицу данных</h2>
@@ -52,6 +53,7 @@ export const infoPage = () => `
               <br><b>Остальные колонки</b> (их может быть одна или несколько) – это значения,
               <br>которые соответствуют отметкам из первой колонки, и которые будут отображены на диаграмме (ось Y).
             </p>
+            <div class="info-examples" id="main-logic-container"></div>
           </div>
           <div class="info-page__section section-ready">
             <h2 class="section__h2 section-ready__h2">3. Готово!</h2>
@@ -59,7 +61,7 @@ export const infoPage = () => `
               Теперь график можно <b>скачать</b> в удобном вам формате или <b>поделиться ссылкой</b> на вашу диаграмму.
             </p>
           </div>
-          <button class="info-page__button">Cоздать график</button>
+          <button class="info-page__button create-chart-button">Cоздать график</button>
         </div>
       </div>
 `;

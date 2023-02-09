@@ -7,7 +7,7 @@ import { colorMod, getColorMod } from './feature/colorMod';
 import { listeners } from './Max/logic/listeners';
 import { globalState } from './Max/services/store';
 import { ViewPage } from './Max/types';
-import { showPage1, showPage2 } from './Max/logic/showPages';
+import {showCreateBlock, showExamplesBlock, showExamplesBlockInInfo} from './Max/logic/showPages';
 import { renderHtml } from './layout/mainRender';
 import { renderCreatePage } from './layout/create';
 import { galleryPage } from './layout/gallery';
@@ -20,24 +20,25 @@ import { weatherLogic } from './aside/wether';
 
 if (globalState.view === ViewPage.main) {
   renderHtml(mainPage());
-  await showPage2();
   animationLogic();
   converterLogic();
   weatherLogic();
+  await showExamplesBlock();
 }
 if (globalState.view === ViewPage.create) {
   renderHtml(renderCreatePage());
-  await showPage1();
+  await showCreateBlock();
 }
 if (globalState.view === ViewPage.gallery) {
   renderHtml(galleryPage());
 }
 if (globalState.view === ViewPage.examples) {
   renderHtml(examplesPage());
-  await showPage2();
+  await showExamplesBlock();
 }
 if (globalState.view === ViewPage.info) {
   renderHtml(infoPage());
+  await showExamplesBlockInInfo();
 }
 
 getColorMod();

@@ -41,6 +41,12 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  transition: all .1s linear;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 10px 0 $blue;
+    border: 1px solid $blue;
+  }
 
   &__link {
     text-decoration: none;

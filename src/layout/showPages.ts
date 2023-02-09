@@ -3,7 +3,7 @@ import { galleryPage } from './gallery';
 import { infoPage } from './info';
 import { renderCreatePage } from './create';
 import { LocalStorageKeys, ViewPage } from '../Max/types';
-import { showPage1, showPage2 } from '../Max/logic/showPages';
+import {showCreateBlock, showExamplesBlock, showExamplesBlockInInfo} from '../Max/logic/showPages';
 import { examplesPage } from './examples/examples';
 import { mainPage } from './main';
 import { animationLogic } from '../feature/animation';
@@ -14,10 +14,10 @@ export const changePage = async (e: Event) => {
   const target = e.target as HTMLElement;
   if (target.classList.contains('menu0')) {
     renderHtml(mainPage());
-    await showPage2();
     clearInterval(animationLogic());
     converterLogic();
     weatherLogic();
+    await showExamplesBlock();
 
     localStorage.setItem(LocalStorageKeys.view, ViewPage.main);
   }
@@ -29,7 +29,7 @@ export const changePage = async (e: Event) => {
       renderHtml(renderCreatePage());
 
       localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showPage1();
+      await showCreateBlock();
     }
     if (e.target === menuLink && menuLink.classList.contains('menu2')) {
       renderHtml(galleryPage());
@@ -40,10 +40,11 @@ export const changePage = async (e: Event) => {
       renderHtml(examplesPage());
 
       localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
-      await showPage2();
+      await showExamplesBlock();
     }
     if (e.target === menuLink && menuLink.classList.contains('menu4')) {
       renderHtml(infoPage());
+      await showExamplesBlockInInfo();
 
       localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
     }
