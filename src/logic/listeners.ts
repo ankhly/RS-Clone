@@ -22,11 +22,11 @@ import { Extensions, LocalStorageKeys, TypeCharts, ViewPage } from '../utils/typ
 import { exampleValueFirst } from '../store/exampleValueFirst';
 import { exampleValueSecond } from '../store/exampleValueSecond';
 import { exampleValueThird } from '../store/exampleValueThird';
-import {showCreateBlock, showExamplesBlock, showExamplesBlockInInfo} from './showPages';
+import { showCreateBlock, showExamplesBlock, showExamplesBlockInInfo } from './showPages';
 import { renderHtml } from '../components/mainRender';
 import { renderCreatePage } from '../components/pageCreate/create';
-import {examplesPage} from "../components/examples/examples";
-import {infoPage} from "../components/pageInfo/info";
+import { examplesPage } from '../components/pageExamples/examples';
+import { infoPage } from '../components/pageInfo/info';
 
 export const listenersMainInput = () => {
   const editLabelsRow = document.querySelectorAll('.edit-labels-row') as NodeListOf<HTMLInputElement>;

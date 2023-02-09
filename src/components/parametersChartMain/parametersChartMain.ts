@@ -60,21 +60,21 @@ export const renderMainParameters = (): string => `
 export const renderMainParametersInner = (): void => {
   const dataForm = document.querySelector('.dataForm') as HTMLDivElement;
   dataForm.innerHTML = `
-  <div class="formContainer">
-    <p class="axis">X</p>
-    <input
-      class="inputData inputDataLabel margin title-chart"
-      type="text"
-      value="${chartParametersState.options.title.text}"
-    />
-    ${renderRowsX()}
-    <button class="addButton add-row"> Добавить строку</button>
-  </div>
-  <div class="formContainer">
-    <div class="flexContainer">
-      ${renderColumnsY()}
+    <div class="formContainer">
+      <p class="axis">X</p>
+      <input
+        class="inputData inputDataLabel margin title-chart"
+        type="text"
+        value="${chartParametersState.options.title.text}"
+      />
+      ${renderRowsX()}
+      <button class="addButton add-row"> Добавить строку</button>
     </div>
-    <button class="addButton add-column">Добавить столбец</button>
-  </div>
+    <div class="formContainer">
+      <div class="flexContainer">
+        ${renderColumnsY()}
+      </div>
+      <button class="addButton add-column">Добавить столбец</button>
+    </div>
   `;
 };

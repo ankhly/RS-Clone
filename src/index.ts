@@ -1,7 +1,7 @@
 import './style.scss';
 
 import { changePage } from './components/showPages';
-import { renderPopup, closePopup, chooseLanguage } from './logic/changeLanguage';
+import { renderPopup, closePopup, chooseLanguage, getLanguage } from './logic/changeLanguage';
 import { colorMod, getColorMod } from './logic/colorMod';
 
 import { listeners } from './logic/listeners';
@@ -11,7 +11,7 @@ import { showCreateBlock, showExamplesBlock, showExamplesBlockInInfo } from './l
 import { renderHtml } from './components/mainRender';
 import { renderCreatePage } from './components/pageCreate/create';
 import { galleryPage } from './components/pageGallery/gallery';
-import { examplesPage } from './components/examples/examples';
+import { examplesPage } from './components/pageExamples/examples';
 import { infoPage } from './components/pageInfo/info';
 import { mainPage } from './components/pageMain/main';
 import { animationLogic } from './logic/animation';

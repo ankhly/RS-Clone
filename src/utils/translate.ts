@@ -35,7 +35,7 @@ export const lang:LangInt = {
   },
   'btnmore2':{
     'ru':'Смотреть примеры',
-    'uk':'See examples',
+    'uk':'See pageExamples',
   },
   'header__title':{
     'ru':'Графики / Диаграммы',

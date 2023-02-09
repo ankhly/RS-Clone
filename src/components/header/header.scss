@@ -1,4 +1,5 @@
 .header {
+  padding: 5px 0;
   // .header__body
   &__body {
     display: flex;
@@ -9,6 +10,25 @@
   // .header__logo
   &__logo {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    .logoText {
+      display: flex;
+      font-size: 2.5rem;
+      font-weight: 700;
+      .letterRed {
+        color: $red;
+      }
+      .letterOrange {
+        color: $yellow;
+      }
+      .letterBlue {
+        color: $blue;
+      }
+      .letterGreen {
+        color: $green;
+      }
+    }
     img {
       width: 100px;
       height: 80px;

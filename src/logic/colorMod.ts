@@ -3,7 +3,7 @@ const colorModParams = {
   bg:false,
 };
 
-export const colorMod = (e:Event)=>{
+export const colorMod = (e:Event) => {
   const colorModBtn = document.querySelector('.actions__bg') as HTMLElement;
   const html = document.querySelector('html') as HTMLElement;
 
@@ -14,7 +14,7 @@ export const colorMod = (e:Event)=>{
   }
 };
 
-export const getColorMod = ()=>{
+export const getColorMod = () => {
   const colorModBtn = document.querySelector('.actions__bg') as HTMLElement;
   const html = document.querySelector('html') as HTMLElement;
 

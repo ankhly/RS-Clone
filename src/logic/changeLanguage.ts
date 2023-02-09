@@ -37,7 +37,7 @@ const changeIconLanguage = (language:string)=>{
   }
 };
 
-export const chooseLanguage = (e:Event)=>{
+export const chooseLanguage = (e:Event) => {
   const popup = document.querySelector('.popup') as HTMLElement;
   const ru = document.querySelector('.popup__lang_ru') as HTMLElement;
   const uk = document.querySelector('.popup__lang_en') as HTMLElement;
@@ -55,7 +55,7 @@ export const chooseLanguage = (e:Event)=>{
   }
 };
 
-export const getLanguage = ()=>{
+export const getLanguage = () => {
   const customLanguage = localStorage.getItem('language') || 'ru';
   changeLanguage(customLanguage);
   changeIconLanguage(customLanguage);

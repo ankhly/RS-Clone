@@ -1,4 +1,4 @@
-const wether = () => `
+const weather = (): string => `
   <div class="weather hide-weather">
     <input type="text" class="city" placeholder="[Enter city]" value="Minsk"/>
     <i class="weather-icon owf"></i>
@@ -12,7 +12,7 @@ const wether = () => `
   </div>
 `;
 
-const currencyConverter = () => `
+const currencyConverter = (): string => `
   <div class="currency-converter">
     <h3 class="currency-converter__h3">Конвертер валют</h3>
     <p class="currency-converter__p">По курсу НБ РБ</p>
@@ -57,9 +57,9 @@ const currencyConverter = () => `
   </div>
 `;
 
-export const aside = () => `
+export const aside = (): string => `
   <aside class="aside">
-    ${wether()}
+    ${weather()}
     ${currencyConverter()}
   </aside>
 `;

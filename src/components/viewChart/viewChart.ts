@@ -22,7 +22,7 @@ const renderChart = (address: string): void => {
   });
 };
 
-export const renderLoaderOrChart = async () => {
+export const renderLoaderOrChart = async (): Promise<void> => {
   renderLoader();
   const address = await getAddress(chartParametersState);
   renderChart(address);

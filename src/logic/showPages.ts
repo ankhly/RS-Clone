@@ -8,7 +8,7 @@ import { showActiveClassAfterRestart } from '../utils/helpers';
 import {
   renderLoaderOrExamples,
   renderViewExamples,
-  renderViewExamplesInInfo
+  renderViewExamplesInInfo,
 } from '../components/viewChartExamples/viewChartExamples';
 
 export const showCreateBlock = async () => {

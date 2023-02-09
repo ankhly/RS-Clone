@@ -3,14 +3,14 @@ import { galleryPage } from './pageGallery/gallery';
 import { infoPage } from './pageInfo/info';
 import { renderCreatePage } from './pageCreate/create';
 import { LocalStorageKeys, ViewPage } from '../utils/types';
-import {showCreateBlock, showExamplesBlock, showExamplesBlockInInfo} from '../logic/showPages';
-import { examplesPage } from './examples/examples';
+import { showCreateBlock, showExamplesBlock, showExamplesBlockInInfo } from '../logic/showPages';
+import { examplesPage } from './pageExamples/examples';
 import { mainPage } from './pageMain/main';
 import { animationLogic } from '../logic/animation';
 import { converterLogic } from '../services/API-converter';
 import { weatherLogic } from '../services/API-wether';
 
-export const changePage = async (e: Event) => {
+export const changePage = async (e: Event): Promise<void> => {
   const target = e.target as HTMLElement;
   if (target.classList.contains('menu0')) {
     renderHtml(mainPage());

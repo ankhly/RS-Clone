@@ -12,7 +12,7 @@ export const renderAdditionalParameters = (): string => `
   </div>
 `;
 
-export const renderAdditionalParametersInner = () => {
+export const renderAdditionalParametersInner = (): void => {
   const paramsContainer = document.querySelector('.params-container') as HTMLDivElement;
   paramsContainer.innerHTML = `
     <div class="params">

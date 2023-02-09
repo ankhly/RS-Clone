@@ -11,4 +11,3 @@ export const examplesPage = () => `
     <div id="main-logic-container" class="main-logic-container"></div>
   </div>
 `;
-
