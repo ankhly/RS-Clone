@@ -5,7 +5,7 @@ export const converterLogic = () => {
   const uahId = 449;
   const plnId = 452;
 
-  const getKurs = async (curId: number) => {
+  const getExchangeRates = async (curId: number) => {
     const response = await fetch(`https://www.nbrb.by/api/exrates/rates/${curId}?periodicity=0`);
     const data = await response.json();
     return data.Cur_OfficialRate;
@@ -20,11 +20,11 @@ export const converterLogic = () => {
   const bynInput = document.querySelector('.input-byn') as HTMLInputElement;
 
   async function bynConverter() {
-    eurInput.value = ((+bynInput.value / await getKurs(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
-    usdInput.value = ((+bynInput.value / await getKurs(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
-    rubInput.value = ((+bynInput.value / await getKurs(rubId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
-    uahInput.value = ((+bynInput.value / await getKurs(uahId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
-    plnInput.value = ((+bynInput.value / await getKurs(plnId) * 10).toFixed(4)).replace(/[,.]?0+$/, '');
+    eurInput.value = ((+bynInput.value / await getExchangeRates(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
+    usdInput.value = ((+bynInput.value / await getExchangeRates(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
+    rubInput.value = ((+bynInput.value / await getExchangeRates(rubId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
+    uahInput.value = ((+bynInput.value / await getExchangeRates(uahId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
+    plnInput.value = ((+bynInput.value / await getExchangeRates(plnId) * 10).toFixed(4)).replace(/[,.]?0+$/, '');
   }
 
   inputWrap.addEventListener('click', (el) => {
@@ -34,43 +34,42 @@ export const converterLogic = () => {
     }
     if (target.classList.contains('input-usd')) {
       target.addEventListener('input', async () => {
-        bynInput.value = ((+target.value * await getKurs(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
+        bynInput.value = ((+target.value * await getExchangeRates(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
         bynConverter();
       });
     }
     if (target.classList.contains('input-eur')) {
       target.addEventListener('input', async () => {
-        bynInput.value = ((+target.value * await getKurs(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
+        bynInput.value = ((+target.value * await getExchangeRates(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
         bynConverter();
       });
     }
     if (target.classList.contains('input-rub')) {
       target.addEventListener('input', async () => {
-        bynInput.value = ((+target.value * await getKurs(rubId) / 100).toFixed(4)).replace(/[,.]?0+$/, '');
-        usdInput.value = ((+bynInput.value / await getKurs(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
-        eurInput.value = ((+bynInput.value / await getKurs(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
-        uahInput.value = ((+bynInput.value / await getKurs(uahId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
-        plnInput.value = ((+bynInput.value / await getKurs(plnId) * 10).toFixed(4)).replace(/[,.]?0+$/, '');
+        bynInput.value = ((+target.value * await getExchangeRates(rubId) / 100).toFixed(4)).replace(/[,.]?0+$/, '');
+        usdInput.value = ((+bynInput.value / await getExchangeRates(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
+        eurInput.value = ((+bynInput.value / await getExchangeRates(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
+        uahInput.value = ((+bynInput.value / await getExchangeRates(uahId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
+        plnInput.value = ((+bynInput.value / await getExchangeRates(plnId) * 10).toFixed(4)).replace(/[,.]?0+$/, '');
       });
     }
     if (target.classList.contains('input-uah')) {
       target.addEventListener('input', async () => {
-        bynInput.value = ((+target.value * await getKurs(uahId) / 100).toFixed(4)).replace(/[,.]?0+$/, '');
-        eurInput.value = ((+bynInput.value / await getKurs(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
-        usdInput.value = ((+bynInput.value / await getKurs(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
-        plnInput.value = ((+bynInput.value / await getKurs(plnId) * 10).toFixed(4)).replace(/[,.]?0+$/, '');
-        rubInput.value = ((+bynInput.value / await getKurs(rubId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
+        bynInput.value = ((+target.value * await getExchangeRates(uahId) / 100).toFixed(4)).replace(/[,.]?0+$/, '');
+        eurInput.value = ((+bynInput.value / await getExchangeRates(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
+        usdInput.value = ((+bynInput.value / await getExchangeRates(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
+        plnInput.value = ((+bynInput.value / await getExchangeRates(plnId) * 10).toFixed(4)).replace(/[,.]?0+$/, '');
+        rubInput.value = ((+bynInput.value / await getExchangeRates(rubId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
       });
     }
     if (target.classList.contains('input-pln')) {
       target.addEventListener('input', async () => {
-        bynInput.value = ((+target.value * await getKurs(plnId) / 10).toFixed(4)).replace(/[,.]?0+$/, '');
-        eurInput.value = ((+bynInput.value / await getKurs(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
-        usdInput.value = ((+bynInput.value / await getKurs(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
-        rubInput.value = ((+bynInput.value / await getKurs(rubId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
-        uahInput.value = ((+bynInput.value / await getKurs(uahId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
+        bynInput.value = ((+target.value * await getExchangeRates(plnId) / 10).toFixed(4)).replace(/[,.]?0+$/, '');
+        eurInput.value = ((+bynInput.value / await getExchangeRates(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
+        usdInput.value = ((+bynInput.value / await getExchangeRates(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
+        rubInput.value = ((+bynInput.value / await getExchangeRates(rubId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
+        uahInput.value = ((+bynInput.value / await getExchangeRates(uahId) * 100).toFixed(4)).replace(/[,.]?0+$/, '');
       });
     }
   });
 };
-

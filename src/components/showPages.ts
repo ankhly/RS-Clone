@@ -10,13 +10,13 @@ import { animationLogic } from '../logic/animation';
 import { converterLogic } from '../services/API-converter';
 import { weatherLogic } from '../services/API-wether';
 
-export const changePage = async (e: Event): Promise<void> => {
+export const changePage = async (e: MouseEvent): Promise<void> => {
   const target = e.target as HTMLElement;
   if (target.classList.contains('menu0')) {
     renderHtml(mainPage());
     clearInterval(animationLogic());
     converterLogic();
-    weatherLogic();
+    await weatherLogic();
     await showExamplesBlock();
 
     localStorage.setItem(LocalStorageKeys.view, ViewPage.main);

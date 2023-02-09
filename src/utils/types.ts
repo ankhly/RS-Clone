@@ -29,6 +29,8 @@ export enum LocalStorageKeys {
   example3 = 'exampleValueThird',
   view = 'view',
   type = 'type',
+  bg = 'bg',
+  language = 'language',
 }
 
 export enum TypeCharts {

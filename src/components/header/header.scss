@@ -88,13 +88,13 @@
 .actions__language {
   transition: all 0.3s;
   &.ru {
-    background: url("../public/russia.png");
+    background: url("../assets/RU.png");
     background-size: contain;
     width: 30px;
     height: 30px;
   }
   &.uk {
-    background: url("../public/UK.png");
+    background: url("../assets/UK.png");
     background-size: contain;
     width: 30px;
     height: 30px;

@@ -1,6 +1,6 @@
 import { ChartParameters } from '../utils/types';
 
-const baseURL = 'https://quickchart.io/chart';
+const baseURL: string = 'https://quickchart.io/chart';
 
 export const getAddress = async (chartParametersState: ChartParameters): Promise<string> => {
   const labels = JSON.stringify(chartParametersState.data.labels);

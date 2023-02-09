@@ -119,8 +119,8 @@ export const lang:LangInt = {
       программы на вашем компьютере. Построить диаграмму онлайн очень просто! Читайте подробнее о том,
       как создать диаграмму онлайн здесь. Также вы можете посмотреть примеры диаграмм, чтобы на их основе
       создать необходимый вам график.`,
-    'uk': `EasyCharts is a website for building charts/diagrams online. Select the chart type (linear, pie, columnar, bar,
-      lines, areas), fill in the chart/diagram data table, and the chart is done! You can download the chart in a
+    'uk': `EasyCharts is a website for building charts/diagrams online. Select the chart type (linear, pie, columnar,
+      bar, lines, areas), fill in the chart/diagram data table, and the chart is done! You can download the chart in a
       format that is convenient for you or get a link to the page of your chart/diagram. You can also use the online
       chart and diagram constructor on our website to download the chart (png / jpeg /, etc.) and paste it into
       Excel, Word, and other programs on your computer. It is very easy to create a chart/diagram online! Read more

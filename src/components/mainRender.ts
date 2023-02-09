@@ -1,5 +1,6 @@
-import { getLanguage } from '../logic/changeLanguage';
 import { renderHeader } from './header/header';
+import { getLanguage } from '../logic/changeLanguage';
+import { getColorMod } from '../logic/colorMod';
 
 export const renderHtml = (page:string): void => {
   const body = document.querySelector('body') as HTMLElement;
@@ -27,4 +28,5 @@ export const renderHtml = (page:string): void => {
   container.insertAdjacentHTML('beforeend', page);
 
   getLanguage();
+  getColorMod();
 };

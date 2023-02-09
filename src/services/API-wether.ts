@@ -1,4 +1,4 @@
-export const weatherLogic = (): void => {
+export const weatherLogic = async (): Promise<void> => {
   const weatherIcon = document.querySelector('.weather-icon') as HTMLElement;
   const temperature = document.querySelector('.temperature') as HTMLInputElement;
   const weatherDescription = document.querySelector('.weather-description') as HTMLInputElement;
@@ -7,9 +7,10 @@ export const weatherLogic = (): void => {
   const weatherError = document.querySelector('.weather-error') as HTMLInputElement;
   const city = document.querySelector('.city') as HTMLInputElement;
 
-  async function getWaeter() {
+  const baseURL: string = 'https://api.openweathermap.org';
+  const getWeather = async (): Promise<void> => {
     const url =
-      `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=ecea04712645dfb0bce29087590fddfd&units=metric`;
+      `${baseURL}/data/2.5/weather?q=${city.value}&lang=en&appid=ecea04712645dfb0bce29087590fddfd&units=metric`;
     const res = await fetch(url);
     const data = await res.json();
     try {
@@ -27,23 +28,23 @@ export const weatherLogic = (): void => {
       wind.textContent = wind.value;
       humidity.textContent = humidity.value;
     }
-  }
-  getWaeter();
+  };
+  await getWeather();
 
-  city.addEventListener('change', getWaeter);
+  city.addEventListener('change', getWeather);
 
-  function setLocalStorageCity() {
+  const setLocalStorageCity = async (): Promise<void> => {
     localStorage.setItem('city', city.value);
-    getWaeter();
-  }
+    await getWeather();
+  };
   window.addEventListener('beforeunload', setLocalStorageCity);
 
-  function getLocalStorageCity() {
+  const getLocalStorageCity = async (): Promise<void> => {
     const storage = localStorage.getItem('city');
     if (storage !== null) {
       city.value = storage;
     }
-    getWaeter();
-  }
+    await getWeather();
+  };
   window.addEventListener('load', getLocalStorageCity);
 };

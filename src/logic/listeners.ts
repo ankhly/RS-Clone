@@ -18,15 +18,18 @@ import { renderMainParametersInner } from '../components/parametersChartMain/par
 import { renderAdditionalParametersInner } from '../components/parametersChartAdditional/parametersChartAdditional';
 import { saveCharts, showActiveClass } from '../utils/helpers';
 import { renderLoaderOrExamples } from '../components/viewChartExamples/viewChartExamples';
-import { Extensions, LocalStorageKeys, TypeCharts, ViewPage } from '../utils/types';
-import { exampleValueFirst } from '../store/exampleValueFirst';
-import { exampleValueSecond } from '../store/exampleValueSecond';
-import { exampleValueThird } from '../store/exampleValueThird';
 import { showCreateBlock, showExamplesBlock, showExamplesBlockInInfo } from './showPages';
 import { renderHtml } from '../components/mainRender';
 import { renderCreatePage } from '../components/pageCreate/create';
 import { examplesPage } from '../components/pageExamples/examples';
 import { infoPage } from '../components/pageInfo/info';
+import { colorMod } from './colorMod';
+import { chooseLanguage, closePopup, renderPopup } from './changeLanguage';
+import { changePage } from '../components/showPages';
+import { Extensions, LocalStorageKeys, TypeCharts, ViewPage } from '../utils/types';
+import { exampleValueFirst } from '../store/exampleValueFirst';
+import { exampleValueSecond } from '../store/exampleValueSecond';
+import { exampleValueThird } from '../store/exampleValueThird';
 
 export const listenersMainInput = () => {
   const editLabelsRow = document.querySelectorAll('.edit-labels-row') as NodeListOf<HTMLInputElement>;
@@ -86,222 +89,246 @@ export const listenersAdditionalInput = () => {
   });
 };
 
+const listenersAddRemoveButtons = async (event: MouseEvent): Promise<void> => {
+  const addRemoveButton = event.target as HTMLElement;
+
+  if (addRemoveButton.classList.contains('remove-row')) {
+    removeRow(addRemoveButton.dataset.id!);
+    const removeRows = document.querySelectorAll('.remove-row') as NodeListOf<HTMLElement>;
+    if (removeRows.length !== 1) {
+      renderMainParametersInner();
+      listenersMainInput();
+      await renderLoaderOrChart();
+    }
+  }
+  if (addRemoveButton.classList.contains('remove-column')) {
+    removeColumn(addRemoveButton.dataset.id!);
+    const removeColumns = document.querySelectorAll('.remove-column') as NodeListOf<HTMLElement>;
+    if (removeColumns.length !== 1) {
+      renderMainParametersInner();
+      listenersMainInput();
+      await renderLoaderOrChart();
+    }
+  }
+  if (addRemoveButton.classList.contains('add-row')) {
+    addRow();
+    renderMainParametersInner();
+    listenersMainInput();
+    await renderLoaderOrChart();
+  }
+  if (addRemoveButton.classList.contains('add-column')) {
+    addColumn();
+    renderMainParametersInner();
+    listenersMainInput();
+    await renderLoaderOrChart();
+  }
+};
+
+const listenersDownloadButtons = async (event: MouseEvent): Promise<void> => {
+  const downloadButton = event.target as HTMLButtonElement;
+  if (downloadButton.classList.contains('download-PNG')) {
+    await saveCharts(Extensions.png);
+  }
+  if (downloadButton.classList.contains('download-JPG')) {
+    await saveCharts(Extensions.jpg);
+  }
+  if (downloadButton.classList.contains('reset')) {
+    resetChart();
+    renderMainParametersInner();
+    renderAdditionalParametersInner();
+    listenersMainInput();
+    listenersAdditionalInput();
+    await renderLoaderOrChart();
+  }
+};
+
+const listenersEditExampleButtons = async (event: MouseEvent): Promise<void> => {
+  const editExampleButton = event.target as HTMLButtonElement;
+  if (editExampleButton.classList.contains('edit-example-1')) {
+    setState(exampleValueFirst);
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    renderHtml(renderCreatePage());
+    await showCreateBlock();
+  }
+  if (editExampleButton.classList.contains('edit-example-2')) {
+    setState(exampleValueSecond);
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    renderHtml(renderCreatePage());
+    await showCreateBlock();
+  }
+  if (editExampleButton.classList.contains('edit-example-3')) {
+    setState(exampleValueThird);
+    renderHtml(renderCreatePage());
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    await showCreateBlock();
+  }
+};
+
+const listenersOnDifferentPageButtons = async (event: MouseEvent): Promise<void> => {
+  const button = event.target as HTMLButtonElement;
+
+  if (button.classList.contains('create-chart-button')) {
+    renderHtml(renderCreatePage());
+
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    await showCreateBlock();
+  }
+  if (button.classList.contains('examples-chart-button')) {
+    renderHtml(examplesPage());
+
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
+    await showExamplesBlock();
+  }
+  if (button.classList.contains('info-chart-button')) {
+    renderHtml(infoPage());
+    await showExamplesBlockInInfo();
+
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
+  }
+  if (button.classList.contains('create-bar')) {
+    setType(TypeCharts.bar);
+    renderHtml(renderCreatePage());
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    await showCreateBlock();
+
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.bar);
+    const selectTypeButton1 = document.querySelector('.type-bar') as HTMLElement;
+    showActiveClass(selectTypeButton1);
+  }
+  if (button.classList.contains('create-horizontalBar')) {
+    setType(TypeCharts.hBar);
+    renderHtml(renderCreatePage());
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    await showCreateBlock();
+
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.hBar);
+    const selectTypeButton1 = document.querySelector('.type-horizontalBar') as HTMLElement;
+    showActiveClass(selectTypeButton1);
+  }
+  if (button.classList.contains('create-line')) {
+    setType(TypeCharts.line);
+    renderHtml(renderCreatePage());
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    await showCreateBlock();
+
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.line);
+    const selectTypeButton1 = document.querySelector('.type-line') as HTMLElement;
+    showActiveClass(selectTypeButton1);
+  }
+  if (button.classList.contains('create-radar')) {
+    setType(TypeCharts.radar);
+    renderHtml(renderCreatePage());
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    await showCreateBlock();
+
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.radar);
+    const selectTypeButton1 = document.querySelector('.type-radar') as HTMLElement;
+    showActiveClass(selectTypeButton1);
+  }
+  if (button.classList.contains('create-pie')) {
+    setType(TypeCharts.pie);
+    renderHtml(renderCreatePage());
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    await showCreateBlock();
+
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.pie);
+    const selectTypeButton1 = document.querySelector('.type-pie') as HTMLElement;
+    showActiveClass(selectTypeButton1);
+  }
+  if (button.classList.contains('create-doughnut')) {
+    setType(TypeCharts.doughnut);
+    renderHtml(renderCreatePage());
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    await showCreateBlock();
+
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.doughnut);
+    const selectTypeButton1 = document.querySelector('.type-doughnut') as HTMLElement;
+    showActiveClass(selectTypeButton1);
+  }
+};
+
+const listenersSelectTypeButtons = async (event: MouseEvent): Promise<void> => {
+  const selectTypeButton = (event.target as HTMLElement).closest('.imageContainer');
+  const imageContainer = document.querySelector('#imageContainer') as HTMLDivElement;
+  if (!selectTypeButton) {
+    return;
+  }
+  if (selectTypeButton.classList.contains('type-bar')) {
+    setType(TypeCharts.bar);
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.bar);
+    showActiveClass(selectTypeButton);
+    if (imageContainer) {
+      await renderLoaderOrChart();
+    } else {
+      await renderLoaderOrExamples();
+    }
+  }
+  if (selectTypeButton.classList.contains('type-horizontalBar')) {
+    setType(TypeCharts.hBar);
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.hBar);
+    showActiveClass(selectTypeButton);
+    if (imageContainer) {
+      await renderLoaderOrChart();
+    } else {
+      await renderLoaderOrExamples();
+    }
+  }
+  if (selectTypeButton.classList.contains('type-line')) {
+    setType(TypeCharts.line);
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.line);
+    showActiveClass(selectTypeButton);
+    if (imageContainer) {
+      await renderLoaderOrChart();
+    } else {
+      await renderLoaderOrExamples();
+    }
+  }
+  if (selectTypeButton.classList.contains('type-radar')) {
+    setType(TypeCharts.radar);
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.radar);
+    showActiveClass(selectTypeButton);
+    if (imageContainer) {
+      await renderLoaderOrChart();
+    } else {
+      await renderLoaderOrExamples();
+    }
+  }
+  if (selectTypeButton.classList.contains('type-pie')) {
+    setType(TypeCharts.pie);
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.pie);
+    showActiveClass(selectTypeButton);
+    if (imageContainer) {
+      await renderLoaderOrChart();
+    } else {
+      await renderLoaderOrExamples();
+    }
+  }
+  if (selectTypeButton.classList.contains('type-doughnut')) {
+    setType(TypeCharts.doughnut);
+    localStorage.setItem(LocalStorageKeys.type, TypeCharts.doughnut);
+    showActiveClass(selectTypeButton);
+    if (imageContainer) {
+      await renderLoaderOrChart();
+    } else {
+      await renderLoaderOrExamples();
+    }
+  }
+};
+
 export const listeners = (): void => {
-  const body = document.querySelector('#body') as HTMLElement;
+  document.addEventListener('click', async (event: MouseEvent): Promise<void> => {
 
-  body.addEventListener('click', async (event: MouseEvent) => {
-    const addRemoveButton = event.target as HTMLElement;
-    if (addRemoveButton.classList.contains('remove-row')) {
-      removeRow(addRemoveButton.dataset.id!);
-      const removeRows = document.querySelectorAll('.remove-row') as NodeListOf<HTMLElement>;
-      if (removeRows.length !== 1) {
-        renderMainParametersInner();
-        listenersMainInput();
-        await renderLoaderOrChart();
-      }
-    }
-    if (addRemoveButton.classList.contains('remove-column')) {
-      removeColumn(addRemoveButton.dataset.id!);
-      const removeColumns = document.querySelectorAll('.remove-column') as NodeListOf<HTMLElement>;
-      if (removeColumns.length !== 1) {
-        renderMainParametersInner();
-        listenersMainInput();
-        await renderLoaderOrChart();
-      }
-    }
-    if (addRemoveButton.classList.contains('add-row')) {
-      addRow();
-      renderMainParametersInner();
-      listenersMainInput();
-      await renderLoaderOrChart();
-    }
-    if (addRemoveButton.classList.contains('add-column')) {
-      addColumn();
-      renderMainParametersInner();
-      listenersMainInput();
-      await renderLoaderOrChart();
-    }
+    await listenersAddRemoveButtons(event);
+    await listenersDownloadButtons(event);
+    await listenersEditExampleButtons(event);
+    await listenersOnDifferentPageButtons(event);
 
-    const downloadButton = event.target as HTMLButtonElement;
-    if (downloadButton.classList.contains('download-PNG')) {
-      await saveCharts(Extensions.png);
-    }
-    if (downloadButton.classList.contains('download-JPG')) {
-      await saveCharts(Extensions.jpg);
-    }
-    if (downloadButton.classList.contains('reset')) {
-      resetChart();
-      renderMainParametersInner();
-      renderAdditionalParametersInner();
-      listenersMainInput();
-      listenersAdditionalInput();
-      await renderLoaderOrChart();
-    }
+    colorMod(event);
+    renderPopup(event);
+    closePopup(event);
+    chooseLanguage(event);
+    await changePage(event);
 
-    if (downloadButton.classList.contains('edit-example-1')) {
-      setState(exampleValueFirst);
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      renderHtml(renderCreatePage());
-      await showCreateBlock();
-    }
-    if (downloadButton.classList.contains('edit-example-2')) {
-      setState(exampleValueSecond);
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      renderHtml(renderCreatePage());
-      await showCreateBlock();
-    }
-    if (downloadButton.classList.contains('edit-example-3')) {
-      setState(exampleValueThird);
-      renderHtml(renderCreatePage());
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showCreateBlock();
-    }
-
-    if (downloadButton.classList.contains('create-chart-button')) {
-      renderHtml(renderCreatePage());
-
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showCreateBlock();
-    }
-    if (downloadButton.classList.contains('examples-chart-button')) {
-      renderHtml(examplesPage());
-
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
-      await showExamplesBlock();
-    }
-    if (downloadButton.classList.contains('info-chart-button')) {
-      renderHtml(infoPage());
-      await showExamplesBlockInInfo();
-
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
-    }
-
-
-    if (downloadButton.classList.contains('create-bar')) {
-      setType(TypeCharts.bar);
-      renderHtml(renderCreatePage());
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showCreateBlock();
-
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.bar);
-      const selectTypeButton1 = document.querySelector('.type-bar') as HTMLElement;
-      showActiveClass(selectTypeButton1);
-    }
-    if (downloadButton.classList.contains('create-horizontalBar')) {
-      setType(TypeCharts.hBar);
-      renderHtml(renderCreatePage());
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showCreateBlock();
-
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.hBar);
-      const selectTypeButton1 = document.querySelector('.type-horizontalBar') as HTMLElement;
-      showActiveClass(selectTypeButton1);
-    }
-    if (downloadButton.classList.contains('create-line')) {
-      setType(TypeCharts.line);
-      renderHtml(renderCreatePage());
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showCreateBlock();
-
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.line);
-      const selectTypeButton1 = document.querySelector('.type-line') as HTMLElement;
-      showActiveClass(selectTypeButton1);
-    }
-    if (downloadButton.classList.contains('create-radar')) {
-      setType(TypeCharts.radar);
-      renderHtml(renderCreatePage());
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showCreateBlock();
-
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.radar);
-      const selectTypeButton1 = document.querySelector('.type-radar') as HTMLElement;
-      showActiveClass(selectTypeButton1);
-    }
-    if (downloadButton.classList.contains('create-pie')) {
-      setType(TypeCharts.pie);
-      renderHtml(renderCreatePage());
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showCreateBlock();
-
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.pie);
-      const selectTypeButton1 = document.querySelector('.type-pie') as HTMLElement;
-      showActiveClass(selectTypeButton1);
-    }
-    if (downloadButton.classList.contains('create-doughnut')) {
-      setType(TypeCharts.doughnut);
-      renderHtml(renderCreatePage());
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
-      await showCreateBlock();
-
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.doughnut);
-      const selectTypeButton1 = document.querySelector('.type-doughnut') as HTMLElement;
-      showActiveClass(selectTypeButton1);
-    }
-
-    const selectTypeButton = (event.target as HTMLElement).closest('.imageContainer');
-    const imageContainer = document.querySelector('#imageContainer') as HTMLDivElement;
-    if (!selectTypeButton) {
-      return;
-    }
-    if (selectTypeButton.classList.contains('type-bar')) {
-      setType(TypeCharts.bar);
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.bar);
-      showActiveClass(selectTypeButton);
-      if (imageContainer) {
-        await renderLoaderOrChart();
-      } else {
-        await renderLoaderOrExamples();
-      }
-    }
-    if (selectTypeButton.classList.contains('type-horizontalBar')) {
-      setType(TypeCharts.hBar);
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.hBar);
-      showActiveClass(selectTypeButton);
-      if (imageContainer) {
-        await renderLoaderOrChart();
-      } else {
-        await renderLoaderOrExamples();
-      }
-    }
-    if (selectTypeButton.classList.contains('type-line')) {
-      setType(TypeCharts.line);
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.line);
-      showActiveClass(selectTypeButton);
-      if (imageContainer) {
-        await renderLoaderOrChart();
-      } else {
-        await renderLoaderOrExamples();
-      }
-    }
-    if (selectTypeButton.classList.contains('type-radar')) {
-      setType(TypeCharts.radar);
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.radar);
-      showActiveClass(selectTypeButton);
-      if (imageContainer) {
-        await renderLoaderOrChart();
-      } else {
-        await renderLoaderOrExamples();
-      }
-    }
-    if (selectTypeButton.classList.contains('type-pie')) {
-      setType(TypeCharts.pie);
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.pie);
-      showActiveClass(selectTypeButton);
-      if (imageContainer) {
-        await renderLoaderOrChart();
-      } else {
-        await renderLoaderOrExamples();
-      }
-    }
-    if (selectTypeButton.classList.contains('type-doughnut')) {
-      setType(TypeCharts.doughnut);
-      localStorage.setItem(LocalStorageKeys.type, TypeCharts.doughnut);
-      showActiveClass(selectTypeButton);
-      if (imageContainer) {
-        await renderLoaderOrChart();
-      } else {
-        await renderLoaderOrExamples();
-      }
-    }
+    await listenersSelectTypeButtons(event);
   });
 };
