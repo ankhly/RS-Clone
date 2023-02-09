@@ -1,12 +1,12 @@
-@import "./Max/global";
-@import "Max/components/typesChart/typesChart";
-@import "./Max/components/viewChart/viewChart";
-@import "./Max/components/viewChartExamples/viewChartExamples";
-@import "Max/components/parametersChartMain/parametersChartMain";
-@import "Max/components/parametersChartAdditional/parametersChartAdditional";
-@import "Max/components/parametersChartAll/parametersChartAll";
-@import "Max/components/loader/loader";
-@import "Max/components/tables/tables";
+@import "utils/global";
+@import "components/typesChart/typesChart";
+@import "./components/viewChart/viewChart";
+@import "./components/viewChartExamples/viewChartExamples";
+@import "components/parametersChartMain/parametersChartMain";
+@import "components/parametersChartAdditional/parametersChartAdditional";
+@import "components/parametersChartAll/parametersChartAll";
+@import "components/loader/loader";
+@import "components/tables/tables";
 
 $fontFamily: "";
 $fontSize: 16;
@@ -24,14 +24,14 @@ $blue: rgb(77, 122, 169);
 $green: rgb(119, 184, 180);
 
 @import "./utils/null.scss";
-@import "./layout/header.scss";
-@import "./layout/popupLanguage.scss";
-@import "./layout/create.scss";
-@import "./layout/info.scss";
-@import "./layout/main.scss";
-@import "./layout/gallery.scss";
-@import "./aside/aside.scss";
-@import "./layout/examples/examples";
+@import "./components/header/header.scss";
+@import "./components/popupLanguage/popupLanguage.scss";
+@import "./components/pageCreate/create.scss";
+@import "./components/pageInfo/info.scss";
+@import "./components/pageMain/main.scss";
+@import "./components/pageGallery/gallery.scss";
+@import "./components/aside/aside.scss";
+@import "./components/examples/examples";
 
 html {
   background-color: #ffffff;
@@ -95,7 +95,6 @@ html {
 .container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
-  padding: 0 15px;
 }
 
 .main-title {

@@ -1,4 +1,4 @@
-import { LangInt } from './type';
+import { LangInt } from './types';
 
 export const lang:LangInt = {
   'menu1':{
@@ -54,12 +54,12 @@ export const lang:LangInt = {
     'uk': 'Chart/diagram gallery',
   },
   'gallery-page__text': {
-    'ru': `Выберите необходимый вид графика/диаграммы, далее вы перейдёте в режим 
-      онлайн-конструктора, в котором сможете заполнить данные графика, и затем 
-      скачать или сохранить вашу диаграмму. Какую диаграмму вам необходимо построить? 
+    'ru': `Выберите необходимый вид графика/диаграммы, далее вы перейдёте в режим
+      онлайн-конструктора, в котором сможете заполнить данные графика, и затем
+      скачать или сохранить вашу диаграмму. Какую диаграмму вам необходимо построить?
       Линейную, круговую, столбчатую, полосовую, линии, области, …?`,
-    'uk': `Choose the desired type of chart/diagram, then you will get to the online 
-      constructor page, where you can fill in the chart data, and then download or save your 
+    'uk': `Choose the desired type of chart/diagram, then you will get to the online
+      constructor page, where you can fill in the chart data, and then download or save your
       chart. What diagram do you need to build? Linear, pie, columnar, bar, lines, areas, …?`,
   },
   'gallery-block-name1': {
@@ -111,20 +111,20 @@ export const lang:LangInt = {
     'uk': 'Chart/diagram gallery',
   },
   'main-page__text-p': {
-    'ru': `EasyCharts - сайт для построения графиков/диаграмм онлайн. Выберите вид диаграммы 
-      (линейная, круговая, столбчатая, полосовая, линии, области), заполните данные таблицы 
+    'ru': `EasyCharts - сайт для построения графиков/диаграмм онлайн. Выберите вид диаграммы
+      (линейная, круговая, столбчатая, полосовая, линии, области), заполните данные таблицы
       графика, и диаграмма готова! Диаграмму можно скачать в удобном вам формате или получить
-      ссылку на страницу вашего графика. Вы можете также использовать онлайн-конструктор графиков 
-      на нашем сайте, чтобы скачать график (png/jpeg/и др.) и вставить его в excel, word и другие 
-      программы на вашем компьютере. Построить диаграмму онлайн очень просто! Читайте подробнее о том, 
-      как создать диаграмму онлайн здесь. Также вы можете посмотреть примеры диаграмм, чтобы на их основе 
+      ссылку на страницу вашего графика. Вы можете также использовать онлайн-конструктор графиков
+      на нашем сайте, чтобы скачать график (png/jpeg/и др.) и вставить его в excel, word и другие
+      программы на вашем компьютере. Построить диаграмму онлайн очень просто! Читайте подробнее о том,
+      как создать диаграмму онлайн здесь. Также вы можете посмотреть примеры диаграмм, чтобы на их основе
       создать необходимый вам график.`,
-    'uk': `EasyCharts is a website for building charts/diagrams online. Select the chart type (linear, pie, columnar, bar, 
-      lines, areas), fill in the chart/diagram data table, and the chart is done! You can download the chart in a 
-      format that is convenient for you or get a link to the page of your chart/diagram. You can also use the online 
-      chart and diagram constructor on our website to download the chart (png / jpeg /, etc.) and paste it into 
-      Excel, Word, and other programs on your computer. It is very easy to create a chart/diagram online! Read more 
-      about how to create a diagram online here. Please see also the examples of the charts/diagrams to create the 
+    'uk': `EasyCharts is a website for building charts/diagrams online. Select the chart type (linear, pie, columnar, bar,
+      lines, areas), fill in the chart/diagram data table, and the chart is done! You can download the chart in a
+      format that is convenient for you or get a link to the page of your chart/diagram. You can also use the online
+      chart and diagram constructor on our website to download the chart (png / jpeg /, etc.) and paste it into
+      Excel, Word, and other programs on your computer. It is very easy to create a chart/diagram online! Read more
+      about how to create a diagram online here. Please see also the examples of the charts/diagrams to create the
       one you need.`,
   },
   'info-page__h1': {
@@ -132,14 +132,14 @@ export const lang:LangInt = {
     'uk': 'How to create a chart/diagram online on the website',
   },
   'info-page__text1': {
-    'ru': `Вы можете посмотреть примеры графиков/диаграмм и создать свой график из 
+    'ru': `Вы можете посмотреть примеры графиков/диаграмм и создать свой график из
       подходящего вам примера.`,
-    'uk': `You can find the chart/diagram examples and create your own one based on 
+    'uk': `You can find the chart/diagram examples and create your own one based on
       the example most suitable for you.`,
   },
   'info-page__text2': {
     'ru': 'Ниже описана полная инструкция, как создать диаграммуна нашем сайте. Это просто:',
-    'uk': `Below you may find the full instruction on how to create the diagram on our website. 
+    'uk': `Below you may find the full instruction on how to create the diagram on our website.
       It is very easy:`,
   },
   'section-view__h2': {
@@ -171,7 +171,7 @@ export const lang:LangInt = {
   'section-ready__h2': {
     'ru': '3. Готово!',
     'uk': '3. Done!',
-  },  
+  },
   'section-ready__text': {
     'ru': 'Теперь график можно скачать в удобном вам формате или поделиться ссылкой на вашу диаграмму.',
     'uk': 'Now you can download the chart/diagram in a convenient format or share a link to your chart.',

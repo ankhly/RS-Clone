@@ -1,22 +1,22 @@
 import './style.scss';
 
-import { changePage } from './layout/showPages';
-import { renderPopup, closePopup, chooseLanguage } from './feature/changeLanguage';
-import { colorMod, getColorMod } from './feature/colorMod';
+import { changePage } from './components/showPages';
+import { renderPopup, closePopup, chooseLanguage } from './logic/changeLanguage';
+import { colorMod, getColorMod } from './logic/colorMod';
 
-import { listeners } from './Max/logic/listeners';
-import { globalState } from './Max/services/store';
-import { ViewPage } from './Max/types';
-import {showCreateBlock, showExamplesBlock, showExamplesBlockInInfo} from './Max/logic/showPages';
-import { renderHtml } from './layout/mainRender';
-import { renderCreatePage } from './layout/create';
-import { galleryPage } from './layout/gallery';
-import { examplesPage } from './layout/examples/examples';
-import { infoPage } from './layout/info';
-import { mainPage } from './layout/main';
-import { animationLogic } from './feature/animation';
-import { converterLogic } from './aside/converter';
-import { weatherLogic } from './aside/wether';
+import { listeners } from './logic/listeners';
+import { globalState } from './store/store';
+import { ViewPage } from './utils/types';
+import { showCreateBlock, showExamplesBlock, showExamplesBlockInInfo } from './logic/showPages';
+import { renderHtml } from './components/mainRender';
+import { renderCreatePage } from './components/pageCreate/create';
+import { galleryPage } from './components/pageGallery/gallery';
+import { examplesPage } from './components/examples/examples';
+import { infoPage } from './components/pageInfo/info';
+import { mainPage } from './components/pageMain/main';
+import { animationLogic } from './logic/animation';
+import { converterLogic } from './services/API-converter';
+import { weatherLogic } from './services/API-wether';
 
 if (globalState.view === ViewPage.main) {
   renderHtml(mainPage());
