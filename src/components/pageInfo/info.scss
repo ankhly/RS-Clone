@@ -60,9 +60,16 @@
     margin-bottom: 40px;
     .info-examples {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      // justify-content: space-between;
+      justify-content: center;
+      gap: 30px;
+      padding-top: 20px;
       .imageContainerBlock {
-        width: 33%;
+        // width: 33%;
+        width: 45%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0;
         img {
           width: 100%;
         }

@@ -18,8 +18,8 @@ $white: white;
 %mini-title {
   font-size: 1.3rem;
   font-weight: 400;
-  margin-bottom: .6rem;
-  color: $black;
+  margin-bottom: 1rem;
+  // color: $black;
 }
 
 %button {
@@ -76,6 +76,7 @@ html {
     .main-page__start,
     .main-page__gallery,
     .aside,
+    // .typeName,
     a {
       background-color: #101010;
       color: #ffffff;
@@ -120,6 +121,7 @@ html {
 .container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .main-title {

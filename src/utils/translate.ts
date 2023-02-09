@@ -62,27 +62,27 @@ export const lang:LangInt = {
       constructor page, where you can fill in the chart data, and then download or save your
       chart. What diagram do you need to build? Linear, pie, columnar, bar, lines, areas, …?`,
   },
-  'gallery-block-name1': {
+  'name1': {
     'ru': 'Колонны',
     'uk': 'Columns',
   },
-  'gallery-block-name2': {
+  'name2': {
     'ru': 'Пончик',
     'uk': 'Donut',
   },
-  'gallery-block-name3': {
+  'name3': {
     'ru': 'Полосы',
     'uk': 'Bars',
   },
-  'gallery-block-name4': {
+  'name4': {
     'ru': 'Линии',
     'uk': 'lines',
   },
-  'gallery-block-name5': {
+  'name5': {
     'ru': 'Пирог',
     'uk': 'Pie',
   },
-  'gallery-block-name6': {
+  'name6': {
     'ru': 'Радар',
     'uk': 'Radar',
   },
@@ -216,5 +216,32 @@ export const lang:LangInt = {
     'ru': 'Польский злотый',
     'uk': 'Polish zloty',
   },
-
+  'view': {
+    'ru': 'Вид',
+    'uk': 'View',
+  },
+  'schedule': {
+    'ru': 'График',
+    'uk': 'Schedule',
+  },
+  // 'typeName2': {
+  //   'ru': '',
+  //   'uk': '',
+  // },
+  // 'typeName3': {
+  //   'ru': '',
+  //   'uk': '',
+  // },
+  // 'typeName4': {
+  //   'ru': '',
+  //   'uk': '',
+  // },
+  // 'typeName5': {
+  //   'ru': '',
+  //   'uk': '',
+  // },
+  // 'typeName6': {
+  //   'ru': '',
+  //   'uk': '',
+  // },
 };
