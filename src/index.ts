@@ -23,17 +23,21 @@ if (globalState.view === ViewPage.main) {
 }
 if (globalState.view === ViewPage.create) {
   renderHtml(renderCreatePage());
+  animationLogic();
   await showCreateBlock();
 }
 if (globalState.view === ViewPage.gallery) {
   renderHtml(galleryPage());
+  animationLogic();
 }
 if (globalState.view === ViewPage.examples) {
   renderHtml(examplesPage());
+  animationLogic();
   await showExamplesBlock();
 }
 if (globalState.view === ViewPage.info) {
   renderHtml(infoPage());
+  animationLogic();
   await showExamplesBlockInInfo();
 }
 

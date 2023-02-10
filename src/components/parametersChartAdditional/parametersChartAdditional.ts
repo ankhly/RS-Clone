@@ -24,7 +24,7 @@ export const renderAdditionalParametersInner = (): void => {
       <input type="text" id="edit-height" value="${chartParametersState.height}"/>
     </div>
     <div class="params">
-       <label class=labelSettingsForm for="color">Цвет фона:</label>
+      <label class=labelSettingsForm for="color">Цвет фона:</label>
       <input type="color" id="edit-color"/>
     </div>
   `;

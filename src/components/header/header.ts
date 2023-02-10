@@ -25,10 +25,10 @@ export const renderHeader = (): string => {
             <div class="header__menu menu">
               <nav class="menu__body">
                 <ul class="menu__list">
-                  <li class="menu__item"><button class="menu__link menu1">Создать</button></li>
-                  <li class="menu__item"><button class="menu__link menu2">Галерея</button></li>
-                  <li class="menu__item"><button class="menu__link menu3">Примеры</button></li>
-                  <li class="menu__item"><button class="menu__link menu4">Инфо</button></li>
+                  <li class="menu__item"><button class="menu__link menu1"></button></li>
+                  <li class="menu__item"><button class="menu__link menu2"></button></li>
+                  <li class="menu__item"><button class="menu__link menu3"></button></li>
+                  <li class="menu__item"><button class="menu__link menu4"></button></li>
                 </ul>
               </nav>
             </div>

@@ -8,7 +8,7 @@ import { renderTableExample1, renderTableExample2, renderTableExample3 } from '.
 export const renderViewExamples = (): string => {
   return `
     <div class="chartResult">
-      <h3 class="miniTitle">График</h3>
+      <h3 class="miniTitle schedule">График</h3>
       <div class="imageContainer" id="imageContainer-1"></div>
       <button class="link edit-example-1">
         Отредактировать график:
