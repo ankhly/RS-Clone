@@ -1,5 +1,6 @@
 export const examplesPage = () => `
   <div class="page__example example-page">
+  <div class="main-page__animation" style="display: none"></div>
     <h1 class="example-page__h1 main-title">Примеры графиков/диаграмм</h1>
     <p class="example-page__p gallery-page__text">
       На данной странице вы можете найти подходящие вам примеры графиков/диаграмм, чтобы

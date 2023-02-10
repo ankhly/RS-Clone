@@ -1,5 +1,6 @@
 export const renderCreatePage = (): string => `
   <div class="page__create create-page">
+  <div class="main-page__animation" style="display: none"></div>
     <h1 class="create-page__title main-title">Создать график/диаграмму онлайн</h1>
     <div class="create-page__body">
       <div id="main-logic-container" class="create-page__content"></div>

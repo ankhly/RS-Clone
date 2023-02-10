@@ -53,3 +53,4 @@ export const animationLogic = () => {
     showAnimation();
   }, 1500);
 };
+// animationLogic();

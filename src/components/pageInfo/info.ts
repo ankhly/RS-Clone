@@ -8,6 +8,7 @@ import doughnut from '../../../assets/doughnut.png';
 export const infoPage = (): string => `
   <div class="page__body">
     <div class="info-page">
+    <div class="main-page__animation" style="display: none"></div>
       <div class="info-page__head">
         <div class="info-page__icon"></div>
       </div>

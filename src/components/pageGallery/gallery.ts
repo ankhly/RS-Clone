@@ -7,6 +7,7 @@ import doughnut from '../../../assets/doughnut.png';
 
 export const galleryBlock = (): string => `
   <div class="gallery-page__gallery-blocks">
+  <div class="main-page__animation" style="display: none"></div>
     <div class="gallery-block__link">
       <div class="gallery-block gallery-block-main create-bar">
         <img class="gallery-block-img create-bar" src=${bar} alt="bar">
