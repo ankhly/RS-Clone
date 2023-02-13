@@ -1,5 +1,6 @@
 .optionsChartContainer {
-  max-width: 100%;
+  width: 100%;
+  flex: 1 0 20%;
   .miniTitle {
     @extend %mini-title;
   }

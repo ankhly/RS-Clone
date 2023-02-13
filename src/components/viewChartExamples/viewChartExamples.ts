@@ -40,7 +40,6 @@ export const renderViewExamplesInInfo = (): string => {
       <div class="imageContainer" id="imageContainer-1"></div>
       ${renderTableExample1()}
       <button class="link edit-example-1">
-        Отредактировать график:
         <span class="edit-example-1">
           ${exampleValueFirst.options.title.text.split(',').shift()}
         </span>
@@ -50,7 +49,6 @@ export const renderViewExamplesInInfo = (): string => {
       <div class="imageContainer" id="imageContainer-2"></div>
       ${renderTableExample2()}
       <button class="link edit-example-2">
-        Отредактировать график:
         <span class="edit-example-2">
           ${exampleValueSecond.options.title.text.split(',').shift()}
         </span>
@@ -60,7 +58,6 @@ export const renderViewExamplesInInfo = (): string => {
       <div class="imageContainer" id="imageContainer-3"></div>
       ${renderTableExample3()}
       <button class="link edit-example-3">
-        Отредактировать график:
         <span class="edit-example-3">
           ${exampleValueThird.options.title.text.split(',').shift()}
         </span>

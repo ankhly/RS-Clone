@@ -30,6 +30,7 @@ import { Extensions, LocalStorageKeys, TypeCharts, ViewPage } from '../utils/typ
 import { exampleValueFirst } from '../store/exampleValueFirst';
 import { exampleValueSecond } from '../store/exampleValueSecond';
 import { exampleValueThird } from '../store/exampleValueThird';
+import { getLanguage } from './changeLanguage';
 
 export const listenersMainInput = () => {
   const editLabelsRow = document.querySelectorAll('.edit-labels-row') as NodeListOf<HTMLInputElement>;
@@ -99,6 +100,7 @@ const listenersAddRemoveButtons = async (event: MouseEvent): Promise<void> => {
       renderMainParametersInner();
       listenersMainInput();
       await renderLoaderOrChart();
+      getLanguage();
     }
   }
   if (addRemoveButton.classList.contains('remove-column')) {
@@ -108,6 +110,7 @@ const listenersAddRemoveButtons = async (event: MouseEvent): Promise<void> => {
       renderMainParametersInner();
       listenersMainInput();
       await renderLoaderOrChart();
+      getLanguage();
     }
   }
   if (addRemoveButton.classList.contains('add-row')) {
@@ -115,12 +118,14 @@ const listenersAddRemoveButtons = async (event: MouseEvent): Promise<void> => {
     renderMainParametersInner();
     listenersMainInput();
     await renderLoaderOrChart();
+    getLanguage();
   }
   if (addRemoveButton.classList.contains('add-column')) {
     addColumn();
     renderMainParametersInner();
     listenersMainInput();
     await renderLoaderOrChart();
+    getLanguage();
   }
 };
 
@@ -139,6 +144,7 @@ const listenersDownloadButtons = async (event: MouseEvent): Promise<void> => {
     listenersMainInput();
     listenersAdditionalInput();
     await renderLoaderOrChart();
+    getLanguage();
   }
 };
 

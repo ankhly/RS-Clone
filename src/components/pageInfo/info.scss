@@ -1,5 +1,4 @@
 .info-page {
-  margin: 0 auto;
   text-align: center;
   background: #fafafa;
   padding: 40px 0;
@@ -7,7 +6,7 @@
   &__head {
     position: relative;
     height: 100px;
-    margin-bottom: 30px;
+    @include adaptiv-value("margin-bottom", 30, 15, 1);
   }
 
   &__icon {
@@ -19,7 +18,7 @@
     content: "";
     position: absolute;
     top: 0;
-    left: 46%;
+    left: calc(50% - 50px);
     background-image: url("../assets/doughnut.png");
     width: 100px;
     height: 100px;
@@ -31,7 +30,7 @@
     content: "";
     position: absolute;
     top: 28%;
-    left: 48%;
+    left: calc(50% - 22.5px);
     background-image: url("../assets/info2.svg");
     width: 45px;
     height: 45px;
@@ -61,18 +60,19 @@
     .info-examples {
       display: flex;
       flex-wrap: wrap;
-      // justify-content: space-between;
       justify-content: center;
       gap: 30px;
       padding-top: 20px;
       .imageContainerBlock {
-        // width: 33%;
-        width: 45%;
+        padding: 15px;
         border-radius: 10px;
         box-shadow: 0 0 10px 0;
         img {
           width: 100%;
         }
+      }
+      .imageContainer {
+        margin: 0px 0px 10px 0px;
       }
     }
   }
@@ -81,7 +81,6 @@
   &__h2 {
     padding-bottom: 15px;
     font-size: 27px;
-    //border-bottom: 1px solid #eee;
   }
   &__text-link {
     color: $green;
@@ -106,7 +105,7 @@
     box-shadow: 0 -1px 2px -1px rgb(0 0 0 / 30%), 0 1px 2px -1px rgb(0 0 0 / 40%);
     border-radius: 5px;
     border: 1px solid transparent;
-    transition: all .1s linear;
+    transition: all 0.1s linear;
     &:hover {
       box-shadow: 0 0 10px 0 $blue;
       border: 1px solid $blue;

@@ -1,4 +1,4 @@
-$fontFamily: 'Inter', sans-serif;
+$fontFamily: "Inter", sans-serif;
 $fontSize: 16;
 
 $minWidth: 320px;
@@ -15,23 +15,36 @@ $green: rgb(119, 184, 180);
 $black: black;
 $white: white;
 
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320})
+      );
+    }
+  } @else {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+  }
+}
+
 %mini-title {
   font-size: 1.3rem;
   font-weight: 400;
   margin-bottom: 1rem;
-  // color: $black;
 }
 
 %button {
   display: block;
   width: 153px;
   padding: 0.5rem;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   border-radius: 10px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   background-color: $green;
   color: $white;
-  transition: all .25s linear;
+  transition: all 0.25s linear;
   cursor: pointer;
   border: none;
   &:hover {
@@ -70,7 +83,6 @@ html {
     .settings-actions,
     .btn-add,
     .popup__content,
-    .menu__link,
     .gallery-block,
     .info-page,
     .info-page__section,
@@ -95,8 +107,22 @@ html {
         background-color: hsla(0, 0%, 100%);
       }
     }
+    .menu__link,
+    .height,
+    .width,
+    .color {
+      color: #ffffff;
+    }
+    .menu__body {
+      background-color: hsla(0, 0%, 0%, 0);
+    }
+    .icon-menu {
+      span {
+        background-color: hsla(0, 0%, 100%);
+      }
+    }
     .aside {
-      background-image: url('../assets/gif-unscreen.gif');
+      background-image: url("../assets/gif-unscreen.gif");
       .city,
       .currency-converter__h3 {
         color: #ffffff;
@@ -126,6 +152,9 @@ html {
 }
 
 .main-title {
-  font-size: 31px;
+  @include adaptiv-value("font-size", 31, 25, 1);
   margin: 0 0 15px 0;
+  @media (max-width: $md4+px) {
+    text-align: center;
+  }
 }

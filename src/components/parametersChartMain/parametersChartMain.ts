@@ -52,7 +52,7 @@ const renderColumnsY = (): string => {
 
 export const renderMainParameters = (): string => `
   <div class="chartSettings">
-    <p class="miniTitle">Таблица данных</p>
+    <p class="miniTitle tableData"></p>
     <div class="dataForm"></div>
   </div>
 `;
@@ -68,13 +68,13 @@ export const renderMainParametersInner = (): void => {
         value="${chartParametersState.options.title.text}"
       />
       ${renderRowsX()}
-      <button class="addButton add-row"> Добавить строку</button>
+      <button class="addButton add-row row"></button>
     </div>
     <div class="formContainer">
       <div class="flexContainer">
         ${renderColumnsY()}
       </div>
-      <button class="addButton add-column">Добавить столбец</button>
+      <button class="addButton add-column col"></button>
     </div>
   `;
 };

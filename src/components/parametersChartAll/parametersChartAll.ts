@@ -3,7 +3,7 @@ import { renderAdditionalParameters } from '../parametersChartAdditional/paramet
 
 export const renderAllParameters = (): string => `
   <div class="optionsChartContainer">
-    <h3 class="miniTitle">Настройки графика</h3>
+    <h3 class="miniTitle settingsChart"></h3>
     ${renderMainParameters()}
     ${renderAdditionalParameters()}
   </div>

@@ -1,10 +1,19 @@
 .aside {
-  width: 17%;
+  width: 22%;
   background-color: #fafafa;
   padding: 5px;
-  background-image: url('../assets/gif.gif');
+  background-image: url("../assets/gif.gif");
   background-size: cover;
   border-radius: 5px;
+  @media (max-width: $md2+px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  @media (max-width: $md3+px) {
+    flex-direction: column;
+  }
 }
 .weather {
   display: flex;
@@ -16,6 +25,9 @@
   padding: 5px;
   text-align: center;
   margin-bottom: 20px;
+  @media (max-width: $md2+px) {
+    flex: 0 0 30%;
+  }
 }
 
 .weather-error {
@@ -54,6 +66,15 @@
 }
 
 .currency-converter {
+  &__inputs {
+    @media (max-width: $md2+px) {
+      display: flex;
+      justify-content: center;
+    }
+    @media (max-width: $md4+px) {
+      flex-wrap: wrap;
+    }
+  }
   text-align: center;
 
   &__h3 {
@@ -78,6 +99,9 @@
     text-align: end;
     font-size: 12px;
     padding-right: 3px;
+    @media (max-width: $md2+px) {
+      display: none;
+    }
   }
 }
 
@@ -93,4 +117,8 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-
+.windblock,
+.humidityblock {
+  display: flex;
+  gap: 5px;
+}

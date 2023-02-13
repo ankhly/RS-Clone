@@ -4,7 +4,7 @@
   &__body {
     display: flex;
     align-items: center;
-    gap: 30px;
+    @include adaptiv-value("gap", 30, 10, 1);
   }
 
   // .header__logo
@@ -12,9 +12,11 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 11;
     .logoText {
       display: flex;
-      font-size: 2.5rem;
+      @include adaptiv-value("font-size", 35, 25, 1);
       font-weight: 700;
       .letterRed {
         color: $red;
@@ -28,10 +30,13 @@
       .letterGreen {
         color: $green;
       }
+      @media (max-width: $md4+px) {
+        display: none;
+      }
     }
     img {
-      width: 100px;
-      height: 80px;
+      @include adaptiv-value("width", 100, 60, 1);
+      @include adaptiv-value("height", 80, 50, 1);
       object-fit: contain;
     }
   }
@@ -42,10 +47,31 @@
 }
 
 .menu {
+  &__body {
+    @media (max-width: $md3+px) {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
+      padding: 80px 0px 20px 15px;
+      top: 0;
+      left: -100%;
+      overflow: auto;
+      transition: all 0.3s ease 0s;
+      z-index: 10;
+      background-color: hsla(0, 0%, 100%, 0.453);
+      backdrop-filter: blur(15px);
+      &._active {
+        left: 0;
+      }
+    }
+  }
   // .menu__list
   &__list {
     display: flex;
-    gap: 20px;
+    @include adaptiv-value("gap", 20, 10, 1);
+    @media (max-width: $md3+px) {
+      flex-direction: column;
+    }
   }
   // .menu__link
   &__link {
@@ -61,17 +87,23 @@
         color: $yellow;
       }
     }
+    @media (max-width: $md3+px) {
+      font-size: 25px;
+    }
   }
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 25px;
+  @include adaptiv-value("gap", 25, 10, 1);
+
   &__bg {
     width: 30px;
     height: 30px;
     transition: all 0.3s;
+    position: relative;
+    z-index: 11;
     &_black {
       background: url("../assets/moon.svg") no-repeat center / cover;
     }
@@ -87,6 +119,8 @@
 }
 .actions__language {
   transition: all 0.3s;
+  position: relative;
+  z-index: 11;
   &.ru {
     background: url("../assets/RU.png");
     background-size: contain;
@@ -102,6 +136,48 @@
   @media (any-hover: hover) {
     &:hover {
       transform: scale(1.2);
+    }
+  }
+}
+
+.icon-menu {
+  display: none;
+  @media (max-width: $md3+px) {
+    display: block;
+    position: relative;
+    width: 23px;
+    height: 16px;
+    cursor: pointer;
+    z-index: 13;
+    span {
+      transition: all 0.3s ease 0s;
+      top: calc(50% - 1px);
+      left: 0px;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: rgb(0, 0, 0);
+      &:first-child {
+        top: 0px;
+      }
+      &:last-child {
+        top: auto;
+        bottom: 0px;
+      }
+    }
+    &._active {
+      span {
+        background-color: #000000;
+        transform: scale(0);
+        &:first-child {
+          transform: rotate(-45deg);
+          top: calc(50% - 1px);
+        }
+        &:last-child {
+          transform: rotate(45deg);
+          bottom: calc(50% - 1px);
+        }
+      }
     }
   }
 }

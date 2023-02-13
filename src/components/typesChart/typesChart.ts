@@ -8,10 +8,10 @@ import doughnut from '../../../assets/doughnut.png';
 export const renderTypesChart = (): string => `
   <div class="chartSelectionForm">
     <h3 class="miniTitle view">Вид</h3>
-    <div class="chartsTypeContainer">
+    <div class="chartsTypeContainer chartsTypeContainer">
       <div class="imageContainer type-bar image-container-active">
         <img src=${bar} alt="Колонны" />
-        <p class="typeName name1">Колонны</p>
+        <p class="typeName name1"></p>
       </div>
       <div class="imageContainer type-horizontalBar">
         <img src=${horizontalBar} alt="Полосы" />

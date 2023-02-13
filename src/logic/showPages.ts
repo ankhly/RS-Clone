@@ -10,6 +10,7 @@ import {
   renderViewExamples,
   renderViewExamplesInInfo,
 } from '../components/viewChartExamples/viewChartExamples';
+import { getLanguage } from './changeLanguage';
 
 export const showCreateBlock = async () => {
   const mainLogicContainer = document.querySelector('#main-logic-container') as HTMLDivElement;
@@ -27,6 +28,7 @@ export const showCreateBlock = async () => {
   listenersAdditionalInput();
 
   showActiveClassAfterRestart();
+  getLanguage();
 };
 
 export const showExamplesBlock = async () => {
@@ -40,6 +42,7 @@ export const showExamplesBlock = async () => {
   await renderLoaderOrExamples();
 
   showActiveClassAfterRestart();
+  getLanguage();
 };
 
 export const showExamplesBlockInInfo = async () => {

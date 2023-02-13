@@ -9,6 +9,7 @@ import { mainPage } from './pageMain/main';
 import { animationLogic } from '../logic/animation';
 import { converterLogic } from '../services/API-converter';
 import { weatherLogic } from '../services/API-wether';
+import { menuClose, burgerMenu } from './header/header';
 
 export const changePage = async (e: MouseEvent): Promise<void> => {
   const target = e.target as HTMLElement;
@@ -18,7 +19,8 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
     converterLogic();
     await weatherLogic();
     await showExamplesBlock();
-
+    menuClose();
+    burgerMenu();
     localStorage.setItem(LocalStorageKeys.view, ViewPage.main);
   }
 
@@ -27,25 +29,29 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
     const menuLink = menuLinks[i] as HTMLElement;
     if (e.target === menuLink && menuLink.classList.contains('menu1')) {
       renderHtml(renderCreatePage());
-
+      menuClose();
+      burgerMenu();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
       await showCreateBlock();
     }
     if (e.target === menuLink && menuLink.classList.contains('menu2')) {
       renderHtml(galleryPage());
-
+      menuClose();
+      burgerMenu();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.gallery);
     }
     if (e.target === menuLink && menuLink.classList.contains('menu3')) {
       renderHtml(examplesPage());
-
+      menuClose();
+      burgerMenu();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
       await showExamplesBlock();
     }
     if (e.target === menuLink && menuLink.classList.contains('menu4')) {
       renderHtml(infoPage());
       await showExamplesBlockInInfo();
-
+      menuClose();
+      burgerMenu();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
     }
   }

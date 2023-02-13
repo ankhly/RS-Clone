@@ -10,7 +10,7 @@ export const weatherLogic = async (): Promise<void> => {
   const baseURL: string = 'https://api.openweathermap.org';
   const getWeather = async (): Promise<void> => {
     const url =
-      `${baseURL}/data/2.5/weather?q=${city.value}&lang=en&appid=ecea04712645dfb0bce29087590fddfd&units=metric`;
+      `${baseURL}/data/2.5/weather?q=${city.value}&lang=ru&appid=ecea04712645dfb0bce29087590fddfd&units=metric`;
     const res = await fetch(url);
     const data = await res.json();
     try {
@@ -18,11 +18,11 @@ export const weatherLogic = async (): Promise<void> => {
       weatherIcon.classList.add(`owf-${data.weather[0].id}`);
       temperature.textContent = `${Math.round(data.main.temp)}°C`;
       weatherDescription.textContent = data.weather[0].description;
-      wind.textContent = `скорость ветра: ${Math.round(data.wind.speed)} м/с`;
-      humidity.textContent = `влажность: ${Math.round(data.main.humidity)}%`;
+      wind.textContent = `${Math.round(data.wind.speed)} m/s`;
+      humidity.textContent = `${Math.round(data.main.humidity)}%`;
       weatherError.textContent = weatherError.value;
     } catch {
-      weatherError.textContent = 'Ошибка! Введите город';
+      weatherError.textContent = 'Error! Enter city';
       temperature.textContent = temperature.value;
       weatherDescription.textContent = weatherDescription.value;
       wind.textContent = wind.value;
