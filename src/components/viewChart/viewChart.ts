@@ -5,7 +5,7 @@ import { renderLoader } from '../loader/loader';
 export const renderViewChart = (): string => {
   return  `
     <div class="chartResult">
-      <h3 class="miniTitle">График</h3>
+      <h3 class="miniTitle schedule"></h3>
       <div class="imageContainer" id="imageContainer"></div>
     </div>
   `;

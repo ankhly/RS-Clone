@@ -86,6 +86,30 @@ export const lang:LangInt = {
     'ru': 'Радар',
     'uk': 'Radar',
   },
+  'name-diagram1': {
+    'ru': 'Колонны',
+    'uk': 'Columns',
+  },
+  'name-diagram2': {
+    'ru': 'Пончик',
+    'uk': 'Donut',
+  },
+  'name-diagram3': {
+    'ru': 'Полосы',
+    'uk': 'Bars',
+  },
+  'name-diagram4': {
+    'ru': 'Линии',
+    'uk': 'lines',
+  },
+  'name-diagram5': {
+    'ru': 'Пирог',
+    'uk': 'Pie',
+  },
+  'name-diagram6': {
+    'ru': 'Радар',
+    'uk': 'Radar',
+  },
   'main-page__h2': {
     'ru': 'Графики/диаграммы онлайн',
     'uk': 'Online charts/diagrams',
@@ -176,14 +200,14 @@ export const lang:LangInt = {
     'ru': 'Теперь график можно <b>скачать</b> в удобном вам формате или поделиться ссылкой на вашу диаграмму.',
     'uk': 'Now you can <b>download</b> the chart/diagram in a convenient format or share a link to your chart.',
   },
-  // 'wind': {
-  //   'ru': 'скорость ветра: ',
-  //   'uk': 'wind speed: ',
-  // },
-  // 'humidity': {
-  //   'ru': 'влажность: ',
-  //   'uk': 'humidity: ',
-  // },
+  'windspead': {
+    'ru': 'Cкорость ветра: ',
+    'uk': 'Wind speed: ',
+  },
+  'humidityproc': {
+    'ru': 'Влажность: ',
+    'uk': 'Humidity: ',
+  },
   'currency-converter__h3': {
     'ru': 'Конвертер валют',
     'uk': 'Currency Converter',
@@ -234,11 +258,72 @@ export const lang:LangInt = {
     'uk': 'Chart/diagram examples',
   },
   'view': {
-    'ru': 'Вид',
-    'uk': 'View',
+    'ru': 'Вид графика',
+    'uk': 'Chart type',
   },
   'schedule': {
     'ru': 'График',
-    'uk': 'Schedule',
+    'uk': 'Chart',
+  },
+  'settingsChart':{
+    'ru': 'Настройки графика',
+    'uk': 'Chart settings',
+  },
+  'tableData':{
+    'ru': 'Таблица данных',
+    'uk': 'Data table',
+  },
+  'row':{
+    'ru': 'Добавить строку',
+    'uk': '+ Row',
+  },
+  'col':{
+    'ru': 'Добавить столбец',
+    'uk': '+ Column',
+  },
+  'optionChart':{
+    'ru': 'Параметры графика',
+    'uk': 'Graph options',
+  },
+  'width':{
+    'ru': 'Ширина:',
+    'uk': 'Width:',
+  },
+  'height':{
+    'ru': 'Высота:',
+    'uk': 'Height:',
+  },
+  'color':{
+    'ru': 'Цвет фона:',
+    'uk': 'Background color:',
+  },
+  'reset':{
+    'ru': 'Сбросить график',
+    'uk': 'Reset Graph',
+  },
+  'download-PNG':{
+    'ru': 'Скачать график PNG',
+    'uk': 'Download chart PNG',
+  },
+  'download-JPG':{
+    'ru': 'Скачать график JPG',
+    'uk': 'Download chart JPG',
+  },
+  'edit-example-1':{
+    'ru': 'Отредактировать график: Численность населения в Беларуси',
+    'uk': 'Edit graph: Population in Belarus',
+  },
+  'exp1':{
+    'ru': 'Отредактировать график: Численность населения в Беларуси',
+    'uk': 'Edit graph: Population in Belarus',
+  },
+  'edit-example-2':{
+    'ru': 'Отредактировать график: Средняя заработная плата в Беларуси',
+    'uk': 'Edit graph: Average salary in Belarus',
+  },
+  'edit-example-3':{
+    'ru': 'Отредактировать график: Среднегодовая инфляция в Беларуси',
+    'uk': 'Edit graph: Average annual inflation in Belarus',
   },
 };
+

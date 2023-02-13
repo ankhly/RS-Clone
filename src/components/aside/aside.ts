@@ -7,8 +7,14 @@ const weather = (): string => `
       <span class="temperature"></span>
       <span class="weather-description"></span>
     </div>
-    <div class="wind"></div>
-    <div class="humidity"></div>
+    <div class="windblock">
+       <div class="windspead"></div>
+       <div class="wind"></div>
+    </div>
+    <div class="humidityblock">
+       <div class="humidityproc"></div>
+       <div class="humidity"></div>
+    </div>
   </div>
 `;
 

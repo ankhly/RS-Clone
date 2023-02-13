@@ -2,11 +2,11 @@ import { chartParametersState } from '../../store/store';
 
 export const renderAdditionalParameters = (): string => `
   <div class="chartViewAndSave">
-    <p class="miniTitle">Параметры графика</p>
+    <p class="miniTitle optionChart"></p>
     <div class="params-container"></div>
     <div class="save-container">
-      <button class="save download-PNG">Скачать график PNG</button>
-      <button class="save download-JPG">Скачать график JPG</button>
+      <button class="save download-PNG"></button>
+      <button class="save download-JPG"></button>
     </div>
     <button class="share">Скопировать ссылку на график</button>
     <button class="reset">Сбросить график</button>
@@ -17,15 +17,15 @@ export const renderAdditionalParametersInner = (): void => {
   const paramsContainer = document.querySelector('.params-container') as HTMLDivElement;
   paramsContainer.innerHTML = `
     <div class="params">
-      <label class="labelSettingsForm" for="width">Ширина:</label>
+      <label class="labelSettingsForm width" for="width"></label>
       <input type="text" id="edit-width" value="${chartParametersState.width}"/>
     </div>
     <div class="params">
-      <label class=labelSettingsForm for="height">Высота:</label>
+      <label class="labelSettingsForm height" for="height"></label>
       <input type="text" id="edit-height" value="${chartParametersState.height}"/>
     </div>
     <div class="params">
-      <label class=labelSettingsForm for="color">Цвет фона:</label>
+      <label class="labelSettingsForm color" for="color"></label>
       <input type="color" id="edit-color"/>
     </div>
   `;

@@ -37,6 +37,11 @@ export const renderHeader = (): string => {
             <button class="actions__bg actions__bg_black"></button>
             <button class="actions__language ru"></button>
           </div>
+          <button type="button" class="menu__icon icon-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </header>`;
@@ -45,3 +50,23 @@ export const renderHeader = (): string => {
 
   return header;
 };
+
+
+export const menuClose = () =>{
+  const iconMenu = document.querySelector('.icon-menu') as HTMLElement;
+  const menuBody = document.querySelector('.menu__body') as HTMLElement;
+  iconMenu.classList.remove('_active');
+  menuBody.classList.remove('_active');
+};
+
+export const burgerMenu = ()=>{
+  const iconMenu = document.querySelector('.menu__icon') as HTMLElement;
+  const menuBody = document.querySelector('.menu__body') as HTMLElement;
+  if (iconMenu) {
+    iconMenu.addEventListener('click', function () {
+      iconMenu.classList.toggle('_active');
+      menuBody.classList.toggle('_active');
+    });
+  }
+};
+
