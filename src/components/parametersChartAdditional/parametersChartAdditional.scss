@@ -41,7 +41,8 @@
       margin-right: 0.3rem;
     }
   }
-  .reset {
+  .reset,
+  .share {
     @extend  %button;
     display: block;
     width: 100%;

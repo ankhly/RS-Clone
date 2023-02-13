@@ -16,7 +16,7 @@ import {
 import { renderLoaderOrChart } from '../components/viewChart/viewChart';
 import { renderMainParametersInner } from '../components/parametersChartMain/parametersChartMain';
 import { renderAdditionalParametersInner } from '../components/parametersChartAdditional/parametersChartAdditional';
-import { saveCharts, showActiveClass } from '../utils/helpers';
+import { saveCharts, shareCharts, showActiveClass } from '../utils/helpers';
 import { renderLoaderOrExamples } from '../components/viewChartExamples/viewChartExamples';
 import { showCreateBlock, showExamplesBlock, showExamplesBlockInInfo } from './showPages';
 import { renderHtml } from '../components/mainRender';
@@ -30,6 +30,7 @@ import { Extensions, LocalStorageKeys, TypeCharts, ViewPage } from '../utils/typ
 import { exampleValueFirst } from '../store/exampleValueFirst';
 import { exampleValueSecond } from '../store/exampleValueSecond';
 import { exampleValueThird } from '../store/exampleValueThird';
+import { historyResolver } from './routing';
 
 export const listenersMainInput = () => {
   const editLabelsRow = document.querySelectorAll('.edit-labels-row') as NodeListOf<HTMLInputElement>;
@@ -132,6 +133,9 @@ const listenersDownloadButtons = async (event: MouseEvent): Promise<void> => {
   if (downloadButton.classList.contains('download-JPG')) {
     await saveCharts(Extensions.jpg);
   }
+  if (downloadButton.classList.contains('share')) {
+    await shareCharts();
+  }
   if (downloadButton.classList.contains('reset')) {
     resetChart();
     renderMainParametersInner();
@@ -145,18 +149,24 @@ const listenersDownloadButtons = async (event: MouseEvent): Promise<void> => {
 const listenersEditExampleButtons = async (event: MouseEvent): Promise<void> => {
   const editExampleButton = event.target as HTMLButtonElement;
   if (editExampleButton.classList.contains('edit-example-1')) {
+    historyResolver(ViewPage.create);
+
     setState(exampleValueFirst);
     localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
     renderHtml(renderCreatePage());
     await showCreateBlock();
   }
   if (editExampleButton.classList.contains('edit-example-2')) {
+    historyResolver(ViewPage.create);
+
     setState(exampleValueSecond);
     localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
     renderHtml(renderCreatePage());
     await showCreateBlock();
   }
   if (editExampleButton.classList.contains('edit-example-3')) {
+    historyResolver(ViewPage.create);
+
     setState(exampleValueThird);
     renderHtml(renderCreatePage());
     localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
@@ -168,24 +178,29 @@ const listenersOnDifferentPageButtons = async (event: MouseEvent): Promise<void>
   const button = event.target as HTMLButtonElement;
 
   if (button.classList.contains('create-chart-button')) {
-    renderHtml(renderCreatePage());
+    historyResolver(ViewPage.create);
 
+    renderHtml(renderCreatePage());
     localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
     await showCreateBlock();
   }
   if (button.classList.contains('examples-chart-button')) {
-    renderHtml(examplesPage());
+    historyResolver(ViewPage.examples);
 
+    renderHtml(examplesPage());
     localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
     await showExamplesBlock();
   }
   if (button.classList.contains('info-chart-button')) {
+    historyResolver(ViewPage.info);
+
     renderHtml(infoPage());
     await showExamplesBlockInInfo();
-
     localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
   }
   if (button.classList.contains('create-bar')) {
+    historyResolver(ViewPage.create);
+
     setType(TypeCharts.bar);
     renderHtml(renderCreatePage());
     localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
@@ -196,6 +211,8 @@ const listenersOnDifferentPageButtons = async (event: MouseEvent): Promise<void>
     showActiveClass(selectTypeButton1);
   }
   if (button.classList.contains('create-horizontalBar')) {
+    historyResolver(ViewPage.create);
+
     setType(TypeCharts.hBar);
     renderHtml(renderCreatePage());
     localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
@@ -206,6 +223,8 @@ const listenersOnDifferentPageButtons = async (event: MouseEvent): Promise<void>
     showActiveClass(selectTypeButton1);
   }
   if (button.classList.contains('create-line')) {
+    historyResolver(ViewPage.create);
+
     setType(TypeCharts.line);
     renderHtml(renderCreatePage());
     localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
@@ -216,6 +235,8 @@ const listenersOnDifferentPageButtons = async (event: MouseEvent): Promise<void>
     showActiveClass(selectTypeButton1);
   }
   if (button.classList.contains('create-radar')) {
+    historyResolver(ViewPage.create);
+
     setType(TypeCharts.radar);
     renderHtml(renderCreatePage());
     localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
@@ -226,6 +247,8 @@ const listenersOnDifferentPageButtons = async (event: MouseEvent): Promise<void>
     showActiveClass(selectTypeButton1);
   }
   if (button.classList.contains('create-pie')) {
+    historyResolver(ViewPage.create);
+
     setType(TypeCharts.pie);
     renderHtml(renderCreatePage());
     localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
@@ -236,6 +259,8 @@ const listenersOnDifferentPageButtons = async (event: MouseEvent): Promise<void>
     showActiveClass(selectTypeButton1);
   }
   if (button.classList.contains('create-doughnut')) {
+    historyResolver(ViewPage.create);
+
     setType(TypeCharts.doughnut);
     renderHtml(renderCreatePage());
     localStorage.setItem(LocalStorageKeys.view, ViewPage.create);

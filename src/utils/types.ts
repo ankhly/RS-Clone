@@ -31,6 +31,7 @@ export enum LocalStorageKeys {
   type = 'type',
   bg = 'bg',
   language = 'language',
+  city = 'city',
 }
 
 export enum TypeCharts {
