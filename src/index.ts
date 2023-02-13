@@ -12,9 +12,11 @@ import { animationLogic } from './logic/animation';
 import { converterLogic } from './services/API-converter';
 import { weatherLogic } from './services/API-wether';
 import { globalState } from './store/store';
-import { ViewPage } from './utils/types';
+import { LocalStorageKeys, ViewPage } from './utils/types';
+import { historyResolver } from './logic/routing';
 
 if (globalState.view === ViewPage.main) {
+  historyResolver(ViewPage.main);
   renderHtml(mainPage());
   animationLogic();
   converterLogic();
@@ -42,3 +44,42 @@ if (globalState.view === ViewPage.info) {
 }
 
 listeners();
+
+window.addEventListener('popstate', async (event: PopStateEvent): Promise<void> => {
+  event.preventDefault();
+
+  const queryString: string = window.location.search;
+
+  if (queryString.includes(ViewPage.main)) {
+    renderHtml(mainPage());
+    clearInterval(animationLogic());
+    converterLogic();
+    await weatherLogic();
+    await showExamplesBlock();
+
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.main);
+  }
+  if (queryString.includes(ViewPage.create)) {
+    renderHtml(renderCreatePage());
+
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
+    await showCreateBlock();
+  }
+  if (queryString.includes(ViewPage.gallery)) {
+    renderHtml(galleryPage());
+
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.gallery);
+  }
+  if (queryString.includes(ViewPage.examples)) {
+    renderHtml(examplesPage());
+
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
+    await showExamplesBlock();
+  }
+  if (queryString.includes(ViewPage.info)) {
+    renderHtml(infoPage());
+    await showExamplesBlockInInfo();
+
+    localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
+  }
+});
