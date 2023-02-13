@@ -18,10 +18,20 @@ const getBase64FromUrl = async (url: string) => {
 export const saveCharts = async (extension: string): Promise<void> => {
   const address = await getAddress(chartParametersState);
   const addressBase64 = await getBase64FromUrl(address);
-  const link = document.createElement('a');
+  const link = document.createElement('a') as HTMLAnchorElement;
   link.setAttribute('href', `${addressBase64}`);
   link.setAttribute('download', `chart.${extension}`);
   link.click();
+};
+
+export const shareCharts = async (): Promise<void> => {
+  const address = await getAddress(chartParametersState);
+  const copyText = document.createElement('input') as HTMLInputElement;
+  copyText.value = address;
+  document.body.appendChild(copyText);
+  copyText.select();
+  document.execCommand('copy');
+  document.body.removeChild(copyText);
 };
 
 export const showActiveClass = (selectTypeButton: Element) => {

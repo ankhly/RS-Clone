@@ -35,13 +35,13 @@ export const converterLogic = () => {
     if (target.classList.contains('input-usd')) {
       target.addEventListener('input', async () => {
         bynInput.value = ((+target.value * await getExchangeRates(usdId)).toFixed(4)).replace(/[,.]?0+$/, '');
-        bynConverter();
+        await bynConverter();
       });
     }
     if (target.classList.contains('input-eur')) {
       target.addEventListener('input', async () => {
         bynInput.value = ((+target.value * await getExchangeRates(eurId)).toFixed(4)).replace(/[,.]?0+$/, '');
-        bynConverter();
+        await bynConverter();
       });
     }
     if (target.classList.contains('input-rub')) {

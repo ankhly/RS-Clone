@@ -42,8 +42,10 @@
       margin-right: 0.3rem;
     }
   }
-  .reset {
-    @extend %button;
+  .reset,
+  .share {
+    @extend  %button;
+
     display: block;
     width: 100%;
     text-align: center;
