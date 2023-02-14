@@ -1,4 +1,5 @@
 import logo from '../../../assets/logo.png';
+
 export const renderHeader = (): string => {
   const wrapper = document.querySelector('.wrapper') as HTMLElement;
 
@@ -51,7 +52,6 @@ export const renderHeader = (): string => {
   return header;
 };
 
-
 export const menuClose = () =>{
   const iconMenu = document.querySelector('.icon-menu') as HTMLElement;
   const menuBody = document.querySelector('.menu__body') as HTMLElement;
@@ -69,4 +69,3 @@ export const burgerMenu = ()=>{
     });
   }
 };
-

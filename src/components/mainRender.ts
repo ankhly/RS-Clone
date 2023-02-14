@@ -1,4 +1,4 @@
-import { renderHeader, burgerMenu } from './header/header';
+import { renderHeader } from './header/header';
 import { getLanguage } from '../logic/changeLanguage';
 import { getColorMod } from '../logic/colorMod';
 import { renderFooter } from './footer/footer';
@@ -35,5 +35,4 @@ export const renderHtml = (page:string): void => {
 
   getLanguage();
   getColorMod();
-  burgerMenu();
 };
