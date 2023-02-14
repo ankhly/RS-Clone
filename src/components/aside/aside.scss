@@ -13,6 +13,10 @@
   }
   @media (max-width: $md3+px) {
     flex-direction: column;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    margin: 0px 0px 0px 0px;
   }
 }
 .weather {
@@ -121,4 +125,15 @@ input[type="number"]::-webkit-inner-spin-button {
 .humidityblock {
   display: flex;
   gap: 5px;
+}
+.mobile-aside {
+  display: block;
+  width: 100%;
+  height: 250px;
+  @media (max-width: $md4+px) {
+    height: 390px;
+  }
+  @media (min-width: $md3+px) {
+    display: none;
+  }
 }
