@@ -70,11 +70,13 @@ $white: white;
 @import "components/loader/loader";
 @import "components/tables/tables";
 @import "components/footer/footer";
+@import "logic/scroll/pageUp";
 
 html {
   background-color: #ffffff;
   color: #9e9898;
   font-family: $fontFamily;
+  scroll-behavior: smooth;
   &.dark {
     background-color: #101010;
     color: #ffffff;
