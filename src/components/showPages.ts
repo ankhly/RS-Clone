@@ -18,12 +18,12 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
     historyResolver(ViewPage.main);
 
     renderHtml(mainPage());
+    menuClose();
+    burgerMenu();
     clearInterval(animationLogic());
     converterLogic();
     await weatherLogic();
     await showExamplesBlock();
-    menuClose();
-    burgerMenu();
     localStorage.setItem(LocalStorageKeys.view, ViewPage.main);
   }
 
@@ -32,31 +32,27 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
     const menuLink = menuLinks[i] as HTMLElement;
     if (e.target === menuLink && menuLink.classList.contains('menu1')) {
       historyResolver(ViewPage.create);
+
       renderHtml(renderCreatePage());
       menuClose();
       burgerMenu();
-      renderHtml(renderCreatePage());
       localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
       await showCreateBlock();
     }
     if (e.target === menuLink && menuLink.classList.contains('menu2')) {
-      renderHtml(galleryPage());
-      menuClose();
-      burgerMenu();
-      localStorage.setItem(LocalStorageKeys.view, ViewPage.gallery);
-    }
-    if (e.target === menuLink && menuLink.classList.contains('menu3')) {
       historyResolver(ViewPage.gallery);
-      renderHtml(examplesPage());
+
+      renderHtml(galleryPage());
       menuClose();
       burgerMenu();
-      renderHtml(galleryPage());
       localStorage.setItem(LocalStorageKeys.view, ViewPage.gallery);
     }
     if (e.target === menuLink && menuLink.classList.contains('menu3')) {
       historyResolver(ViewPage.examples);
 
       renderHtml(examplesPage());
+      menuClose();
+      burgerMenu();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
       await showExamplesBlock();
     }
@@ -64,10 +60,10 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
       historyResolver(ViewPage.info);
 
       renderHtml(infoPage());
-      await showExamplesBlockInInfo();
       menuClose();
       burgerMenu();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
+      await showExamplesBlockInInfo();
     }
   }
 };
