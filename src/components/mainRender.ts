@@ -2,16 +2,18 @@ import { renderHeader } from './header/header';
 import { getLanguage } from '../logic/changeLanguage';
 import { getColorMod } from '../logic/colorMod';
 import { renderFooter } from './footer/footer';
+import { pageUp } from '../logic/scroll/pageUp'
 
 export const renderHtml = (page:string): void => {
   const body = document.querySelector('body') as HTMLElement;
 
   const content = `
     <div class="wrapper">
-      <main class="page">
-        <div class="progress-bar" id="progress-bar"></div>
+    <main class="page">
+      <div class="progress-bar" id="progress-bar"></div>
+      ${pageUp()}
         <div class="page__container container"></div>
-      </main>
+    </main>
     </div>
   `;
 

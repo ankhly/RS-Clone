@@ -25,7 +25,7 @@ const creatAnimation = (number: number): void => {
     const chartColumn = document.createElement('div');
     chartColumn.classList.add('animation__chart-column');
     chartColumn.style.left = `${leftPos}px`;
-    if (leftPos < Math.floor(animationDiv.offsetWidth)) {
+    if (leftPos < Math.floor(animationDiv.offsetWidth - marginColumn)) {
       leftPos += widthColumn + marginColumn;
       animationDiv.appendChild(chartColumn);
     }
