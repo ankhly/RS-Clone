@@ -19,7 +19,6 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
 
     renderHtml(mainPage());
     menuClose();
-    burgerMenu();
     clearInterval(animationLogic());
     converterLogic();
     await weatherLogic();
@@ -35,7 +34,6 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
 
       renderHtml(renderCreatePage());
       menuClose();
-      burgerMenu();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.create);
       await showCreateBlock();
     }
@@ -44,7 +42,6 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
 
       renderHtml(galleryPage());
       menuClose();
-      burgerMenu();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.gallery);
     }
     if (e.target === menuLink && menuLink.classList.contains('menu3')) {
@@ -52,7 +49,6 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
 
       renderHtml(examplesPage());
       menuClose();
-      burgerMenu();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.examples);
       await showExamplesBlock();
     }
@@ -61,7 +57,6 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
 
       renderHtml(infoPage());
       menuClose();
-      burgerMenu();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
       await showExamplesBlockInInfo();
     }
