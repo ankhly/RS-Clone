@@ -1,7 +1,7 @@
-import { renderHeader, burgerMenu } from './header/header';
+import { renderHeader } from './header/header';
 import { getLanguage } from '../logic/changeLanguage';
 import { getColorMod } from '../logic/colorMod';
-import { renderFooter } from '../components/footer/footer';
+import { renderFooter } from './footer/footer';
 import { pageUp } from '../logic/scroll/pageUp'
 
 export const renderHtml = (page:string): void => {
@@ -10,9 +10,10 @@ export const renderHtml = (page:string): void => {
   const content = `
     <div class="wrapper">
     <main class="page">
+      <div class="progress-bar" id="progress-bar"></div>
       ${pageUp()}
-      <div class="page__container container"></div>
-      </main>
+        <div class="page__container container"></div>
+    </main>
     </div>
   `;
 
@@ -36,5 +37,4 @@ export const renderHtml = (page:string): void => {
 
   getLanguage();
   getColorMod();
-  burgerMenu();
 };

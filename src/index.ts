@@ -14,6 +14,8 @@ import { weatherLogic } from './services/API-wether';
 import { globalState } from './store/store';
 import { LocalStorageKeys, ViewPage } from './utils/types';
 import { historyResolver } from './logic/routing';
+import { progressBar } from './logic/progressBar';
+import { burgerMenu } from './components/header/header';
 
 if (globalState.view === ViewPage.main) {
   historyResolver(ViewPage.main);
@@ -43,6 +45,7 @@ if (globalState.view === ViewPage.info) {
   await showExamplesBlockInInfo();
 }
 
+burgerMenu();
 listeners();
 
 window.addEventListener('popstate', async (event: PopStateEvent): Promise<void> => {
@@ -83,3 +86,5 @@ window.addEventListener('popstate', async (event: PopStateEvent): Promise<void> 
     localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
   }
 });
+
+window.addEventListener('scroll', progressBar);
