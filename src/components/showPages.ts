@@ -9,8 +9,9 @@ import { mainPage } from './pageMain/main';
 import { animationLogic } from '../logic/animation';
 import { converterLogic } from '../services/API-converter';
 import { weatherLogic } from '../services/API-wether';
-import { menuClose, burgerMenu } from './header/header';
+import { menuClose } from './header/header';
 import { historyResolver } from '../logic/routing';
+import { getLanguage } from '../logic/changeLanguage';
 
 export const changePage = async (e: MouseEvent): Promise<void> => {
   const target = e.target as HTMLElement;
@@ -59,6 +60,7 @@ export const changePage = async (e: MouseEvent): Promise<void> => {
       menuClose();
       localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
       await showExamplesBlockInInfo();
+      getLanguage();
     }
   }
 };

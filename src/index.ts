@@ -16,6 +16,7 @@ import { LocalStorageKeys, ViewPage } from './utils/types';
 import { historyResolver } from './logic/routing';
 import { progressBar } from './logic/progressBar';
 import { burgerMenu } from './components/header/header';
+import { getLanguage } from './logic/changeLanguage';
 
 if (globalState.view === ViewPage.main) {
   historyResolver(ViewPage.main);
@@ -43,6 +44,7 @@ if (globalState.view === ViewPage.info) {
   renderHtml(infoPage());
   animationLogic();
   await showExamplesBlockInInfo();
+  getLanguage();
 }
 
 burgerMenu();

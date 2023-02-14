@@ -38,6 +38,8 @@ export const mainPage = (): string => `
       <section class="main-page__text">
         <p class="main-page__text-p"></p>
       </section>
+      <div class="mobile-aside">
+      </div>
     </div>
   </div>
 `;

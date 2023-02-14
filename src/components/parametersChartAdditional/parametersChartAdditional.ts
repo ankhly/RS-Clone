@@ -8,8 +8,8 @@ export const renderAdditionalParameters = (): string => `
       <button class="save download-PNG"></button>
       <button class="save download-JPG"></button>
     </div>
-    <button class="share">Скопировать ссылку на график</button>
-    <button class="reset">Сбросить график</button>
+    <button class="share copi-link"></button>
+    <button class="reset"></button>
   </div>
 `;
 

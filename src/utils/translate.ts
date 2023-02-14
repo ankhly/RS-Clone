@@ -325,5 +325,9 @@ export const lang:LangInt = {
     'ru': 'Отредактировать график: Среднегодовая инфляция в Беларуси',
     'uk': 'Edit graph: Average annual inflation in Belarus',
   },
+  'copi-link':{
+    'ru': 'Скопировать ссылку на график',
+    'uk': 'Copy message to chart',
+  },
 };
 
