@@ -1,7 +1,7 @@
 import { renderHeader, burgerMenu } from './header/header';
 import { getLanguage } from '../logic/changeLanguage';
 import { getColorMod } from '../logic/colorMod';
-import { renderFooter } from '../components/footer/footer';
+import { renderFooter } from './footer/footer';
 
 export const renderHtml = (page:string): void => {
   const body = document.querySelector('body') as HTMLElement;
