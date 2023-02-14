@@ -8,8 +8,9 @@ export const renderHtml = (page:string): void => {
 
   const content = `
     <div class="wrapper">
-    <main class="page">
-      <div class="page__container container"></div>
+      <main class="page">
+        <div class="progress-bar" id="progress-bar"></div>
+        <div class="page__container container"></div>
       </main>
     </div>
   `;

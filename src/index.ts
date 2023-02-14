@@ -14,6 +14,7 @@ import { weatherLogic } from './services/API-wether';
 import { globalState } from './store/store';
 import { LocalStorageKeys, ViewPage } from './utils/types';
 import { historyResolver } from './logic/routing';
+import { progressBar } from './logic/progressBar';
 
 if (globalState.view === ViewPage.main) {
   historyResolver(ViewPage.main);
@@ -83,3 +84,5 @@ window.addEventListener('popstate', async (event: PopStateEvent): Promise<void> 
     localStorage.setItem(LocalStorageKeys.view, ViewPage.info);
   }
 });
+
+window.addEventListener('scroll', progressBar);
