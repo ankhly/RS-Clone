@@ -7,9 +7,13 @@ export const pageUp = () => `
   </a>
 `;
 
-function scroll() {  
-  window.addEventListener('scroll', () => {
+function scroll() { 
+  document.addEventListener('DOMContentLoaded', () => {
     const circle = document.querySelector('.circle') as HTMLElement;
+    circle.hidden = true; 
+  });
+  window.addEventListener('scroll', () => {
+    const circle = document.querySelector('.circle') as HTMLElement;    
     circle.hidden = (scrollY < document.documentElement.clientHeight)    
   });
 }
