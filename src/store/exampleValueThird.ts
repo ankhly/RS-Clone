@@ -21,7 +21,3 @@ export const exampleValueThird: ChartParameters = JSON.parse(localStorage.getIte
   width: 800,
   height: 400,
 };
-
-
-
-

@@ -12,7 +12,7 @@ import {
 } from '../components/viewChartExamples/viewChartExamples';
 import { getLanguage } from './changeLanguage';
 
-export const showCreateBlock = async () => {
+export const showCreateBlock = async (): Promise<void> => {
   const mainLogicContainer = document.querySelector('#main-logic-container') as HTMLDivElement;
 
   mainLogicContainer.innerHTML = `
@@ -31,7 +31,7 @@ export const showCreateBlock = async () => {
   getLanguage();
 };
 
-export const showExamplesBlock = async () => {
+export const showExamplesBlock = async (): Promise<void> => {
   const mainLogicContainer = document.querySelector('#main-logic-container') as HTMLDivElement;
 
   mainLogicContainer.innerHTML = `
@@ -45,7 +45,7 @@ export const showExamplesBlock = async () => {
   getLanguage();
 };
 
-export const showExamplesBlockInInfo = async () => {
+export const showExamplesBlockInInfo = async (): Promise<void> => {
   const mainLogicContainer = document.querySelector('#main-logic-container') as HTMLDivElement;
 
   mainLogicContainer.innerHTML = `

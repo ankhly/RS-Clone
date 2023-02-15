@@ -54,4 +54,3 @@ export const infoPage = (): string => `
     </div>
   </div>
 `;
-

@@ -10,7 +10,7 @@ import { infoPage } from './components/pageInfo/info';
 import { mainPage } from './components/pageMain/main';
 import { animationLogic } from './logic/animation';
 import { converterLogic } from './services/API-converter';
-import { weatherLogic } from './services/API-wether';
+import { weatherLogic } from './services/API-weather';
 import { globalState } from './store/store';
 import { LocalStorageKeys, ViewPage } from './utils/types';
 import { historyResolver } from './logic/routing';

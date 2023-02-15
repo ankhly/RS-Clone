@@ -75,7 +75,7 @@ const renderExamples = (address: string, imageContainer: HTMLDivElement): void =
   });
 };
 
-export const renderLoaderOrExamples = async () => {
+export const renderLoaderOrExamples = async (): Promise<void> => {
   renderLoaderExamples();
 
   const addressExample1 = await getAddress(exampleValueFirst);

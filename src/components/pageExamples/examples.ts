@@ -1,4 +1,4 @@
-export const examplesPage = () => `
+export const examplesPage = (): string => `
   <div class="page__example example-page">
   <div class="main-page__animation" style="display: none"></div>
     <h1 class="example-page__h1 main-title"></h1>

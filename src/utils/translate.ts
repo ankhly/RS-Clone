@@ -325,4 +325,3 @@ export const lang:LangInt = {
     'uk': 'Copy message to chart',
   },
 };
-

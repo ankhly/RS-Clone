@@ -12,7 +12,6 @@ export const weatherLogic = async (): Promise<void> => {
 
   const baseURL: string = 'https://api.openweathermap.org';
   const getWeather = async (): Promise<void> => {
-    const cityStorage =  localStorage.getItem(LocalStorageKeys.city) || city.value;
     const url =
       `${baseURL}/data/2.5/weather?q=${city.value}&lang=ru&appid=ecea04712645dfb0bce29087590fddfd&units=metric`;
     const res = await fetch(url);

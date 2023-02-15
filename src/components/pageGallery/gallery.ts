@@ -55,4 +55,3 @@ export const galleryPage = (): string => `
     ${galleryBlock()}
   </div>
 `;
-

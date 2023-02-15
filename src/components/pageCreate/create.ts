@@ -30,8 +30,3 @@ export const renderCreatePage = (): string => `
     </div>
   </div>
 `;
-
-
-
-
-

@@ -1,4 +1,4 @@
-export const converterLogic = () => {
+export const converterLogic = (): void => {
   const eurId = 451;
   const usdId = 431;
   const rubId = 456;

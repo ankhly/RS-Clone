@@ -52,14 +52,14 @@ export const renderHeader = (): string => {
   return header;
 };
 
-export const menuClose = () =>{
+export const menuClose = (): void => {
   const iconMenu = document.querySelector('.icon-menu') as HTMLElement;
   const menuBody = document.querySelector('.menu__body') as HTMLElement;
   iconMenu.classList.remove('_active');
   menuBody.classList.remove('_active');
 };
 
-export const burgerMenu = ()=>{
+export const burgerMenu = (): void => {
   const iconMenu = document.querySelector('.menu__icon') as HTMLElement;
   const menuBody = document.querySelector('.menu__body') as HTMLElement;
   if (iconMenu) {

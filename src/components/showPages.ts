@@ -8,7 +8,7 @@ import { examplesPage } from './pageExamples/examples';
 import { mainPage } from './pageMain/main';
 import { animationLogic } from '../logic/animation';
 import { converterLogic } from '../services/API-converter';
-import { weatherLogic } from '../services/API-wether';
+import { weatherLogic } from '../services/API-weather';
 import { menuClose } from './header/header';
 import { historyResolver } from '../logic/routing';
 import { getLanguage } from '../logic/changeLanguage';

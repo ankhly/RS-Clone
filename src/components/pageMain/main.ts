@@ -43,4 +43,3 @@ export const mainPage = (): string => `
     </div>
   </div>
 `;
-
