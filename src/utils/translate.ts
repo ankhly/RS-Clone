@@ -57,10 +57,10 @@ export const lang:LangInt = {
     'ru': `Выберите необходимый вид графика/диаграммы, далее вы перейдёте в режим
       онлайн-конструктора, в котором сможете заполнить данные графика, и затем
       скачать или сохранить вашу диаграмму. Какую диаграмму вам необходимо построить?
-      Линейную, круговую, столбчатую, полосовую, линии, области, …?`,
+      Колонны, полосы, линии, радар, пирог или пончик?`,
     'uk': `Choose the desired type of chart/diagram, then you will get to the online
       constructor page, where you can fill in the chart data, and then download or save your
-      chart. What diagram do you need to build? Linear, pie, columnar, bar, lines, areas, …?`,
+      chart. What diagram do you need to build? Columns, bars, lines, radar, pie or donut?`,
   },
   'name1': {
     'ru': 'Колонны',
@@ -136,20 +136,15 @@ export const lang:LangInt = {
   },
   'main-page__text-p': {
     'ru': `<b>EasyCharts</b> - сайт для построения графиков/диаграмм онлайн. Выберите вид диаграммы
-      (линейная, круговая, столбчатая, полосовая, линии, области), заполните данные таблицы
-      графика, и диаграмма готова! Диаграмму можно скачать в удобном вам формате или получить
-      ссылку на страницу вашего графика. Вы можете также использовать онлайн-конструктор графиков
-      на нашем сайте, чтобы скачать график (png/jpeg/и др.) и вставить его в excel, word и другие
-      программы на вашем компьютере. Построить диаграмму онлайн очень просто! Читайте подробнее о том,
-      как создать диаграмму онлайн здесь. Также вы можете посмотреть примеры диаграмм, чтобы на их основе
-      создать необходимый вам график.`,
-    'uk': `<b>EasyCharts</b> is a website for building charts/diagrams online. Select the chart type (linear, pie, columnar,
-      bar, lines, areas), fill in the chart/diagram data table, and the chart is done! You can download the chart in a
-      format that is convenient for you or get a link to the page of your chart/diagram. You can also use the online
-      chart and diagram constructor on our website to download the chart (png / jpeg /, etc.) and paste it into
-      Excel, Word, and other programs on your computer. It is very easy to create a chart/diagram online! Read more
-      about how to create a diagram online here. Please see also the examples of the charts/diagrams to create the
-      one you need.`,
+      (колонны, полосы, линии, радар, пирог, пончик), заполните данные таблицы
+      графика, и диаграмма готова! Диаграмму можно скачать в удобном вам формате (png/jpeg) или получить
+      ссылку на страницу вашего графика. Построить диаграмму онлайн очень просто! Также вы можете посмотреть примеры
+      диаграмм, чтобы на их основе создать необходимый вам график.`,
+    'uk': `<b>EasyCharts</b> is a website for building charts/diagrams online. Select the chart type (columns, bars,
+      lines, radar, pie, donut), fill in the chart/diagram data table, and the chart is done! You can download the
+      chart in a format that is convenient for you (png/jpeg) or get a link to the page of your chart/diagram.
+      It is very easy to create a chart/diagram online! Please see also the examples of the charts/diagrams
+      to create the one you need.`,
   },
   'info-page__h1': {
     'ru': 'Как создать график/диаграмму онлайн на сайте <br><b>EasyCharts</b>',
@@ -173,10 +168,10 @@ export const lang:LangInt = {
   'section-view__text': {
     'ru': `На странице создания или в галерее выберите подходящий вам тип графика.
     <br>Как вам необходимо отобразить ваши данные?
-    <br>Линии / области / колонны / круговая диаграмма / … ?`,
+    <br>Колонны / полосы / линии / радар / пирог / пончик?`,
     'uk': `On the Creation page or in the Gallery, choose the chart/diagram type you need.
     <br>How do you need to display your data?
-    <br>Lines / areas / columns / pie chart / … ?`,
+    <br>Columns / bars / lines / radar / pie / donut?`,
   },
   'section-tables__h2': {
     'ru': '2. Заполните таблицу данных',
@@ -244,13 +239,13 @@ export const lang:LangInt = {
     'ru': `На данной странице вы можете найти подходящие вам примеры графиков/диаграмм, чтобы
     использовать их для построения своего графика, а также для того, чтобы понять как
     работает конструктор графиков на нашем сайте. Также вы можете выбрать необходимый вид
-    диаграммы, чтобы посмотреть примеры для данного вида: круговая диаграмма, линейная,
-    столбчатая, полосовая, линии, области и другие.`,
+    диаграммы, чтобы посмотреть примеры для данного вида: колонны, полосы,
+    линии, радар, пирог и пончик.`,
     'uk': `
-      On this page, you can find examples of charts/diagrams in order to use them to build 
-      your own chart/diagram, as well as to understand how the chart constructor works on 
-      our website. You can also select the desired type of chart to see examples for this type: 
-      pie chart, linear, columns, bar chart, lines, areas, and others.
+      On this page, you can find examples of charts/diagrams in order to use them to build
+      your own chart/diagram, as well as to understand how the chart constructor works on
+      our website. You can also select the desired type of chart to see examples for this type:
+      columns, bars, lines, radar, pie and donut.
     `,
   },
   'example-page__h1': {

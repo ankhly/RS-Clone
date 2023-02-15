@@ -278,6 +278,13 @@ const listenersOnDifferentPageButtons = async (event: MouseEvent): Promise<void>
   }
 };
 
+const listenerScrollButton = (event: MouseEvent): void => {
+  const scrollButton = event.target as HTMLDivElement;
+  if (scrollButton.classList.contains('scroll-up')) {
+    window.scrollTo(0, 0);
+  }
+};
+
 const listenersSelectTypeButtons = async (event: MouseEvent): Promise<void> => {
   const selectTypeButton = (event.target as HTMLElement).closest('.imageContainer');
   const imageContainer = document.querySelector('#imageContainer') as HTMLDivElement;
@@ -359,6 +366,8 @@ export const listeners = (): void => {
     closePopup(event);
     chooseLanguage(event);
     await changePage(event);
+
+    listenerScrollButton(event);
 
     await listenersSelectTypeButtons(event);
   });
