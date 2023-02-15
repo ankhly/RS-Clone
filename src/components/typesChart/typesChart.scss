@@ -1,5 +1,5 @@
 .chartSelectionForm {
-  flex: 1 1 20%;
+  flex: 1 1 5%;
   .miniTitle {
     @extend %mini-title;
   }
@@ -22,6 +22,7 @@
       font-size: 1rem;
       @media (max-width: $md2+px) {
         margin-bottom: 0;
+        width: 150px;
       }
       img {
         height: 100%;
