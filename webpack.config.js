@@ -14,7 +14,7 @@ const devServer = (isDevelopment) => !isDevelopment ? {} : {
       directory: path.join(__dirname, 'public'),
       publicPath: '/assetsStatic',
     },
-    devMiddleware: { index: 'main.html' },
+    devMiddleware: { index: 'index.html' },
   },
 };
 
@@ -22,7 +22,7 @@ const esLintPlugin = (isDevelopment) => isDevelopment ? [] : [
   new ESLintPlugin({ extensions: ['ts', 'js'] })
 ];
 
-module.exports = ({development}) => ({
+module.exports = ({ development }) => ({
   mode: development ? 'development' : 'production',
   devtool: development ? 'inline-source-map' : false,
   entry: {
@@ -71,7 +71,7 @@ module.exports = ({development}) => ({
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: '[name].html'
+      filename: 'index.html'
       // if add 'filename' - add 'devMiddleware: { index: 'main.html' }' for devServer
       // [name] for match '[name].html' and '[name].js/css'
       // for multipage building (entry > 1) create array pages and add HtmlWebpackPlugin according to array
