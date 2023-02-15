@@ -1,0 +1,27 @@
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(226, 214, 214, 0.5);
+  position: fixed;
+  z-index: 10;
+  left: 5px;
+  top: 50%;
+  cursor: pointer;
+}
+.line {
+  width: 18px;
+  height: 3px;
+  background-color: $yellow;
+  position: absolute;
+}
+.line1 {
+  left: 22px;
+  top: 20px;
+  transform: rotate(45deg);
+}
+.line2 {
+  left: 10px;
+  top: 20px;
+  transform: rotate(-45deg);
+}

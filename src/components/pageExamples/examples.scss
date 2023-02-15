@@ -1,0 +1,12 @@
+.example-page {
+  padding: 40px 0px;
+}
+.main-logic-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  gap: 20px;
+  @media (max-width: $md2+px) {
+    flex-direction: column;
+  }
+}

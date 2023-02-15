@@ -1,0 +1,13 @@
+.optionsChartContainer {
+  width: 100%;
+  flex: 1 0 20%;
+  .miniTitle {
+    @extend %mini-title;
+  }
+}
+.containerSettings {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

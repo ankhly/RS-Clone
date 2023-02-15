@@ -1,0 +1,154 @@
+.info-page {
+  text-align: center;
+  background: #fafafa;
+  padding: 40px 0;
+
+  &__head {
+    position: relative;
+    height: 100px;
+    @include adaptiv-value("margin-bottom", 30, 15, 1);
+  }
+
+  &__icon {
+    width: 100%;
+    height: auto;
+  }
+
+  &__icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(50% - 50px);
+    background-image: url("../assets/doughnut.png");
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  &__icon::after {
+    content: "";
+    position: absolute;
+    top: 28%;
+    left: calc(50% - 22.5px);
+    background-image: url("../assets/info2.svg");
+    width: 45px;
+    height: 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__titles {
+    margin-bottom: 40px;
+  }
+
+  &__h1 {
+    font-weight: normal;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__section {
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 1px 1px 2px rgb(242 233 233 / 30%), 0 0px 0px 0px rgb(249 249 249 / 99%);
+    padding: 15px;
+    margin-bottom: 40px;
+    .info-examples {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding-top: 20px;
+      .imageContainerBlock {
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0;
+        img {
+          width: 100%;
+        }
+      }
+      .imageContainer {
+        margin: 0px 0px 10px 0px;
+      }
+    }
+  }
+}
+.section {
+  &__h2 {
+    padding-bottom: 15px;
+    font-size: 27px;
+  }
+  &__text-link {
+    color: $green;
+  }
+}
+// .section-tables {
+// }
+// .section-ready {
+// }
+.section-view {
+  &__images {
+    margin-top: 25px;
+  }
+
+  &__link {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px 10px 0;
+    padding: 5px;
+    background: #fafafa;
+    box-shadow: 0 -1px 2px -1px rgb(0 0 0 / 30%), 0 1px 2px -1px rgb(0 0 0 / 40%);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: all 0.1s linear;
+    &:hover {
+      box-shadow: 0 0 10px 0 $blue;
+      border: 1px solid $blue;
+    }
+  }
+
+  &__img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.info-page {
+  &__button {
+    padding: 15px 30px 11px 30px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 16px;
+    text-decoration: none;
+    background: $blue;
+    border-radius: 25px;
+    color: #fff;
+    border: none;
+    border-bottom: 4px solid rgb(69 112 158);
+    box-shadow: 0 1px 2px -1px rgb(0 0 0 / 20%);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+    &::after {
+      content: "";
+      background-image: url("../assets/arrow-right.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__button:hover {
+    background-color: $green;
+    border-bottom: 4px solid rgb(113 174 170);
+    background-size: 28px;
+  }
+}

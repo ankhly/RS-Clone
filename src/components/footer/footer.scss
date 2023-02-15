@@ -1,0 +1,18 @@
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  gap: 15px;
+  align-items: center;
+  @media (max-width: $md4+px) {
+    flex-direction: column;
+  }
+}
+
+.img-github {
+  height: 50px;
+}
+
+.rsschool-logo {
+  width: 100px;
+}

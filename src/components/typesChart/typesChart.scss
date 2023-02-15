@@ -1,0 +1,64 @@
+.chartSelectionForm {
+  flex: 1 1 5%;
+  .miniTitle {
+    @extend %mini-title;
+  }
+
+  .chartsTypeContainer {
+    @media (max-width: $md2+px) {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .imageContainer {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 0 10px 0;
+      border-radius: 10px;
+      padding: 6px 20px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      @media (max-width: $md2+px) {
+        margin-bottom: 0;
+        width: 150px;
+      }
+      img {
+        height: 100%;
+        margin-right: 0.6rem;
+      }
+      .typeName {
+        // color: black;
+        font-size: 1.2rem;
+        text-decoration: none;
+        line-height: 1.2rem;
+        transition: all 0.25s linear;
+      }
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 10px 0 $blue;
+        border: 1px solid $blue;
+        .typeName {
+          color: $blue;
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .image-container-active {
+      box-shadow: 0 0 10px 0 $green;
+      .typeName {
+        color: $green;
+      }
+      &:hover {
+        cursor: default;
+        box-shadow: 0 0 10px 0 $green;
+        border: none;
+        .typeName {
+          color: $green;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
